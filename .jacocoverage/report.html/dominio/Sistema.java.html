@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Sistema.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">dominio</a> &gt; <span class="el_source">Sistema.java</span></div><h1>Sistema.java</h1><pre class="source lang-java linenums">package dominio;
+
+
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Currency;
+import javax.swing.ImageIcon;
+
+public final class Sistema implements Serializable {
+
+    private ArrayList&lt;Usuario&gt; listaUsuarios;
+    private ArrayList&lt;Profesional&gt; listaProfesionales;
+    private ArrayList&lt;Alimento&gt; listaAlimentos;
+    private ArrayList&lt;PlanAlimentacion&gt; listaPlanesAlimentacion;
+    private ArrayList&lt;Conversacion&gt; listaConversaciones;
+    private Persona personaLogueada;
+
+    public Sistema(ArrayList&lt;Usuario&gt; unaListaUsuarios,
+            ArrayList&lt;Profesional&gt; unaListaProfesionales,
+            ArrayList&lt;Alimento&gt; unaListaAlimentos,
+            ArrayList&lt;PlanAlimentacion&gt; unaListaPlanesAlimentacion,
+            ArrayList&lt;Conversacion&gt; unaListaConversaciones,
+<span class="fc" id="L27">            Persona personaLogueada) {</span>
+
+<span class="fc" id="L29">        setListaUsuarios(unaListaUsuarios);</span>
+<span class="fc" id="L30">        setListaProfesionales(unaListaProfesionales);</span>
+<span class="fc" id="L31">        setListaAlimentos(unaListaAlimentos);</span>
+<span class="fc" id="L32">        setListaConversaciones(unaListaConversaciones);</span>
+<span class="fc" id="L33">        setListaPlanesAlimentacion(unaListaPlanesAlimentacion);</span>
+<span class="fc" id="L34">        setPersonaLogueada(personaLogueada);</span>
+<span class="fc" id="L35">    }</span>
+
+<span class="fc" id="L37">    public Sistema() {</span>
+<span class="fc" id="L38">        setListaUsuarios(new ArrayList&lt;&gt;());</span>
+<span class="fc" id="L39">        setListaProfesionales(new ArrayList&lt;&gt;());</span>
+<span class="fc" id="L40">        setListaAlimentos(new ArrayList&lt;&gt;());</span>
+<span class="fc" id="L41">        setListaConversaciones(new ArrayList&lt;&gt;());</span>
+<span class="fc" id="L42">        setListaPlanesAlimentacion(new ArrayList&lt;&gt;());</span>
+<span class="fc" id="L43">        setPersonaLogueada(new Usuario(&quot;Nombre&quot;, &quot;Apellido&quot;, &quot;&quot;,</span>
+<span class="fc" id="L44">                new ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;)),</span>
+                &quot;&quot;, null, null, null));
+
+<span class="fc" id="L47">    }</span>
+
+    public Persona getPersonaLogueada() {
+<span class="fc" id="L50">        return personaLogueada;</span>
+    }
+
+    public void setPersonaLogueada(Persona personaLogueada) {
+<span class="fc" id="L54">        personaLogueada = personaLogueada;</span>
+        
+<span class="fc" id="L56">    }</span>
+
+    public ArrayList&lt;Conversacion&gt; getListaConversaciones() {
+<span class="fc" id="L59">        return this.listaConversaciones;</span>
+    }
+
+    public void setListaConversaciones(ArrayList&lt;Conversacion&gt; unaListaConversaciones) {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (unaListaConversaciones == null) {</span>
+<span class="fc" id="L64">            this.listaConversaciones = new ArrayList&lt;&gt;();</span>
+        } else {
+<span class="fc" id="L66">            this.listaConversaciones = unaListaConversaciones;</span>
+        }
+<span class="fc" id="L68">    }</span>
+
+    public ArrayList&lt;Usuario&gt; getListaUsuarios() {
+<span class="fc" id="L71">        return this.listaUsuarios;</span>
+    }
+
+    public void setListaUsuarios(ArrayList&lt;Usuario&gt; unaListaUsuarios) {
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (unaListaUsuarios == null) {</span>
+<span class="fc" id="L76">            this.listaUsuarios = new ArrayList&lt;&gt;();</span>
+        } else {
+<span class="fc" id="L78">            this.listaUsuarios = unaListaUsuarios;</span>
+        }
+<span class="fc" id="L80">    }</span>
+
+    public ArrayList&lt;Profesional&gt; getListaProfesionales() {
+<span class="fc" id="L83">        return this.listaProfesionales;</span>
+    }
+
+    public void setListaProfesionales(ArrayList&lt;Profesional&gt; unaListaProfesionales) {
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (unaListaProfesionales == null) {</span>
+<span class="fc" id="L88">            this.listaProfesionales = new ArrayList&lt;&gt;();</span>
+        } else {
+<span class="fc" id="L90">            this.listaProfesionales = unaListaProfesionales;</span>
+        }
+<span class="fc" id="L92">    }</span>
+
+    public ArrayList&lt;Alimento&gt; getListaAlimentos() {
+<span class="fc" id="L95">        return this.listaAlimentos;</span>
+    }
+
+    public void setListaAlimentos(ArrayList&lt;Alimento&gt; unaListaAlimentos) {
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        if (unaListaAlimentos == null) {</span>
+<span class="fc" id="L100">            this.listaAlimentos = new ArrayList&lt;&gt;();</span>
+        } else {
+<span class="fc" id="L102">            this.listaAlimentos = unaListaAlimentos;</span>
+        }
+<span class="fc" id="L104">    }</span>
+
+    public ArrayList&lt;PlanAlimentacion&gt; getListaPlanesAlimentacion() {
+<span class="fc" id="L107">        return this.listaPlanesAlimentacion;</span>
+    }
+
+    public void setListaPlanesAlimentacion(ArrayList&lt;PlanAlimentacion&gt; unaListaPlanesAlimentacion) {
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (unaListaPlanesAlimentacion == null) {</span>
+<span class="fc" id="L112">            this.listaPlanesAlimentacion = new ArrayList&lt;&gt;();</span>
+        } else {
+<span class="fc" id="L114">            this.listaPlanesAlimentacion = unaListaPlanesAlimentacion;</span>
+        }
+<span class="fc" id="L116">    }</span>
+
+<span class="pc" id="L118">    public enum Preferencias {</span>
+<span class="fc" id="L119">        CarnesRojas, CarnesBlancas, Verduras, Frutas, Harinas;</span>
+    }
+
+<span class="pc" id="L122">    public enum Restricciones {</span>
+<span class="fc" id="L123">        Diabetes, Veganismo, IntoleranciaLactosa, Celiaquia;</span>
+    }
+
+<span class="nc" id="L126">    public enum Paises {</span>
+<span class="nc" id="L127">        Argentina, Bolivia, Brasil, Chile, Colombia, CostaRica, Cuba, Ecuador, ElSalvador,</span>
+<span class="nc" id="L128">        GuayanaFrancesa, Granada, Guatemala, Guayana, Haití, Honduras, Jamaica,</span>
+<span class="nc" id="L129">        México, Nicaragua, Paraguay, Panamá, Perú, PuertoRico, RepúblicaDominicana, Surinam, Uruguay, Venezuela;</span>
+    }
+
+<span class="pc" id="L132">    public enum DiasDeLaSemana {</span>
+<span class="fc" id="L133">        Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo;</span>
+    }
+
+<span class="pc" id="L136">    public enum IngestasPorDia {</span>
+<span class="fc" id="L137">        Desayuno, Almuerzo, Cena;</span>
+    }
+
+    public ArrayList&lt;String&gt; devolverListaPaises() {
+<span class="nc" id="L141">        ArrayList&lt;String&gt; lstNacionalidades = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L142">        lstNacionalidades.add(Paises.Argentina.toString());</span>
+<span class="nc" id="L143">        lstNacionalidades.add(Paises.Bolivia.toString());</span>
+<span class="nc" id="L144">        lstNacionalidades.add(Paises.Brasil.toString());</span>
+<span class="nc" id="L145">        lstNacionalidades.add(Paises.Chile.toString());</span>
+<span class="nc" id="L146">        lstNacionalidades.add(Paises.Colombia.toString());</span>
+<span class="nc" id="L147">        lstNacionalidades.add(&quot;Costa Rica&quot;);</span>
+<span class="nc" id="L148">        lstNacionalidades.add(Paises.Cuba.toString());</span>
+<span class="nc" id="L149">        lstNacionalidades.add(Paises.Ecuador.toString());</span>
+<span class="nc" id="L150">        lstNacionalidades.add(&quot;El Salvador&quot;);</span>
+<span class="nc" id="L151">        lstNacionalidades.add(&quot;Guayana Francesa&quot;);</span>
+<span class="nc" id="L152">        lstNacionalidades.add(Paises.Granada.toString());</span>
+<span class="nc" id="L153">        lstNacionalidades.add(Paises.Guatemala.toString());</span>
+<span class="nc" id="L154">        lstNacionalidades.add(Paises.Guayana.toString());</span>
+<span class="nc" id="L155">        lstNacionalidades.add(Paises.Haití.toString());</span>
+<span class="nc" id="L156">        lstNacionalidades.add(Paises.Honduras.toString());</span>
+<span class="nc" id="L157">        lstNacionalidades.add(Paises.Jamaica.toString());</span>
+<span class="nc" id="L158">        lstNacionalidades.add(Paises.México.toString());</span>
+<span class="nc" id="L159">        lstNacionalidades.add(Paises.Nicaragua.toString());</span>
+<span class="nc" id="L160">        lstNacionalidades.add(Paises.Paraguay.toString());</span>
+<span class="nc" id="L161">        lstNacionalidades.add(Paises.Panamá.toString());</span>
+<span class="nc" id="L162">        lstNacionalidades.add(Paises.Perú.toString());</span>
+<span class="nc" id="L163">        lstNacionalidades.add(&quot;Puerto Rico&quot;);</span>
+<span class="nc" id="L164">        lstNacionalidades.add(&quot;República Dominicana&quot;);</span>
+<span class="nc" id="L165">        lstNacionalidades.add(Paises.Surinam.toString());</span>
+<span class="nc" id="L166">        lstNacionalidades.add(Paises.Uruguay.toString());</span>
+<span class="nc" id="L167">        lstNacionalidades.add(Paises.Venezuela.toString());</span>
+<span class="nc" id="L168">        return lstNacionalidades;</span>
+    }
+
+    public ArrayList&lt;String&gt; devolverListaDiasDeLaSemana() {
+<span class="fc" id="L172">        ArrayList&lt;String&gt; lstDiasSemana = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L173">        lstDiasSemana.add(DiasDeLaSemana.Lunes.toString());</span>
+<span class="fc" id="L174">        lstDiasSemana.add(DiasDeLaSemana.Martes.toString());</span>
+<span class="fc" id="L175">        lstDiasSemana.add(DiasDeLaSemana.Miercoles.toString());</span>
+<span class="fc" id="L176">        lstDiasSemana.add(DiasDeLaSemana.Jueves.toString());</span>
+<span class="fc" id="L177">        lstDiasSemana.add(DiasDeLaSemana.Viernes.toString());</span>
+<span class="fc" id="L178">        lstDiasSemana.add(DiasDeLaSemana.Sabado.toString());</span>
+<span class="fc" id="L179">        lstDiasSemana.add(DiasDeLaSemana.Domingo.toString());</span>
+<span class="fc" id="L180">        return lstDiasSemana;</span>
+    }
+
+    public ArrayList&lt;String&gt; devolverListaIngestasDeLaSemana() {
+<span class="fc" id="L184">        ArrayList&lt;String&gt; lstIngestas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L185">        lstIngestas.add(IngestasPorDia.Desayuno.toString());</span>
+<span class="fc" id="L186">        lstIngestas.add(IngestasPorDia.Almuerzo.toString());</span>
+<span class="fc" id="L187">        lstIngestas.add(IngestasPorDia.Cena.toString());</span>
+<span class="fc" id="L188">        return lstIngestas;</span>
+    }
+
+    public void guardarDatosSistema() {
+        try {
+<span class="nc" id="L193">            FileOutputStream archivo = new FileOutputStream(&quot;Sistema.data&quot;);</span>
+<span class="nc" id="L194">            BufferedOutputStream buffer = new BufferedOutputStream(archivo);</span>
+<span class="nc" id="L195">            try (ObjectOutputStream objetoASerializar = new ObjectOutputStream(buffer)) {</span>
+<span class="nc" id="L196">                objetoASerializar.writeObject(this);</span>
+<span class="nc" id="L197">                objetoASerializar.flush();</span>
+<span class="nc bnc" id="L198" title="All 8 branches missed.">            }</span>
+<span class="nc" id="L199">        } catch (IOException e) {</span>
+
+<span class="nc" id="L201">        }</span>
+<span class="nc" id="L202">    }</span>
+
+    public boolean crearUsuario(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoDePerfil, String nacionalidad, ArrayList&lt;String&gt; preferencias, ArrayList&lt;String&gt; restricciones, ArrayList&lt;Ingesta&gt; alimentosIngeridos) {
+        Usuario usuarioNuevo;
+<span class="fc" id="L206">        usuarioNuevo = new Usuario(nombre, apellido, fechaNacimiento, fotoDePerfil, nacionalidad, preferencias, restricciones, alimentosIngeridos);</span>
+<span class="fc" id="L207">        boolean fueAgregadoUsuario = agregarUsuarioALaLista(usuarioNuevo);</span>
+<span class="fc" id="L208">        return fueAgregadoUsuario;</span>
+    }
+
+    public boolean agregarUsuarioALaLista(Usuario usuarioARegistrar) {
+<span class="fc" id="L212">        boolean fueAgregadoUsuario = false;</span>
+<span class="pc bpc" id="L213" title="2 of 4 branches missed.">        if ((usuarioARegistrar != null) &amp;&amp; !getListaUsuarios().contains(usuarioARegistrar)) {</span>
+<span class="fc" id="L214">            getListaUsuarios().add(usuarioARegistrar);</span>
+<span class="fc" id="L215">            fueAgregadoUsuario = true;</span>
+        }
+<span class="fc" id="L217">        return fueAgregadoUsuario;</span>
+    }
+
+    public boolean crearProfesional(String nombre, String apellido, String fechaNacimiento, ImageIcon fotoPerfil, String tituloProfesional, String fechaGraduacion, String paisGraduacion) {
+<span class="nc" id="L221">        Profesional profesionalNuevo = new Profesional(nombre, apellido, fechaNacimiento, fotoPerfil, tituloProfesional, fechaGraduacion, paisGraduacion);</span>
+<span class="nc" id="L222">        boolean fueAgregadoProfesional = agregarProfesionalALaLista(profesionalNuevo);</span>
+<span class="nc" id="L223">        return fueAgregadoProfesional;</span>
+    }
+
+    public boolean agregarProfesionalALaLista(Profesional profesionalARegistrar) {
+<span class="pc bpc" id="L227" title="2 of 4 branches missed.">        if ((profesionalARegistrar != null) &amp;&amp; !getListaProfesionales().contains(profesionalARegistrar)) {</span>
+<span class="fc" id="L228">            getListaProfesionales().add(profesionalARegistrar);</span>
+<span class="fc" id="L229">            return true;</span>
+        }
+<span class="nc" id="L231">        return false;</span>
+    }
+
+    public boolean crearAlimento(String nombre, String tipoAlimento, ArrayList&lt;ComposicionAlimento&gt; listaNutrientesConProporcion, ImageIcon fotoDelAlimento) {
+        Alimento an;
+<span class="nc" id="L236">        an = new Alimento(nombre, tipoAlimento, listaNutrientesConProporcion, fotoDelAlimento);</span>
+<span class="nc" id="L237">        boolean fueAgregadoAlimento = agregarAlimentoALaLista(an);</span>
+<span class="nc" id="L238">        return fueAgregadoAlimento;</span>
+    }
+
+    public boolean agregarAlimentoALaLista(Alimento alimentoAAgregar) {
+<span class="nc bnc" id="L242" title="All 4 branches missed.">        if (alimentoAAgregar != null &amp;&amp; !getListaAlimentos().contains(alimentoAAgregar)) {</span>
+<span class="nc" id="L243">            getListaAlimentos().add(alimentoAAgregar);</span>
+<span class="nc" id="L244">            return true;</span>
+        }
+<span class="nc" id="L246">        return false;</span>
+    }
+
+    public boolean crearConversacion(Persona usuario, Persona profesional, String mensaje, boolean usuarioEsRemitente) {
+<span class="fc" id="L250">        boolean fueAgregadaConversacion = false;</span>
+<span class="pc bpc" id="L251" title="4 of 8 branches missed.">        if (usuario != null &amp;&amp; profesional != null &amp;&amp; mensaje != null &amp;&amp; !mensaje.isEmpty()) {</span>
+            InformacionMensaje info;
+<span class="pc bpc" id="L253" title="1 of 2 branches missed.">            if (usuarioEsRemitente) {</span>
+<span class="fc" id="L254">                info = new InformacionMensaje(usuario.getNombreCompleto(), profesional.getNombreCompleto(), mensaje);</span>
+            } else {
+<span class="nc" id="L256">                info = new InformacionMensaje(profesional.getNombreCompleto(), usuario.getNombreCompleto(), mensaje);</span>
+            }
+<span class="pc bpc" id="L258" title="1 of 2 branches missed.">            if (listaUsuarios.contains((Usuario) usuario)) {</span>
+<span class="nc bnc" id="L259" title="All 2 branches missed.">                if (listaProfesionales.contains((Profesional) profesional)) {</span>
+<span class="nc" id="L260">                    ArrayList&lt;InformacionMensaje&gt; listaMensajes = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L261">                    listaMensajes.add(info);</span>
+<span class="nc" id="L262">                    Conversacion nuevaConversacion = new Conversacion(usuario, profesional, listaMensajes);</span>
+<span class="nc" id="L263">                    fueAgregadaConversacion = agregarConversacionALaLista(nuevaConversacion);</span>
+                }
+            }
+        }
+<span class="fc" id="L267">        return fueAgregadaConversacion;</span>
+    }
+
+    private boolean agregarConversacionALaLista(Conversacion nuevaConversacion) {
+<span class="nc" id="L271">        boolean fueAgregadaConversacion = false;</span>
+<span class="nc bnc" id="L272" title="All 2 branches missed.">        if (!getListaConversaciones().contains(nuevaConversacion)) {</span>
+<span class="nc" id="L273">            getListaConversaciones().add(nuevaConversacion);</span>
+<span class="nc" id="L274">            fueAgregadaConversacion = true;</span>
+        }
+<span class="nc" id="L276">        return fueAgregadaConversacion;</span>
+    }
+
+    public String[] getListaNombresProfesionalesConversaciones(String nombreUsuarioConversacion) {
+<span class="nc" id="L280">        String[] nombresProfesionales = new String[getListaConversaciones().size()];</span>
+<span class="nc" id="L281">        ArrayList&lt;String&gt; nombresIngresados = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L282" title="All 2 branches missed.">        for (int i = 1; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="nc" id="L283">            String nombreCompleto = getListaConversaciones().get(i).getProfesional().getNombreCompleto();</span>
+<span class="nc" id="L284">            String nombreUsuarioCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();</span>
+<span class="nc bnc" id="L285" title="All 2 branches missed.">            if (!nombresIngresados.contains(nombreCompleto)) {</span>
+<span class="nc bnc" id="L286" title="All 2 branches missed.">                if (nombreUsuarioCompleto.equals(nombreUsuarioConversacion)) {</span>
+<span class="nc" id="L287">                    nombresProfesionales[i] = nombreCompleto;</span>
+<span class="nc" id="L288">                    nombresIngresados.add(nombreCompleto);</span>
+                }
+            }
+        }
+<span class="nc" id="L292">        return nombresProfesionales;</span>
+    }
+
+    public String[] getListaNombresUsuariosConversacionesPendientes(String profesional) {
+<span class="nc" id="L296">        ArrayList&lt;String&gt; nombresIngresados = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L297" title="All 2 branches missed.">        for (int i = 0; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="nc" id="L298">            String nombreCompleto = getListaConversaciones().get(i).getUsuario().getNombreCompleto();</span>
+<span class="nc" id="L299">            String nombreProfesional = getListaConversaciones().get(i).getProfesional().getNombreCompleto();</span>
+<span class="nc bnc" id="L300" title="All 2 branches missed.">            if (!nombresIngresados.contains(nombreCompleto)) {</span>
+<span class="nc bnc" id="L301" title="All 2 branches missed.">                if (profesional.equals(nombreProfesional)) {</span>
+<span class="nc bnc" id="L302" title="All 2 branches missed.">                    if (!getListaConversaciones().get(i).getFueAtendidaConsulta()) {</span>
+<span class="nc" id="L303">                        nombresIngresados.add(nombreCompleto);</span>
+                    }
+                }
+            }
+        }
+<span class="nc" id="L308">        String[] nombreUsuarios = new String[nombresIngresados.size()];</span>
+<span class="nc bnc" id="L309" title="All 2 branches missed.">        for (int i = 0; i &lt; nombreUsuarios.length; i++) {</span>
+<span class="nc" id="L310">            nombreUsuarios[i] = nombresIngresados.get(i);</span>
+        }
+<span class="nc" id="L312">        return nombreUsuarios;</span>
+    }
+
+    public String getConversacion(String nombreCompletoProfesional, String nombreCompletoUsuario) {
+<span class="nc" id="L316">        String retorno = &quot;No hay conversación disponible.&quot;;</span>
+<span class="nc bnc" id="L317" title="All 2 branches missed.">        for (int i = 0; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="nc" id="L318">            Conversacion conversacionActual = getListaConversaciones().get(i);</span>
+<span class="nc" id="L319">            String nombreCompletoProfesionalActual = conversacionActual.getProfesional().getNombreCompleto();</span>
+<span class="nc" id="L320">            String nombreUsuarioActual = conversacionActual.getUsuario().getNombreCompleto();</span>
+<span class="nc bnc" id="L321" title="All 4 branches missed.">            if (nombreCompletoProfesionalActual.equals(nombreCompletoProfesional) &amp;&amp; nombreUsuarioActual.equals(nombreCompletoUsuario)) {</span>
+<span class="nc" id="L322">                return conversacionActual.toString();</span>
+            }
+        }
+<span class="nc" id="L325">        return retorno;</span>
+    }
+
+    public boolean agregarMensajeConversacion(String remitente, String destinatario, String mensaje, boolean intercambioRemitente, boolean consultaRespondida) {
+<span class="fc" id="L329">        boolean pudeAgregarMensaje = false;</span>
+<span class="pc bpc" id="L330" title="3 of 8 branches missed.">        if (remitente != null &amp;&amp; !remitente.isEmpty() &amp;&amp; !destinatario.isEmpty() &amp;&amp; destinatario != null) {</span>
+<span class="pc bpc" id="L331" title="2 of 4 branches missed.">            for (int i = 0; getListaConversaciones() != null &amp;&amp; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="nc" id="L332">                Conversacion conversacionActual = getListaConversaciones().get(i);</span>
+<span class="nc" id="L333">                String nombreApellidoProfesional = conversacionActual.getProfesional().getNombreCompleto();</span>
+<span class="nc" id="L334">                String nombreApellidoUsuario = conversacionActual.getUsuario().getNombreCompleto();</span>
+<span class="nc bnc" id="L335" title="All 4 branches missed.">                if (destinatario.equals(nombreApellidoProfesional) &amp;&amp; remitente.equals(nombreApellidoUsuario)</span>
+<span class="nc bnc" id="L336" title="All 4 branches missed.">                        || destinatario.equals(nombreApellidoUsuario) &amp;&amp; remitente.equals(nombreApellidoProfesional)) {</span>
+<span class="nc" id="L337">                    conversacionActual.agregarMensaje(mensaje, intercambioRemitente);</span>
+<span class="nc" id="L338">                    conversacionActual.setFueAtendidaConsulta(consultaRespondida);</span>
+<span class="nc" id="L339">                    pudeAgregarMensaje = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L343">        return pudeAgregarMensaje;</span>
+    }
+
+    public ArrayList getNombresProfesionalesSinConversacionConUsuario(Persona personaLogueada) {
+<span class="nc" id="L347">        ArrayList retorno = copiarLista(getListaProfesionales());</span>
+<span class="nc bnc" id="L348" title="All 2 branches missed.">        for (int i = 0; i &lt; getListaConversaciones().size(); i++) {</span>
+<span class="nc" id="L349">            Profesional profActual = (Profesional) getListaConversaciones().get(i).getProfesional();</span>
+<span class="nc" id="L350">            Persona usuarioActual = getListaConversaciones().get(i).getUsuario();</span>
+<span class="nc bnc" id="L351" title="All 2 branches missed.">            if (usuarioActual.equals(personaLogueada)) {</span>
+<span class="nc" id="L352">                retorno.remove(profActual);</span>
+            }
+        }
+<span class="nc" id="L355">        return retorno;</span>
+    }
+
+    private ArrayList copiarLista(ArrayList lista) {
+<span class="nc" id="L359">        ArrayList nueva = new ArrayList();</span>
+<span class="nc bnc" id="L360" title="All 2 branches missed.">        for (int i = 0; i &lt; lista.size(); i++) {</span>
+<span class="nc" id="L361">            nueva.add(lista.get(i));</span>
+        }
+<span class="nc" id="L363">        return nueva;</span>
+    }
+
+    public boolean agregarIngestaAUsuario(ArrayList&lt;Ingesta&gt; listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
+<span class="fc" id="L367">        boolean ingestaAgregada = false;</span>
+<span class="pc bpc" id="L368" title="1 of 2 branches missed.">        if (listaIngestasDelUsuario != null) {</span>
+            
+<span class="fc bfc" id="L370" title="All 2 branches covered.">                if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {</span>
+<span class="fc bfc" id="L371" title="All 2 branches covered.">                    for (int i = 0; i &lt; listaIngestasDelUsuario.size(); i++) {</span>
+<span class="pc bpc" id="L372" title="1 of 2 branches missed.">                        if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {</span>
+<span class="fc" id="L373">                            ArrayList&lt;Alimento&gt; listaAlimentosActual = listaIngestasDelUsuario.get(i).getListaAlimentosPorFecha();</span>
+<span class="fc" id="L374">                            Alimento alimentoAAgregar = devolverAlimentoDadoNombre(nuevoAlimento);</span>
+<span class="fc" id="L375">                            listaAlimentosActual.add(alimentoAAgregar);</span>
+                        }
+                    }
+                } else {
+<span class="fc" id="L379">                    Alimento alimentoAAgregar = devolverAlimentoDadoNombre(nuevoAlimento);</span>
+<span class="fc" id="L380">                    ArrayList&lt;Alimento&gt; nuevaLista = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L381">                    nuevaLista.add(alimentoAAgregar);</span>
+<span class="fc" id="L382">                    Ingesta nuevaIngesta = new Ingesta(fechaIngesta, nuevaLista);</span>
+<span class="fc" id="L383">                    listaIngestasDelUsuario.add(nuevaIngesta);</span>
+                }
+<span class="fc" id="L385">                ingestaAgregada = true;</span>
+            
+        }
+<span class="fc" id="L388">        return ingestaAgregada;</span>
+    }
+
+    private boolean yaExisteIngestaEnEsaFecha(ArrayList&lt;Ingesta&gt; listaIngestasDelUsuario, String fechaIngesta) {
+<span class="fc" id="L392">        boolean existe = false;</span>
+<span class="pc bpc" id="L393" title="1 of 2 branches missed.">        if (listaIngestasDelUsuario != null) {</span>
+<span class="fc bfc" id="L394" title="All 2 branches covered.">            for (int i = 0; i &lt; listaIngestasDelUsuario.size(); i++) {</span>
+<span class="fc bfc" id="L395" title="All 2 branches covered.">                if (listaIngestasDelUsuario.get(i).getFechaDeIngesta().equals(fechaIngesta)) {</span>
+<span class="fc" id="L396">                    existe = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L400">        return existe;</span>
+    }
+
+    public Alimento devolverAlimentoDadoNombre(String nuevoAlimento) {
+<span class="fc" id="L404">        Alimento alimentoRetorno = new Alimento(null, null, null, null);</span>
+<span class="fc bfc" id="L405" title="All 2 branches covered.">        for (int i = 0; i &lt; this.listaAlimentos.size(); i++) {</span>
+<span class="fc" id="L406">            String alimentoActual = this.listaAlimentos.get(i).getNombre();</span>
+<span class="fc bfc" id="L407" title="All 2 branches covered.">            if (alimentoActual.equals(nuevoAlimento)) {</span>
+<span class="fc" id="L408">                alimentoRetorno = this.listaAlimentos.get(i);</span>
+            }
+        }
+<span class="fc" id="L411">        return alimentoRetorno;</span>
+    }
+
+    public Usuario getUsuarioPorNombre(String nombreCompleto) {
+<span class="fc" id="L415">        Usuario usuarioRetorno = new Usuario(null, null, null, null, null, null, null, null);</span>
+<span class="fc bfc" id="L416" title="All 2 branches covered.">        for (int i = 0; i &lt; this.listaUsuarios.size(); i++) {</span>
+<span class="fc" id="L417">            String nombreActual = this.listaUsuarios.get(i).getNombreCompleto();</span>
+<span class="pc bpc" id="L418" title="1 of 2 branches missed.">            if (nombreActual.equals(nombreCompleto)) {</span>
+<span class="fc" id="L419">                usuarioRetorno = this.listaUsuarios.get(i);</span>
+            }
+        }
+<span class="fc" id="L422">        return usuarioRetorno;</span>
+    }
+
+    public Profesional getProfesionalPorNombre(String nombreCompleto) {
+<span class="fc" id="L426">        Profesional profesionalRetorno = new Profesional(null, null, null, null, null, null, null);</span>
+<span class="fc bfc" id="L427" title="All 2 branches covered.">        for (int i = 0; i &lt; this.listaProfesionales.size(); i++) {</span>
+<span class="fc" id="L428">            String nombreActual = this.listaProfesionales.get(i).getNombreCompleto();</span>
+<span class="pc bpc" id="L429" title="1 of 2 branches missed.">            if (nombreActual.equals(nombreCompleto)) {</span>
+<span class="fc" id="L430">                profesionalRetorno = this.listaProfesionales.get(i);</span>
+            }
+        }
+<span class="fc" id="L433">        return profesionalRetorno;</span>
+    }
+
+    public boolean agregarPlanSolicitado(Usuario usuario, Profesional profesional) {
+<span class="fc" id="L437">        boolean agreguePlan = false;</span>
+<span class="fc bfc" id="L438" title="All 4 branches covered.">        if (usuario != null &amp;&amp; profesional != null) {</span>
+<span class="fc" id="L439">            PlanAlimentacion planNuevo = new PlanAlimentacion(&quot;&quot;, usuario, profesional, false, null);</span>
+<span class="pc bpc" id="L440" title="1 of 2 branches missed.">            if (!getListaPlanesAlimentacion().contains(planNuevo)) {</span>
+<span class="fc" id="L441">                this.getListaPlanesAlimentacion().add(planNuevo);</span>
+<span class="fc" id="L442">                agreguePlan = true;</span>
+            }
+        }
+<span class="fc" id="L445">        return agreguePlan;</span>
+
+    }
+
+    public boolean atenderSolicitudDelPlan(String[][] planAlimentacion,
+            Profesional profesional,
+            Usuario usuario,
+            String nombrePlan) {
+<span class="fc" id="L453">        boolean fueAtendido = false;</span>
+<span class="fc bfc" id="L454" title="All 2 branches covered.">        for (int i = 0; i &lt; this.listaPlanesAlimentacion.size(); i++) {</span>
+<span class="fc" id="L455">            PlanAlimentacion actual = this.listaPlanesAlimentacion.get(i);</span>
+<span class="fc bfc" id="L456" title="All 4 branches covered.">            if (actual.getProfesional().equals(profesional) &amp;&amp; actual.getUsuario().equals(usuario)</span>
+<span class="fc bfc" id="L457" title="All 2 branches covered.">                    &amp;&amp; actual.getFueAtendidoElPlan() == false) {</span>
+<span class="fc" id="L458">                actual.setNombreDelPlan(nombrePlan);</span>
+<span class="fc" id="L459">                actual.setPlanDiaADia(planAlimentacion);</span>
+<span class="fc" id="L460">                actual.setFueAtendidoElPlan(true);</span>
+<span class="fc" id="L461">                fueAtendido = true;</span>
+            }
+        }
+<span class="fc" id="L464">        return fueAtendido;</span>
+    }
+
+    public String[] planesAtendidosDelUsuario(Usuario usuario) {
+<span class="fc" id="L468">        ArrayList&lt;String&gt; listaAuxiliar = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L469" title="All 2 branches covered.">        for (int i = 0; i &lt; this.listaPlanesAlimentacion.size(); i++) {</span>
+<span class="fc" id="L470">            PlanAlimentacion actual = this.listaPlanesAlimentacion.get(i);</span>
+<span class="pc bpc" id="L471" title="2 of 4 branches missed.">            if (actual.getUsuario().equals(usuario) &amp;&amp; actual.getFueAtendidoElPlan()) {</span>
+<span class="fc" id="L472">                listaAuxiliar.add(actual.getNombreDelPlan());</span>
+            }
+        }
+<span class="fc" id="L475">        String[] planesDelUsuario = new String[listaAuxiliar.size()];</span>
+<span class="fc bfc" id="L476" title="All 2 branches covered.">        for (int i = 0; i &lt; planesDelUsuario.length; i++) {</span>
+<span class="fc" id="L477">            planesDelUsuario[i] = listaAuxiliar.get(i);</span>
+        }
+<span class="fc" id="L479">        return planesDelUsuario;</span>
+    }
+
+    public PlanAlimentacion devolverPlanDadoNombre(String np) {
+<span class="fc" id="L483">        PlanAlimentacion planRetorno = new PlanAlimentacion(null, null, null, false, null);</span>
+<span class="fc bfc" id="L484" title="All 2 branches covered.">        if (np != null) {</span>
+<span class="fc bfc" id="L485" title="All 2 branches covered.">            for (int i = 0; i &lt; this.listaPlanesAlimentacion.size(); i++) {</span>
+<span class="fc" id="L486">                String nombrePlanActual = this.listaPlanesAlimentacion.get(i).getNombreDelPlan();</span>
+<span class="pc bpc" id="L487" title="1 of 2 branches missed.">                if (nombrePlanActual.equals(np)) {</span>
+<span class="fc" id="L488">                    planRetorno = this.listaPlanesAlimentacion.get(i);</span>
+                }
+            }
+        }
+
+<span class="fc" id="L493">        return planRetorno;</span>
+    }
+
+    public String[] getListaPlanesPendientes(Profesional profesional) {
+<span class="fc bfc" id="L497" title="All 2 branches covered.">        if (profesional != null) {</span>
+<span class="fc" id="L498">            ArrayList&lt;String&gt; planesPendientes = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L499" title="All 2 branches covered.">            for (int i = 0; i &lt; this.listaPlanesAlimentacion.size(); i++) {</span>
+<span class="fc" id="L500">                Profesional profesionalActual = this.listaPlanesAlimentacion.get(i).getProfesional();</span>
+<span class="fc" id="L501">                boolean fueAtendidoPlanActual = this.listaPlanesAlimentacion.get(i).getFueAtendidoElPlan();</span>
+<span class="pc bpc" id="L502" title="1 of 4 branches missed.">                if (profesionalActual.equals(profesional) &amp;&amp; fueAtendidoPlanActual == false) {</span>
+<span class="fc" id="L503">                    String nombreUsuario = this.listaPlanesAlimentacion.get(i).getUsuario().getNombreCompleto();</span>
+<span class="fc" id="L504">                    planesPendientes.add(nombreUsuario);</span>
+                }
+            }
+<span class="fc" id="L507">            String[] nombreUsuarios = new String[planesPendientes.size()];</span>
+<span class="fc bfc" id="L508" title="All 2 branches covered.">            for (int i = 0; i &lt; nombreUsuarios.length; i++) {</span>
+<span class="fc" id="L509">                nombreUsuarios[i] = planesPendientes.get(i);</span>
+            }
+<span class="fc" id="L511">            return nombreUsuarios;</span>
+        } else {
+<span class="fc" id="L513">            return new String[0];</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
