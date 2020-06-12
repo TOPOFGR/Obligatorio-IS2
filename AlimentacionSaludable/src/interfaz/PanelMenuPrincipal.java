@@ -50,7 +50,6 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         btnAgregarProfesional = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         btnAgregarProfesional1 = new javax.swing.JLabel();
-        btnCerrarSistema = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1060, 800));
         setPreferredSize(new java.awt.Dimension(1060, 800));
@@ -167,20 +166,6 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         panel2.add(btnAgregarProfesional1);
         btnAgregarProfesional1.setBounds(510, 600, 100, 90);
 
-        btnCerrarSistema.setBackground(new java.awt.Color(51, 51, 51));
-        btnCerrarSistema.setForeground(new java.awt.Color(51, 51, 51));
-        btnCerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Close_Window_48px.png"))); // NOI18N
-        btnCerrarSistema.setBorderPainted(false);
-        btnCerrarSistema.setContentAreaFilled(false);
-        btnCerrarSistema.setFocusPainted(false);
-        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSistemaActionPerformed(evt);
-            }
-        });
-        panel2.add(btnCerrarSistema);
-        btnCerrarSistema.setBounds(730, 10, 50, 50);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -202,11 +187,13 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
 
     private void listaUsuariosVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosVentanaValueChanged
         this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());
+        listaUsuariosVentana.clearSelection();
         ventana.gotoVentanaUsuario();
     }//GEN-LAST:event_listaUsuariosVentanaValueChanged
 
     private void listaProfesionalesVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProfesionalesVentanaValueChanged
         this.sistema.setPersonaLogueada((Persona) listaProfesionalesVentana.getSelectedValue());
+        listaProfesionalesVentana.clearSelection();
         ventana.gotoVentanaProfesional();
     }//GEN-LAST:event_listaProfesionalesVentanaValueChanged
 
@@ -222,17 +209,11 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         ventana.gotoRegistrarProfesional();
     }//GEN-LAST:event_btnAgregarProfesional1MouseClicked
 
-    private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-        this.sistema.guardarDatosSistema();
-        //this.dispose();
-    }//GEN-LAST:event_btnCerrarSistemaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAgregarProfesional;
     private javax.swing.JLabel btnAgregarProfesional1;
     private javax.swing.JLabel btnAgregarUsuario;
-    private javax.swing.JButton btnCerrarSistema;
     private javax.swing.JLabel icono;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
