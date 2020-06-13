@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import java.util.Currency;
+import java.util.Date;
 import javax.swing.ImageIcon;
 
 public final class Sistema implements Serializable {
@@ -364,8 +365,9 @@ public final class Sistema implements Serializable {
         return nueva;
     }
 
-    public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
+    public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String nuevoAlimento) {
         boolean ingestaAgregada = false;
+        String fechaIngesta = (new Date()).toString();  
         if (listaIngestasDelUsuario != null) {
             
                 if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {
