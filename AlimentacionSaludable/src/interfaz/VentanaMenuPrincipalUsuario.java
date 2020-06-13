@@ -1309,7 +1309,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             this.panelBuscarPlan.setVisible(true);
             this.listaPlanesDelUsuario.setListData(planesDelUsuario);
         } else {
-            this.panelBuscarPlan.setVisible(true);
             this.panelNoHayPlanesDisponibles.setVisible(true);
         }
     }//GEN-LAST:event_btnVerPlanesExistentesActionPerformed

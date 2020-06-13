@@ -429,7 +429,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto3.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto3.setText("No hay conversaciones creadas");
         panelNoHayConversacionesCreadas.add(lblNohayConsultasTexto3);
-        lblNohayConsultasTexto3.setBounds(80, 350, 634, 77);
+        lblNohayConsultasTexto3.setBounds(80, 350, 634, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayConversacionesCreadas.add(jLabel2);
@@ -880,7 +880,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNoHayPlanesDisponiblesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNoHayPlanes)
-                .addGap(43, 43, 43))
+                .addGap(49, 49, 49))
             .addGroup(panelNoHayPlanesDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNoHayPlanesDisponiblesLayout.createSequentialGroup()
                     .addContainerGap(39, Short.MAX_VALUE)
@@ -892,9 +892,9 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             .addGroup(panelNoHayPlanesDisponiblesLayout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(lblPlanSolicitadoCorrectamente1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addGap(110, 110, 110)
                 .addComponent(lblNoHayPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109))
+                .addContainerGap(110, Short.MAX_VALUE))
             .addGroup(panelNoHayPlanesDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNoHayPlanesDisponiblesLayout.createSequentialGroup()
                     .addContainerGap(244, Short.MAX_VALUE)

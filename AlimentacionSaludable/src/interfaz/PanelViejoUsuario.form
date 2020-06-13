@@ -370,7 +370,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="80" y="350" width="-1" height="77"/>
+                  <AbsoluteConstraints x="80" y="350" width="-1" height="80"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1471,7 +1471,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lblNoHayPlanes" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -1487,9 +1487,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                           <Component id="lblPlanSolicitadoCorrectamente1" min="-2" pref="124" max="-2" attributes="0"/>
-                          <EmptySpace pref="111" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                           <Component id="lblNoHayPlanes" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                          <EmptySpace pref="110" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
