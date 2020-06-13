@@ -15,6 +15,7 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
 
     Sistema sistema;
     VentanaSPA ventana;
+
     /**
      * Creates new form PanelMenuPrincipal
      */
@@ -22,10 +23,25 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         initComponents();
         sistema = sys;
         ventana = vent;
-        this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
-        this.listaProfesionalesVentana.setListData(sistema.getListaProfesionales().toArray());
+        actualizarTablas();
     }
-
+    
+    public void actualizarTablas(){
+        if (sistema.getListaUsuarios().isEmpty()) {
+            this.lblNombre1.setText("No hay usuarios");
+            this.jScrollPane2.setVisible(false);
+        } else {
+            this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
+            this.jScrollPane2.setVisible(true);
+        }
+        if (sistema.getListaProfesionales().isEmpty()) {
+            this.lblNombre.setText("No hay profesionales");
+            this.jScrollPane1.setVisible(false);
+        } else {
+            this.listaProfesionalesVentana.setListData(sistema.getListaProfesionales().toArray());
+            this.jScrollPane1.setVisible(true);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -102,9 +118,10 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
 
         lblNombre.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("Profesional");
         panel2.add(lblNombre);
-        lblNombre.setBounds(450, 200, 181, 38);
+        lblNombre.setBounds(370, 200, 410, 38);
 
         listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
         listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -153,9 +170,10 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
 
         lblNombre1.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre1.setText("Usuario");
         panel2.add(lblNombre1);
-        lblNombre1.setBounds(90, 200, 181, 38);
+        lblNombre1.setBounds(0, 200, 330, 38);
 
         btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesional.png"))); // NOI18N
         btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {

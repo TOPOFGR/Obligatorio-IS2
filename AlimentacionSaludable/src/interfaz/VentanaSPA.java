@@ -16,6 +16,7 @@ public class VentanaSPA extends javax.swing.JFrame {
 
     private Sistema sistema;
     private CardLayout cardLayout;
+    private PanelMenuPrincipal menuP;
     /**
      * Creates new form VentanaSPA
      */
@@ -24,7 +25,8 @@ public class VentanaSPA extends javax.swing.JFrame {
         sistema = sys;
         cardLayout = new CardLayout();
         panelPrincipal.setLayout(cardLayout);
-        panelPrincipal.add(new PanelMenuPrincipal(sistema, this), "menu");
+        menuP =new PanelMenuPrincipal(sistema, this);
+        panelPrincipal.add(menuP, "menu");
         panelPrincipal.add(new PanelRegistrarUsuario(sistema, this), "regUsuario");
         panelPrincipal.add(new PanelRegistrarProfesional(sistema, this), "regProfesional");
         panelPrincipal.add(new PanelViejoUsuario(sistema, this), "menuUsuario");
@@ -154,6 +156,7 @@ public class VentanaSPA extends javax.swing.JFrame {
     
     public void gotoMenuPrincipal(){
         cardLayout.show(panelPrincipal, "menu");
+        menuP.actualizarTablas();
     }
 
     public void gotoRegistrarUsuario(){
