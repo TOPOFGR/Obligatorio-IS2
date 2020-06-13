@@ -52,8 +52,7 @@ public final class Sistema implements Serializable {
     }
 
     public void setPersonaLogueada(Persona personaLogueada) {
-        personaLogueada = personaLogueada;
-        
+        this.personaLogueada = personaLogueada;
     }
 
     public ArrayList<Conversacion> getListaConversaciones() {
