@@ -13,6 +13,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -49,7 +50,6 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         this.primeraVez = true;
         this.primeraIngesta = true;
         Calendar fecha = new GregorianCalendar();
-        this.fechaIngestaUsuario.setMaxDate(fecha);
         this.panelVacio.setVisible(true);
     }
     
@@ -204,10 +204,8 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultas1 = new javax.swing.JLabel();
         lblNohayConsultasTexto1 = new javax.swing.JLabel();
         panelAlimentoIngerido = new javax.swing.JPanel();
-        fechaIngestaUsuario = new datechooser.beans.DateChooserCombo();
         lblAlimentoIngerido = new javax.swing.JLabel();
         lblAlimentoIngerido2 = new javax.swing.JLabel();
-        lblFechaAlimentoIngerido = new javax.swing.JLabel();
         lblAlimentoIngeridoSeleccionado = new javax.swing.JLabel();
         comboAlimentosEnSistema = new javax.swing.JComboBox<>();
         lblNuevoAlimentoIngerido = new javax.swing.JLabel();
@@ -347,7 +345,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnHome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnConsultaConProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblConsultaConProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,7 +357,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
                 .addComponent(btnIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblIngresarAlimentoIngerido, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelDerecho.setBackground(new java.awt.Color(51, 51, 51));
@@ -431,7 +429,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto3.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto3.setText("No hay conversaciones creadas");
         panelNoHayConversacionesCreadas.add(lblNohayConsultasTexto3);
-        lblNohayConsultasTexto3.setBounds(80, 350, 599, 77);
+        lblNohayConsultasTexto3.setBounds(80, 350, 634, 77);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayConversacionesCreadas.add(jLabel2);
@@ -528,7 +526,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
 
         panelConsultaConProfesionalOld.add(panelConversacion);
-        panelConversacion.setBounds(264, 48, 526, 671);
+        panelConversacion.setBounds(264, 48, 526, 647);
 
         btnNuevaConversacion.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaConversacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoNuevoMensaje.png"))); // NOI18N
@@ -560,7 +558,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Seleccione al profesional");
         panelConsultaConProfesionalOld.add(jLabel1);
-        jLabel1.setBounds(26, 131, 175, 21);
+        jLabel1.setBounds(26, 131, 190, 21);
 
         panelDerecho.add(panelConsultaConProfesionalOld, "card3");
 
@@ -766,7 +764,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto1.setText("Ingesta registrada");
         panelIngestaRegistradaCorrectamente.add(lblNohayConsultasTexto1);
-        lblNohayConsultasTexto1.setBounds(190, 340, 360, 52);
+        lblNohayConsultasTexto1.setBounds(190, 340, 360, 50);
 
         panelDerecho.add(panelIngestaRegistradaCorrectamente, "card10");
 
@@ -774,10 +772,6 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         panelAlimentoIngerido.setMaximumSize(new java.awt.Dimension(800, 800));
         panelAlimentoIngerido.setMinimumSize(new java.awt.Dimension(800, 800));
         panelAlimentoIngerido.setLayout(null);
-
-        fechaIngestaUsuario.setFieldFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 17));
-        panelAlimentoIngerido.add(fechaIngestaUsuario);
-        fechaIngestaUsuario.setBounds(49, 477, 178, 38);
 
         lblAlimentoIngerido.setFont(new java.awt.Font("Levenim MT", 0, 50)); // NOI18N
         lblAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
@@ -791,17 +785,11 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         panelAlimentoIngerido.add(lblAlimentoIngerido2);
         lblAlimentoIngerido2.setBounds(160, 40, 596, 62);
 
-        lblFechaAlimentoIngerido.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
-        lblFechaAlimentoIngerido.setForeground(new java.awt.Color(255, 255, 255));
-        lblFechaAlimentoIngerido.setText("Ingrese la fecha de ingesta");
-        panelAlimentoIngerido.add(lblFechaAlimentoIngerido);
-        lblFechaAlimentoIngerido.setBounds(49, 410, 624, 39);
-
         lblAlimentoIngeridoSeleccionado.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         lblAlimentoIngeridoSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
         lblAlimentoIngeridoSeleccionado.setText("Ingrese el nuevo alimento ");
         panelAlimentoIngerido.add(lblAlimentoIngeridoSeleccionado);
-        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 39);
+        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 38);
 
         comboAlimentosEnSistema.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         comboAlimentosEnSistema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
@@ -1132,7 +1120,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
 
         panelPlanDeAlimentacion.add(panelSolicitarNuevoPlan);
-        panelSolicitarNuevoPlan.setBounds(35, 246, 394, 556);
+        panelSolicitarNuevoPlan.setBounds(35, 246, 404, 556);
 
         panelBuscarPlan.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -1172,7 +1160,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
 
         panelPlanDeAlimentacion.add(panelBuscarPlan);
-        panelBuscarPlan.setBounds(435, 254, 339, 529);
+        panelBuscarPlan.setBounds(435, 254, 339, 525);
 
         btnVerPlanesExistentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoVerPlanesAlimentacion.png"))); // NOI18N
         btnVerPlanesExistentes.setBorderPainted(false);
@@ -1233,8 +1221,10 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelDerecho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelDerecho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1366,7 +1356,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         String nombreUsuarioLoguedo = this.sistema.getPersonaLogueada().getNombreCompleto();
         Usuario usuarioLogueado = this.sistema.getUsuarioPorNombre(nombreUsuarioLoguedo);
         ArrayList<Ingesta> listaIngestasDelUsuario = usuarioLogueado.getAlimentosIngeridos();
-        String fechaIngesta = this.fechaIngestaUsuario.getText();
+        String fechaIngesta = (new Date()).toString();
         String nuevoAlimento = this.comboAlimentosEnSistema.getSelectedItem().toString();
         if (nuevoAlimento.equals("Seleccione...")) {
             this.lblDatosIncorrectos2.setVisible(true);
@@ -1508,7 +1498,6 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
     private javax.swing.JButton btnVerPlanesExistentes;
     private javax.swing.JComboBox<String> comboAlimentosEnSistema;
     private javax.swing.JComboBox<String> comboProfesionalesEnSistema;
-    private datechooser.beans.DateChooserCombo fechaIngestaUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1547,7 +1536,6 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel lblDatosIncorrectos;
     private javax.swing.JLabel lblDatosIncorrectos1;
     private javax.swing.JLabel lblDatosIncorrectos2;
-    private javax.swing.JLabel lblFechaAlimentoIngerido;
     private javax.swing.JLabel lblFotoProfesional;
     private javax.swing.JLabel lblIngresarAlimentoIngerido;
     private javax.swing.JLabel lblNoHayPlanes;

@@ -104,7 +104,7 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Profesional");
         panel2.add(lblNombre);
-        lblNombre.setBounds(450, 200, 181, 39);
+        lblNombre.setBounds(450, 200, 181, 38);
 
         listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));
         listaUsuariosVentana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
@@ -155,7 +155,7 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre1.setText("Usuario");
         panel2.add(lblNombre1);
-        lblNombre1.setBounds(90, 200, 181, 39);
+        lblNombre1.setBounds(90, 200, 181, 38);
 
         btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarProfesional.png"))); // NOI18N
         btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {
