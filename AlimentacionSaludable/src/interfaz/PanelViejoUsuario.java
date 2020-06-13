@@ -1375,7 +1375,6 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             this.primeraIngesta = true;
             this.comboAlimentosEnSistema.setSelectedIndex(0);
         }
-        this.panelAlimentoIngerido.setVisible(false);
     }//GEN-LAST:event_btnNuevaIngestaActionPerformed
 
     private void btnSolicitarNuevoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarNuevoPlanActionPerformed
