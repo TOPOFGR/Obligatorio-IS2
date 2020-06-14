@@ -245,6 +245,14 @@ public final class Sistema implements Serializable {
         }
         return false;
     }
+    
+    public String[] getArrayAlimentos(){
+        String[] alimentos = new String[getListaAlimentos().size()];
+        for (int i = 0; i < alimentos.length; i++){
+            alimentos[i] = getListaAlimentos().get(i).getNombre();
+        }
+        return alimentos;
+    }
 
     public boolean crearConversacion(Persona usuario, Persona profesional, String mensaje, boolean usuarioEsRemitente) {
         boolean fueAgregadaConversacion = false;

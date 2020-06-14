@@ -52,6 +52,9 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         lblDatosIncorrectos2.setVisible(false);
         ocultarPrincipalesNutrientes();
         this.panelVacio.setVisible(true);
+        cargarListaDiasDeLaSemana();
+        cargarListaIngestasPorDia();
+        cargarListaAlimentos();
     }
 
     public Sistema getSistema() {
@@ -213,6 +216,10 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         }
     }
 
+    private void cargarListaAlimentos(){
+        listaAlimentosEnSistema.setListData(sistema.getArrayAlimentos());
+    }
+    
     private void guardarDatosDelPlan() {
         String diaSeleccionado = (String) this.listaDiasDeLaSemana.getSelectedItem();
         this.diaDeLaSemanaActual = diaSeleccionado;
@@ -324,6 +331,34 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         lblIngresarAlimento = new javax.swing.JLabel();
         lblIngresarAlimento2 = new javax.swing.JLabel();
         panelDerecho = new javax.swing.JPanel();
+        panelElaborarPlan = new javax.swing.JPanel();
+        lblElaborarNuevoPlan = new javax.swing.JLabel();
+        lblComida = new javax.swing.JLabel();
+        lblAlimentos = new javax.swing.JLabel();
+        listaDiasDeLaSemana = new javax.swing.JComboBox<>();
+        listaComidasPlan = new javax.swing.JComboBox<>();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        listaAlimentosEnSistema = new javax.swing.JList();
+        lblDia = new javax.swing.JLabel();
+        lblNombrePlan = new javax.swing.JLabel();
+        txtNombrePlan = new javax.swing.JTextField();
+        btnAgregarAlPlan = new javax.swing.JButton();
+        btnEliminarDelPlan = new javax.swing.JButton();
+        lblDesayuno = new javax.swing.JLabel();
+        lblAlmuerzo = new javax.swing.JLabel();
+        lblCena = new javax.swing.JLabel();
+        lblNombreDelDia = new javax.swing.JLabel();
+        btnElaborarPlan1 = new javax.swing.JButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        textAlmuerzo = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        textCena = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        textDesayuno = new javax.swing.JTextArea();
+        btnEliminarDelPlan1 = new javax.swing.JButton();
+        lblValidarNombrePlan = new javax.swing.JLabel();
+        lblCena1 = new javax.swing.JLabel();
+        lblNombrePlanVacio = new javax.swing.JLabel();
         panelVacio = new javax.swing.JPanel();
         btnAyuda = new javax.swing.JButton();
         panelNoHayPlanesPendientes = new javax.swing.JPanel();
@@ -353,34 +388,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         txtMostrarConversacion = new javax.swing.JTextPane();
         btnEnviarMensaje = new javax.swing.JButton();
         lblVerPerfilUsuario = new javax.swing.JLabel();
-        panelElaborarPlan = new javax.swing.JPanel();
-        lblElaborarNuevoPlan = new javax.swing.JLabel();
-        lblComida = new javax.swing.JLabel();
-        lblAlimentos = new javax.swing.JLabel();
-        listaDiasDeLaSemana = new javax.swing.JComboBox<>();
-        listaComidasPlan = new javax.swing.JComboBox<>();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        listaAlimentosEnSistema = new javax.swing.JList();
-        lblDia = new javax.swing.JLabel();
-        lblNombrePlan = new javax.swing.JLabel();
-        txtNombrePlan = new javax.swing.JTextField();
-        btnAgregarAlPlan = new javax.swing.JButton();
-        btnEliminarDelPlan = new javax.swing.JButton();
-        lblDesayuno = new javax.swing.JLabel();
-        lblAlmuerzo = new javax.swing.JLabel();
-        lblCena = new javax.swing.JLabel();
-        lblNombreDelDia = new javax.swing.JLabel();
-        btnElaborarPlan1 = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        textAlmuerzo = new javax.swing.JTextArea();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        textCena = new javax.swing.JTextArea();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        textDesayuno = new javax.swing.JTextArea();
-        btnEliminarDelPlan1 = new javax.swing.JButton();
-        lblValidarNombrePlan = new javax.swing.JLabel();
-        lblCena1 = new javax.swing.JLabel();
-        lblNombrePlanVacio = new javax.swing.JLabel();
         panelMostrarPlanEnviado = new javax.swing.JPanel();
         lblOK2 = new javax.swing.JLabel();
         lblOKTexto2 = new javax.swing.JLabel();
@@ -584,6 +591,222 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         panelDerecho.setMaximumSize(new java.awt.Dimension(800, 800));
         panelDerecho.setLayout(new java.awt.CardLayout());
 
+        panelElaborarPlan.setBackground(new java.awt.Color(51, 51, 51));
+        panelElaborarPlan.setMaximumSize(new java.awt.Dimension(800, 800));
+        panelElaborarPlan.setMinimumSize(new java.awt.Dimension(800, 800));
+        panelElaborarPlan.setLayout(null);
+
+        lblElaborarNuevoPlan.setFont(new java.awt.Font("Levenim MT", 0, 65)); // NOI18N
+        lblElaborarNuevoPlan.setForeground(new java.awt.Color(255, 255, 255));
+        lblElaborarNuevoPlan.setText("Elaborar plan ");
+        panelElaborarPlan.add(lblElaborarNuevoPlan);
+        lblElaborarNuevoPlan.setBounds(30, 11, 403, 91);
+
+        lblComida.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
+        lblComida.setForeground(new java.awt.Color(255, 255, 255));
+        lblComida.setText("Comida");
+        panelElaborarPlan.add(lblComida);
+        lblComida.setBounds(50, 230, 134, 52);
+
+        lblAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
+        lblAlimentos.setForeground(new java.awt.Color(255, 255, 255));
+        lblAlimentos.setText("Alimentos");
+        panelElaborarPlan.add(lblAlimentos);
+        lblAlimentos.setBounds(310, 110, 167, 44);
+
+        listaDiasDeLaSemana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        listaDiasDeLaSemana.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listaDiasDeLaSemanaItemStateChanged(evt);
+            }
+        });
+        listaDiasDeLaSemana.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                listaDiasDeLaSemanaFocusLost(evt);
+            }
+        });
+        listaDiasDeLaSemana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaDiasDeLaSemanaActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(listaDiasDeLaSemana);
+        listaDiasDeLaSemana.setBounds(50, 170, 200, 40);
+
+        listaComidasPlan.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        listaComidasPlan.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listaComidasPlanItemStateChanged(evt);
+            }
+        });
+        listaComidasPlan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                listaComidasPlanFocusLost(evt);
+            }
+        });
+        listaComidasPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaComidasPlanActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(listaComidasPlan);
+        listaComidasPlan.setBounds(50, 290, 200, 40);
+
+        listaAlimentosEnSistema.setBackground(new java.awt.Color(238, 238, 238));
+        listaAlimentosEnSistema.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        listaAlimentosEnSistema.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaAlimentosEnSistemaValueChanged(evt);
+            }
+        });
+        jScrollPane8.setViewportView(listaAlimentosEnSistema);
+
+        panelElaborarPlan.add(jScrollPane8);
+        jScrollPane8.setBounds(310, 160, 285, 166);
+
+        lblDia.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
+        lblDia.setForeground(new java.awt.Color(255, 255, 255));
+        lblDia.setText("Día");
+        panelElaborarPlan.add(lblDia);
+        lblDia.setBounds(50, 120, 134, 36);
+
+        lblNombrePlan.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
+        lblNombrePlan.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombrePlan.setText("Nombre del plan:");
+        panelElaborarPlan.add(lblNombrePlan);
+        lblNombrePlan.setBounds(30, 370, 240, 34);
+
+        txtNombrePlan.setBackground(new java.awt.Color(227, 227, 227));
+        txtNombrePlan.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        txtNombrePlan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtNombrePlan.setMaximumSize(new java.awt.Dimension(6, 26));
+        txtNombrePlan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombrePlanFocusLost(evt);
+            }
+        });
+        txtNombrePlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePlanActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(txtNombrePlan);
+        txtNombrePlan.setBounds(260, 370, 181, 38);
+
+        btnAgregarAlPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarAlPlan.png"))); // NOI18N
+        btnAgregarAlPlan.setBorderPainted(false);
+        btnAgregarAlPlan.setContentAreaFilled(false);
+        btnAgregarAlPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAlPlanActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(btnAgregarAlPlan);
+        btnAgregarAlPlan.setBounds(620, 150, 90, 80);
+
+        btnEliminarDelPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoEliminarDelPlan.png"))); // NOI18N
+        btnEliminarDelPlan.setBorderPainted(false);
+        btnEliminarDelPlan.setContentAreaFilled(false);
+        btnEliminarDelPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarDelPlanActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(btnEliminarDelPlan);
+        btnEliminarDelPlan.setBounds(630, 260, 70, 70);
+
+        lblDesayuno.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        lblDesayuno.setForeground(new java.awt.Color(255, 255, 255));
+        lblDesayuno.setText("Desayuno");
+        panelElaborarPlan.add(lblDesayuno);
+        lblDesayuno.setBounds(170, 460, 120, 34);
+
+        lblAlmuerzo.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        lblAlmuerzo.setForeground(new java.awt.Color(255, 255, 255));
+        lblAlmuerzo.setText("Almuerzo");
+        panelElaborarPlan.add(lblAlmuerzo);
+        lblAlmuerzo.setBounds(370, 460, 120, 34);
+
+        lblCena.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        lblCena.setForeground(new java.awt.Color(255, 255, 255));
+        lblCena.setText("Cena");
+        panelElaborarPlan.add(lblCena);
+        lblCena.setBounds(560, 460, 80, 34);
+
+        lblNombreDelDia.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        lblNombreDelDia.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreDelDia.setText("Nombre del dia");
+        panelElaborarPlan.add(lblNombreDelDia);
+        lblNombreDelDia.setBounds(20, 550, 120, 34);
+
+        btnElaborarPlan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoEnviarMensaje.png"))); // NOI18N
+        btnElaborarPlan1.setBorderPainted(false);
+        btnElaborarPlan1.setContentAreaFilled(false);
+        btnElaborarPlan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElaborarPlan1ActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(btnElaborarPlan1);
+        btnElaborarPlan1.setBounds(730, 740, 60, 50);
+
+        textAlmuerzo.setBackground(new java.awt.Color(51, 51, 51));
+        textAlmuerzo.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        textAlmuerzo.setForeground(new java.awt.Color(255, 255, 255));
+        textAlmuerzo.setRows(5);
+        jScrollPane10.setViewportView(textAlmuerzo);
+
+        panelElaborarPlan.add(jScrollPane10);
+        jScrollPane10.setBounds(350, 520, 160, 240);
+
+        textCena.setBackground(new java.awt.Color(51, 51, 51));
+        textCena.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        textCena.setForeground(new java.awt.Color(255, 255, 255));
+        textCena.setRows(5);
+        jScrollPane11.setViewportView(textCena);
+
+        panelElaborarPlan.add(jScrollPane11);
+        jScrollPane11.setBounds(540, 520, 160, 240);
+
+        textDesayuno.setBackground(new java.awt.Color(51, 51, 51));
+        textDesayuno.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        textDesayuno.setForeground(new java.awt.Color(255, 255, 255));
+        textDesayuno.setRows(5);
+        jScrollPane12.setViewportView(textDesayuno);
+
+        panelElaborarPlan.add(jScrollPane12);
+        jScrollPane12.setBounds(150, 520, 160, 240);
+
+        btnEliminarDelPlan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoGuardarDia.png"))); // NOI18N
+        btnEliminarDelPlan1.setBorderPainted(false);
+        btnEliminarDelPlan1.setContentAreaFilled(false);
+        btnEliminarDelPlan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarDelPlan1ActionPerformed(evt);
+            }
+        });
+        panelElaborarPlan.add(btnEliminarDelPlan1);
+        btnEliminarDelPlan1.setBounds(580, 390, 70, 70);
+
+        lblValidarNombrePlan.setForeground(new java.awt.Color(255, 255, 255));
+        lblValidarNombrePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
+        panelElaborarPlan.add(lblValidarNombrePlan);
+        lblValidarNombrePlan.setBounds(450, 370, 32, 44);
+
+        lblCena1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblCena1.setForeground(new java.awt.Color(255, 255, 255));
+        lblCena1.setText("Guardar día");
+        panelElaborarPlan.add(lblCena1);
+        lblCena1.setBounds(640, 410, 150, 34);
+
+        lblNombrePlanVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
+        lblNombrePlanVacio.setForeground(new java.awt.Color(240, 128, 128));
+        lblNombrePlanVacio.setText("Dato vacío");
+        panelElaborarPlan.add(lblNombrePlanVacio);
+        lblNombrePlanVacio.setBounds(490, 370, 134, 38);
+
+        panelDerecho.add(panelElaborarPlan, "card2");
+
         panelVacio.setBackground(new java.awt.Color(51, 51, 51));
         panelVacio.setMaximumSize(new java.awt.Dimension(800, 800));
         panelVacio.setMinimumSize(new java.awt.Dimension(800, 800));
@@ -629,7 +852,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         lblNohayPlanesTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayPlanesTexto1.setText("No hay planes de");
         panelNoHayPlanesPendientes.add(lblNohayPlanesTexto1);
-        lblNohayPlanesTexto1.setBounds(200, 260, 344, 77);
+        lblNohayPlanesTexto1.setBounds(200, 260, 323, 77);
 
         lblNoHayAlimentosIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayPlanesPendientes.add(lblNoHayAlimentosIcono);
@@ -639,7 +862,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         lblNohayConsultasTexto2.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto2.setText("alimentación pendientes");
         panelNoHayPlanesPendientes.add(lblNohayConsultasTexto2);
-        lblNohayConsultasTexto2.setBounds(128, 336, 487, 77);
+        lblNohayConsultasTexto2.setBounds(128, 336, 457, 77);
 
         lblNoHayAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 40)); // NOI18N
         lblNoHayAlimentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -891,222 +1114,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         );
 
         panelDerecho.add(panelConsultaConProfesional, "card4");
-
-        panelElaborarPlan.setBackground(new java.awt.Color(51, 51, 51));
-        panelElaborarPlan.setMaximumSize(new java.awt.Dimension(800, 800));
-        panelElaborarPlan.setMinimumSize(new java.awt.Dimension(800, 800));
-        panelElaborarPlan.setLayout(null);
-
-        lblElaborarNuevoPlan.setFont(new java.awt.Font("Levenim MT", 0, 65)); // NOI18N
-        lblElaborarNuevoPlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblElaborarNuevoPlan.setText("Elaborar plan ");
-        panelElaborarPlan.add(lblElaborarNuevoPlan);
-        lblElaborarNuevoPlan.setBounds(30, 11, 403, 91);
-
-        lblComida.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
-        lblComida.setForeground(new java.awt.Color(255, 255, 255));
-        lblComida.setText("Comida");
-        panelElaborarPlan.add(lblComida);
-        lblComida.setBounds(50, 230, 134, 52);
-
-        lblAlimentos.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
-        lblAlimentos.setForeground(new java.awt.Color(255, 255, 255));
-        lblAlimentos.setText("Alimentos");
-        panelElaborarPlan.add(lblAlimentos);
-        lblAlimentos.setBounds(310, 110, 167, 44);
-
-        listaDiasDeLaSemana.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        listaDiasDeLaSemana.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                listaDiasDeLaSemanaItemStateChanged(evt);
-            }
-        });
-        listaDiasDeLaSemana.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                listaDiasDeLaSemanaFocusLost(evt);
-            }
-        });
-        listaDiasDeLaSemana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaDiasDeLaSemanaActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(listaDiasDeLaSemana);
-        listaDiasDeLaSemana.setBounds(50, 170, 200, 40);
-
-        listaComidasPlan.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        listaComidasPlan.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                listaComidasPlanItemStateChanged(evt);
-            }
-        });
-        listaComidasPlan.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                listaComidasPlanFocusLost(evt);
-            }
-        });
-        listaComidasPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaComidasPlanActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(listaComidasPlan);
-        listaComidasPlan.setBounds(50, 290, 200, 40);
-
-        listaAlimentosEnSistema.setBackground(new java.awt.Color(238, 238, 238));
-        listaAlimentosEnSistema.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-        listaAlimentosEnSistema.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listaAlimentosEnSistemaValueChanged(evt);
-            }
-        });
-        jScrollPane8.setViewportView(listaAlimentosEnSistema);
-
-        panelElaborarPlan.add(jScrollPane8);
-        jScrollPane8.setBounds(310, 160, 285, 166);
-
-        lblDia.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
-        lblDia.setForeground(new java.awt.Color(255, 255, 255));
-        lblDia.setText("Día");
-        panelElaborarPlan.add(lblDia);
-        lblDia.setBounds(50, 120, 134, 36);
-
-        lblNombrePlan.setFont(new java.awt.Font("Century Gothic", 1, 25)); // NOI18N
-        lblNombrePlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombrePlan.setText("Nombre del plan:");
-        panelElaborarPlan.add(lblNombrePlan);
-        lblNombrePlan.setBounds(30, 370, 240, 34);
-
-        txtNombrePlan.setBackground(new java.awt.Color(227, 227, 227));
-        txtNombrePlan.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
-        txtNombrePlan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtNombrePlan.setMaximumSize(new java.awt.Dimension(6, 26));
-        txtNombrePlan.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtNombrePlanFocusLost(evt);
-            }
-        });
-        txtNombrePlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombrePlanActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(txtNombrePlan);
-        txtNombrePlan.setBounds(260, 370, 181, 38);
-
-        btnAgregarAlPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoAgregarAlPlan.png"))); // NOI18N
-        btnAgregarAlPlan.setBorderPainted(false);
-        btnAgregarAlPlan.setContentAreaFilled(false);
-        btnAgregarAlPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarAlPlanActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(btnAgregarAlPlan);
-        btnAgregarAlPlan.setBounds(620, 150, 90, 80);
-
-        btnEliminarDelPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoEliminarDelPlan.png"))); // NOI18N
-        btnEliminarDelPlan.setBorderPainted(false);
-        btnEliminarDelPlan.setContentAreaFilled(false);
-        btnEliminarDelPlan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarDelPlanActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(btnEliminarDelPlan);
-        btnEliminarDelPlan.setBounds(630, 260, 70, 70);
-
-        lblDesayuno.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        lblDesayuno.setForeground(new java.awt.Color(255, 255, 255));
-        lblDesayuno.setText("Desayuno");
-        panelElaborarPlan.add(lblDesayuno);
-        lblDesayuno.setBounds(170, 460, 120, 34);
-
-        lblAlmuerzo.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        lblAlmuerzo.setForeground(new java.awt.Color(255, 255, 255));
-        lblAlmuerzo.setText("Almuerzo");
-        panelElaborarPlan.add(lblAlmuerzo);
-        lblAlmuerzo.setBounds(370, 460, 120, 34);
-
-        lblCena.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        lblCena.setForeground(new java.awt.Color(255, 255, 255));
-        lblCena.setText("Cena");
-        panelElaborarPlan.add(lblCena);
-        lblCena.setBounds(560, 460, 80, 34);
-
-        lblNombreDelDia.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        lblNombreDelDia.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreDelDia.setText("Nombre del dia");
-        panelElaborarPlan.add(lblNombreDelDia);
-        lblNombreDelDia.setBounds(20, 550, 120, 34);
-
-        btnElaborarPlan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoEnviarMensaje.png"))); // NOI18N
-        btnElaborarPlan1.setBorderPainted(false);
-        btnElaborarPlan1.setContentAreaFilled(false);
-        btnElaborarPlan1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnElaborarPlan1ActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(btnElaborarPlan1);
-        btnElaborarPlan1.setBounds(730, 740, 60, 50);
-
-        textAlmuerzo.setBackground(new java.awt.Color(51, 51, 51));
-        textAlmuerzo.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-        textAlmuerzo.setForeground(new java.awt.Color(255, 255, 255));
-        textAlmuerzo.setRows(5);
-        jScrollPane10.setViewportView(textAlmuerzo);
-
-        panelElaborarPlan.add(jScrollPane10);
-        jScrollPane10.setBounds(350, 520, 160, 240);
-
-        textCena.setBackground(new java.awt.Color(51, 51, 51));
-        textCena.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-        textCena.setForeground(new java.awt.Color(255, 255, 255));
-        textCena.setRows(5);
-        jScrollPane11.setViewportView(textCena);
-
-        panelElaborarPlan.add(jScrollPane11);
-        jScrollPane11.setBounds(540, 520, 160, 240);
-
-        textDesayuno.setBackground(new java.awt.Color(51, 51, 51));
-        textDesayuno.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-        textDesayuno.setForeground(new java.awt.Color(255, 255, 255));
-        textDesayuno.setRows(5);
-        jScrollPane12.setViewportView(textDesayuno);
-
-        panelElaborarPlan.add(jScrollPane12);
-        jScrollPane12.setBounds(150, 520, 160, 240);
-
-        btnEliminarDelPlan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoGuardarDia.png"))); // NOI18N
-        btnEliminarDelPlan1.setBorderPainted(false);
-        btnEliminarDelPlan1.setContentAreaFilled(false);
-        btnEliminarDelPlan1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarDelPlan1ActionPerformed(evt);
-            }
-        });
-        panelElaborarPlan.add(btnEliminarDelPlan1);
-        btnEliminarDelPlan1.setBounds(580, 390, 70, 70);
-
-        lblValidarNombrePlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblValidarNombrePlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png"))); // NOI18N
-        panelElaborarPlan.add(lblValidarNombrePlan);
-        lblValidarNombrePlan.setBounds(450, 370, 32, 44);
-
-        lblCena1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        lblCena1.setForeground(new java.awt.Color(255, 255, 255));
-        lblCena1.setText("Guardar día");
-        panelElaborarPlan.add(lblCena1);
-        lblCena1.setBounds(640, 410, 150, 34);
-
-        lblNombrePlanVacio.setFont(new java.awt.Font("Century Gothic", 0, 19)); // NOI18N
-        lblNombrePlanVacio.setForeground(new java.awt.Color(240, 128, 128));
-        lblNombrePlanVacio.setText("Dato vacío");
-        panelElaborarPlan.add(lblNombrePlanVacio);
-        lblNombrePlanVacio.setBounds(490, 370, 134, 38);
-
-        panelDerecho.add(panelElaborarPlan, "card2");
 
         panelMostrarPlanEnviado.setBackground(new java.awt.Color(51, 51, 51));
         panelMostrarPlanEnviado.setMaximumSize(new java.awt.Dimension(800, 800));
@@ -1413,7 +1420,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         );
 
         panelNuevoAlimento.add(panelAlimentroRegistradoCorrectamente);
-        panelAlimentroRegistradoCorrectamente.setBounds(0, 0, 811, 800);
+        panelAlimentroRegistradoCorrectamente.setBounds(0, 0, 800, 800);
 
         panelIngresarAlimentoAlSistema.setBackground(new java.awt.Color(51, 51, 51));
         panelIngresarAlimentoAlSistema.setMaximumSize(new java.awt.Dimension(700, 700));
@@ -2490,6 +2497,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private void elaborarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elaborarPlanActionPerformed
         this.elaborarPlan.setVisible(false);
         this.panelElaborarPlan.setVisible(true);
+        cargarListaAlimentos();
     }//GEN-LAST:event_elaborarPlanActionPerformed
 
 
