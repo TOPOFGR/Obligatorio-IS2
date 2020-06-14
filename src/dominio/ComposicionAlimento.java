@@ -8,7 +8,11 @@ public final class ComposicionAlimento implements Serializable {
     private float proporcion;
 
     public ComposicionAlimento(String unNutriente, float unaProporcion) {
-        this.setNutriente(unNutriente);
+        if (unNutriente == null || unNutriente.trim().equals("")){
+            this.setNutriente("No definido");
+        } else {
+            this.setNutriente(unNutriente);   
+        }
         this.setProporcion(unaProporcion);
     }
 

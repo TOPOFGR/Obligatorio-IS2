@@ -18,7 +18,11 @@ public final class PlanAlimentacion implements Serializable {
             boolean fueAtendido,
             String[][] unPlan) {
 
-        setNombreDelPlan(np);
+        if (np == null || np.trim().equals("")){
+            setNombreDelPlan("Plan de alimentación");
+        } else {
+            setNombreDelPlan(np);
+        }
         setUsuario(usu);
         setProfesional(pro);
         setFueAtendidoElPlan(fueAtendido);

@@ -20,11 +20,19 @@ public final class Usuario extends Persona {
             ArrayList<String> listaRestricciones,
             ArrayList<Ingesta> listaAlimentos) {
 
-        this.setNombre(unNombre);
+        if (unNombre == null || unNombre.trim().equals("")){
+            this.setNombre("Nombre no ingresado");
+        } else {
+            this.setNombre(unNombre);
+        }
         this.setApellido(unApellido);
         this.setFechaNacimiento(unaFechaNacimiento);
         this.setFotoDePerfil(unaFotoDePerfil);
-        this.setNacionalidad(unaNacionalidad);
+        if (unaNacionalidad == null || unaNacionalidad.trim().equals("")){
+            this.setNacionalidad("Nacionalidad no ingresada");
+        } else {
+            this.setNacionalidad(unaNacionalidad);
+        }
         this.setPreferencias(listaPreferencias);
         this.setRestricciones(listaRestricciones);
         this.setAlimentosIngeridos(listaAlimentos);

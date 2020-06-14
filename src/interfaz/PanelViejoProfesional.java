@@ -227,9 +227,9 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         String itemsDesayuno = this.textDesayuno.getText();
         String itemsAlmuerzo = this.textAlmuerzo.getText();
         String itemsCena = this.textCena.getText();
-        this.textDesayuno.setText("");
-        this.textAlmuerzo.setText("");
-        this.textCena.setText("");
+        //this.textDesayuno.setText("");
+        //this.textAlmuerzo.setText("");
+        //this.textCena.setText("");
         switch (this.diaDeLaSemanaAnterior) {
             case "Lunes":
                 this.planAlimentacion[0][0] = itemsDesayuno;
@@ -625,9 +625,9 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
                 listaDiasDeLaSemanaFocusLost(evt);
             }
         });
-        listaDiasDeLaSemana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaDiasDeLaSemanaActionPerformed(evt);
+        listaDiasDeLaSemana.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaDiasDeLaSemanaMouseClicked(evt);
             }
         });
         panelElaborarPlan.add(listaDiasDeLaSemana);
@@ -2044,7 +2044,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged
-
         String diaSeleccionado = (String) this.listaDiasDeLaSemana.getSelectedItem();
         this.diaDeLaSemanaActual = diaSeleccionado;
         this.lblNombreDelDia.setText(this.diaDeLaSemanaActual);
@@ -2092,10 +2091,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private void listaDiasDeLaSemanaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaFocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_listaDiasDeLaSemanaFocusLost
-
-    private void listaDiasDeLaSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaActionPerformed
-
-    }//GEN-LAST:event_listaDiasDeLaSemanaActionPerformed
 
     private void listaComidasPlanItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaComidasPlanItemStateChanged
 
@@ -2499,6 +2494,10 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         this.panelElaborarPlan.setVisible(true);
         cargarListaAlimentos();
     }//GEN-LAST:event_elaborarPlanActionPerformed
+
+    private void listaDiasDeLaSemanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaMouseClicked
+        guardarDatosDelPlan();
+    }//GEN-LAST:event_listaDiasDeLaSemanaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

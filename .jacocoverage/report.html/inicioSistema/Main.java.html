@@ -2,26 +2,27 @@
 
 import dominio.Sistema;
 import interfaz.VentanaMenuPrincipal;
+import interfaz.VentanaSPA;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-<span class="nc" id="L10">public class Main {</span>
+<span class="nc" id="L11">public class Main {</span>
 
     public static void main(String[] args) {
         Sistema sistema;
 
         try {
-<span class="nc" id="L16">            try (FileInputStream f = new FileInputStream(&quot;Sistema.data&quot;)) {</span>
-<span class="nc" id="L17">                sistema = (Sistema) new ObjectInputStream(new BufferedInputStream(f)).readObject();</span>
-<span class="nc bnc" id="L18" title="All 8 branches missed.">            }</span>
-<span class="nc" id="L19">        } catch (IOException | ClassNotFoundException e) {</span>
-<span class="nc" id="L20">            sistema = new Sistema();</span>
-<span class="nc" id="L21">        }</span>
-<span class="nc" id="L22">        VentanaMenuPrincipal ventana = new VentanaMenuPrincipal(sistema);</span>
-<span class="nc" id="L23">        ventana.setVisible(true);</span>
-<span class="nc" id="L24">    }</span>
+<span class="nc" id="L17">            try (FileInputStream f = new FileInputStream(&quot;Sistema.data&quot;)) {</span>
+<span class="nc" id="L18">                sistema = (Sistema) new ObjectInputStream(new BufferedInputStream(f)).readObject();</span>
+<span class="nc bnc" id="L19" title="All 8 branches missed.">            }</span>
+<span class="nc" id="L20">        } catch (IOException | ClassNotFoundException e) {</span>
+<span class="nc" id="L21">            sistema = new Sistema();</span>
+<span class="nc" id="L22">        }</span>
+<span class="nc" id="L23">        VentanaSPA ventana = new VentanaSPA(sistema);</span>
+<span class="nc" id="L24">        ventana.setVisible(true);</span>
+<span class="nc" id="L25">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
