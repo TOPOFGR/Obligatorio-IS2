@@ -69,7 +69,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     public void setFotoDeAlimentoActual(ImageIcon unaFoto) {
         this.fotoDeAlimentoActual = unaFoto;
     }
-    
+
     private void ocultarPaneles() {
         this.btnConsultasPendientes.setEnabled(true);
         this.btnIngresarAlimento.setEnabled(true);
@@ -194,7 +194,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         }
         return listaRetorno;
     }
-    
+
     private void cargarListaDiasDeLaSemana() {
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         ArrayList<String> diasEnSistema = sistema.devolverListaDiasDeLaSemana();
@@ -303,6 +303,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         this.txtVitaminas.setVisible(false);
         this.txtFibra.setVisible(false);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -405,7 +406,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         lblIngestas = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         listaIngestas = new javax.swing.JList<>();
-        lblElaborarPlan = new javax.swing.JLabel();
+        elaborarPlan = new javax.swing.JButton();
         panelNuevoAlimento = new javax.swing.JPanel();
         panelAlimentroRegistradoCorrectamente = new javax.swing.JPanel();
         lblNoPlanes2 = new javax.swing.JLabel();
@@ -1264,9 +1265,13 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         listaIngestas.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane7.setViewportView(listaIngestas);
 
-        lblElaborarPlan.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        lblElaborarPlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblElaborarPlan.setText("Elaborar plan");
+        elaborarPlan.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        elaborarPlan.setText("Elaborar Plan");
+        elaborarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elaborarPlanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelPerfilDeUsuarioLayout = new javax.swing.GroupLayout(panelPerfilDeUsuario);
         panelPerfilDeUsuario.setLayout(panelPerfilDeUsuarioLayout);
@@ -1295,12 +1300,11 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
                         .addGroup(panelPerfilDeUsuarioLayout.createSequentialGroup()
                             .addComponent(lblTxtRestricciones)
                             .addGap(18, 18, 18)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPerfilDeUsuarioLayout.createSequentialGroup()
+                        .addComponent(elaborarPlan)
+                        .addGap(63, 63, 63)))
                 .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPerfilDeUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblElaborarPlan)
-                .addGap(117, 117, 117))
         );
         panelPerfilDeUsuarioLayout.setVerticalGroup(
             panelPerfilDeUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1331,9 +1335,9 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
                     .addGroup(panelPerfilDeUsuarioLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
-                .addComponent(lblElaborarPlan)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(elaborarPlan)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPlanAlimentacionLayout = new javax.swing.GroupLayout(panelPlanAlimentacion);
@@ -1953,6 +1957,14 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private void btnPlanesSolicitadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanesSolicitadosActionPerformed
         ocultarPaneles();
         this.btnPlanesSolicitados.setEnabled(false);
+        if (sistema.getListaPlanesAlimentacion().size() < 1){
+            this.panelNoHayPlanesPendientes.setVisible(true);
+            this.lblNohayPlanesTexto1.setVisible(true);
+            this.lblNohayConsultasTexto2.setVisible(true);
+            this.lblNoHayAlimentos.setVisible(false);
+            this.lblNoHayAlimentosIcono.setVisible(false);
+            this.lblNohayPlanesIcono.setVisible(true);
+        } else {
         if (sistema.getListaAlimentos().size() <= 0) {
             this.panelNoHayPlanesPendientes.setVisible(true);
             this.lblNohayPlanesTexto1.setVisible(false);
@@ -1980,6 +1992,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
                 this.lblNohayPlanesIcono.setVisible(true);
             }
         }
+                }
     }//GEN-LAST:event_btnPlanesSolicitadosActionPerformed
 
     private void btnIngresarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoActionPerformed
@@ -2020,13 +2033,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         this.panelConversacionOk.setVisible(true);
         this.panelConversacion.setVisible(false);
         this.panelMostrarOk.setVisible(true);
-        String[] listaUsuariosConversacionesPendientes = sistema.getListaNombresUsuariosConversacionesPendientes(profesional);
-        if (listaUsuariosConversacionesPendientes.length > 0) {
-            this.listaConversaciones.setListData(listaUsuariosConversacionesPendientes);
-        } else {
-            ocultarPaneles();
-            this.panelNoHayConsultasPendientes.setVisible(true);
-        }
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged
@@ -2036,42 +2042,42 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         this.lblNombreDelDia.setText(this.diaDeLaSemanaActual);
         switch (this.diaDeLaSemanaActual) {
             case "Lunes":
-            this.textDesayuno.setText(this.planAlimentacion[0][0]);
-            this.textCena.setText(this.planAlimentacion[0][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[0][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[0][0]);
+                this.textCena.setText(this.planAlimentacion[0][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[0][1]);
+                break;
             case "Martes":
-            this.textDesayuno.setText(this.planAlimentacion[1][0]);
-            this.textCena.setText(this.planAlimentacion[1][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[1][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[1][0]);
+                this.textCena.setText(this.planAlimentacion[1][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[1][1]);
+                break;
             case "Miercoles":
-            this.textDesayuno.setText(this.planAlimentacion[2][0]);
-            this.textCena.setText(this.planAlimentacion[2][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[2][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[2][0]);
+                this.textCena.setText(this.planAlimentacion[2][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[2][1]);
+                break;
             case "Jueves":
-            this.textDesayuno.setText(this.planAlimentacion[3][0]);
-            this.textCena.setText(this.planAlimentacion[3][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[3][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[3][0]);
+                this.textCena.setText(this.planAlimentacion[3][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[3][1]);
+                break;
             case "Viernes":
-            this.textDesayuno.setText(this.planAlimentacion[4][0]);
-            this.textCena.setText(this.planAlimentacion[4][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[4][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[4][0]);
+                this.textCena.setText(this.planAlimentacion[4][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[4][1]);
+                break;
             case "Sabado":
-            this.textDesayuno.setText(this.planAlimentacion[5][0]);
-            this.textCena.setText(this.planAlimentacion[5][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[5][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[5][0]);
+                this.textCena.setText(this.planAlimentacion[5][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[5][1]);
+                break;
             case "Domingo":
-            this.textDesayuno.setText(this.planAlimentacion[6][0]);
-            this.textCena.setText(this.planAlimentacion[6][2]);
-            this.textAlmuerzo.setText(this.planAlimentacion[6][1]);
-            break;
+                this.textDesayuno.setText(this.planAlimentacion[6][0]);
+                this.textCena.setText(this.planAlimentacion[6][2]);
+                this.textAlmuerzo.setText(this.planAlimentacion[6][1]);
+                break;
             default:
-            break;
+                break;
         }
     }//GEN-LAST:event_listaDiasDeLaSemanaItemStateChanged
 
@@ -2124,34 +2130,34 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         String textoAnterior = "";
         switch (ingestaSeleccionada) {
             case "Desayuno":
-            textoAnterior = this.textDesayuno.getText();
-            if (textoAnterior.equals("")) {
-                textoAnterior = alimentoAgregado;
-            } else {
-                textoAnterior += "\n" + alimentoAgregado;
-            }
-            this.textDesayuno.setText(textoAnterior);
-            break;
+                textoAnterior = this.textDesayuno.getText();
+                if (textoAnterior.equals("")) {
+                    textoAnterior = alimentoAgregado;
+                } else {
+                    textoAnterior += "\n" + alimentoAgregado;
+                }
+                this.textDesayuno.setText(textoAnterior);
+                break;
             case "Almuerzo":
-            textoAnterior = this.textAlmuerzo.getText();
-            if (textoAnterior.equals("")) {
-                textoAnterior = alimentoAgregado;
-            } else {
-                textoAnterior += "\n" + alimentoAgregado;
-            }
-            this.textAlmuerzo.setText(textoAnterior);
-            break;
+                textoAnterior = this.textAlmuerzo.getText();
+                if (textoAnterior.equals("")) {
+                    textoAnterior = alimentoAgregado;
+                } else {
+                    textoAnterior += "\n" + alimentoAgregado;
+                }
+                this.textAlmuerzo.setText(textoAnterior);
+                break;
             case "Cena":
-            textoAnterior = this.textCena.getText();
-            if (textoAnterior.equals("")) {
-                textoAnterior = alimentoAgregado;
-            } else {
-                textoAnterior += "\n" + alimentoAgregado;
-            }
-            this.textCena.setText(textoAnterior);
-            break;
+                textoAnterior = this.textCena.getText();
+                if (textoAnterior.equals("")) {
+                    textoAnterior = alimentoAgregado;
+                } else {
+                    textoAnterior += "\n" + alimentoAgregado;
+                }
+                this.textCena.setText(textoAnterior);
+                break;
             default:
-            break;
+                break;
         }
     }//GEN-LAST:event_btnAgregarAlPlanActionPerformed
 
@@ -2164,31 +2170,31 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         CharSequence secuencia = "\n";
         switch (ingestaSeleccionada) {
             case "Desayuno":
-            aRemplazar = this.textDesayuno.getText();
-            if (aRemplazar.contains(secuencia)) {
-                alimentoEliminado += "\n";
-            }
-            remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
-            this.textDesayuno.setText(remplazado);
-            break;
+                aRemplazar = this.textDesayuno.getText();
+                if (aRemplazar.contains(secuencia)) {
+                    alimentoEliminado += "\n";
+                }
+                remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
+                this.textDesayuno.setText(remplazado);
+                break;
             case "Almuerzo":
-            aRemplazar = this.textAlmuerzo.getText();
-            if (aRemplazar.contains(secuencia)) {
-                alimentoEliminado += "\n";
-            }
-            remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
-            this.textAlmuerzo.setText(remplazado);
-            break;
+                aRemplazar = this.textAlmuerzo.getText();
+                if (aRemplazar.contains(secuencia)) {
+                    alimentoEliminado += "\n";
+                }
+                remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
+                this.textAlmuerzo.setText(remplazado);
+                break;
             case "Cena":
-            aRemplazar = this.textCena.getText();
-            if (aRemplazar.contains(secuencia)) {
-                alimentoEliminado += "\n";
-            }
-            remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
-            this.textCena.setText(remplazado);
-            break;
+                aRemplazar = this.textCena.getText();
+                if (aRemplazar.contains(secuencia)) {
+                    alimentoEliminado += "\n";
+                }
+                remplazado = aRemplazar.replaceFirst(alimentoEliminado, "");
+                this.textCena.setText(remplazado);
+                break;
             default:
-            break;
+                break;
         }
     }//GEN-LAST:event_btnEliminarDelPlanActionPerformed
 
@@ -2480,6 +2486,10 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
 
     }//GEN-LAST:event_lblValidarTipoAlimentoFocusGained
 
+    private void elaborarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elaborarPlanActionPerformed
+        this.panelElaborarPlan.setVisible(true);
+    }//GEN-LAST:event_elaborarPlanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarAlPlan;
@@ -2502,6 +2512,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private javax.swing.JCheckBox checkMinerales;
     private javax.swing.JCheckBox checkProteínas;
     private javax.swing.JCheckBox checkVitaminas;
+    private javax.swing.JButton elaborarPlan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -2528,7 +2539,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel lblDesayuno;
     private javax.swing.JLabel lblDia;
     private javax.swing.JLabel lblElaborarNuevoPlan;
-    private javax.swing.JLabel lblElaborarPlan;
     private javax.swing.JLabel lblElijaUnUsuario;
     private javax.swing.JLabel lblFechaNacimiento;
     private javax.swing.JLabel lblFibra;
