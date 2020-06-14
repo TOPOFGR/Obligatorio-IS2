@@ -2,6 +2,7 @@ package inicioSistema;
 
 import dominio.Sistema;
 import interfaz.VentanaMenuPrincipal;
+import interfaz.VentanaSPA;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class Main {
         } catch (IOException | ClassNotFoundException e) {
             sistema = new Sistema();
         }
-        VentanaMenuPrincipal ventana = new VentanaMenuPrincipal(sistema);
+        VentanaSPA ventana = new VentanaSPA(sistema);
         ventana.setVisible(true);
     }
 

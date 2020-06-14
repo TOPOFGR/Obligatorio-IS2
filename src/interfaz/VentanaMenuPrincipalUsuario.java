@@ -8,6 +8,7 @@ import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -78,7 +79,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         lblNohayConsultasTexto3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblNohayProfesionales = new javax.swing.JLabel();
-        panelConsultaConProfesional = new javax.swing.JPanel();
+        panelConsultaConProfesionalOld = new javax.swing.JPanel();
         panelConversacion = new javax.swing.JPanel();
         lblFotoProfesional = new javax.swing.JLabel();
         lblNombreProfesional = new javax.swing.JLabel();
@@ -384,11 +385,11 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 
         panelDerecho.add(panelNoHayConversacionesCreadas, "card9");
 
-        panelConsultaConProfesional.setBackground(new java.awt.Color(51, 51, 51));
-        panelConsultaConProfesional.setMaximumSize(new java.awt.Dimension(800, 800));
-        panelConsultaConProfesional.setMinimumSize(new java.awt.Dimension(800, 800));
-        panelConsultaConProfesional.setPreferredSize(new java.awt.Dimension(800, 800));
-        panelConsultaConProfesional.setLayout(null);
+        panelConsultaConProfesionalOld.setBackground(new java.awt.Color(51, 51, 51));
+        panelConsultaConProfesionalOld.setMaximumSize(new java.awt.Dimension(800, 800));
+        panelConsultaConProfesionalOld.setMinimumSize(new java.awt.Dimension(800, 800));
+        panelConsultaConProfesionalOld.setPreferredSize(new java.awt.Dimension(800, 800));
+        panelConsultaConProfesionalOld.setLayout(null);
 
         panelConversacion.setOpaque(false);
 
@@ -465,7 +466,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        panelConsultaConProfesional.add(panelConversacion);
+        panelConsultaConProfesionalOld.add(panelConversacion);
         panelConversacion.setBounds(264, 48, 526, 647);
 
         btnNuevaConversacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -479,7 +480,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
                 btnNuevaConversacionActionPerformed(evt);
             }
         });
-        panelConsultaConProfesional.add(btnNuevaConversacion);
+        panelConsultaConProfesionalOld.add(btnNuevaConversacion);
         btnNuevaConversacion.setBounds(83, 588, 93, 57);
 
         listaConversaciones.setBackground(new java.awt.Color(238, 238, 238));
@@ -491,16 +492,16 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         });
         jScrollPane3.setViewportView(listaConversaciones);
 
-        panelConsultaConProfesional.add(jScrollPane3);
+        panelConsultaConProfesionalOld.add(jScrollPane3);
         jScrollPane3.setBounds(26, 158, 232, 424);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Seleccione al profesional");
-        panelConsultaConProfesional.add(jLabel1);
+        panelConsultaConProfesionalOld.add(jLabel1);
         jLabel1.setBounds(26, 131, 190, 21);
 
-        panelDerecho.add(panelConsultaConProfesional, "card3");
+        panelDerecho.add(panelConsultaConProfesionalOld, "card3");
 
         panelElegirProfesional.setBackground(new java.awt.Color(51, 51, 51));
         panelElegirProfesional.setMaximumSize(new java.awt.Dimension(800, 800));
@@ -1185,7 +1186,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             if (lista.length > 0) {
                 this.listaConversaciones.setListData(lista);
                 this.existeConversacion = true;
-                this.panelConsultaConProfesional.setVisible(true);
+                this.panelConsultaConProfesionalOld.setVisible(true);
             } else {
                 this.panelNoHayConversacionesCreadas.setVisible(true);
                 this.lblNohayProfesionales.setVisible(false);
@@ -1243,7 +1244,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.sistema.crearConversacion(this.sistema.getPersonaLogueada(), profesional, "CONVERSACION:", true);
         ocultarPaneles();
         actualizarConversaciones(profesional.getNombreCompleto());
-        this.panelConsultaConProfesional.setVisible(true);
+        this.panelConsultaConProfesionalOld.setVisible(true);
     }//GEN-LAST:event_listaElegirProfesionalesValueChanged
 
     private void listaConversacionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaConversacionesValueChanged
@@ -1277,6 +1278,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         String nombreUsuarioLoguedo = this.sistema.getPersonaLogueada().getNombreCompleto();
         Usuario usuarioLogueado = this.sistema.getUsuarioPorNombre(nombreUsuarioLoguedo);
         ArrayList<Ingesta> listaIngestasDelUsuario = usuarioLogueado.getAlimentosIngeridos();
+        String fechaIngesta = (new Date()).toString();
         String nuevoAlimento = this.comboAlimentosEnSistema.getSelectedItem().toString();
         if (nuevoAlimento.equals("Seleccione...")) {
             this.lblDatosIncorrectos2.setVisible(true);
@@ -1284,7 +1286,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             this.lblValidarNuevoAlimento.setVisible(true);
             this.lblNuevoAlimentoVacio.setVisible(true);
         } else {
-            this.sistema.agregarIngestaAUsuario(listaIngestasDelUsuario, nuevoAlimento);
+            this.sistema.agregarIngestaAUsuario(listaIngestasDelUsuario, fechaIngesta, nuevoAlimento);
             this.panelIngestaRegistradaCorrectamente.setVisible(true);
             this.lblNuevoAlimentoVacio.setVisible(false);
             this.lblValidarNuevoAlimento.setVisible(false);
@@ -1307,7 +1309,6 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
             this.panelBuscarPlan.setVisible(true);
             this.listaPlanesDelUsuario.setListData(planesDelUsuario);
         } else {
-            this.panelBuscarPlan.setVisible(true);
             this.panelNoHayPlanesDisponibles.setVisible(true);
         }
     }//GEN-LAST:event_btnVerPlanesExistentesActionPerformed
@@ -1435,7 +1436,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         this.btnSolicitarPlanAlimentacion.setEnabled(true);
         this.btnSolicitarNuevoPlan.setEnabled(true);
         this.btnVerPlanesExistentes.setEnabled(true);
-        this.panelConsultaConProfesional.setVisible(false);
+        this.panelConsultaConProfesionalOld.setVisible(false);
         this.txtMostrarConversacion.setText("");
         this.panelElegirProfesional.setVisible(false);
         this.panelBuscarPlan.setVisible(false);
@@ -1552,7 +1553,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
     private javax.swing.JList<String> listaPlanesDelUsuario;
     private javax.swing.JPanel panelAlimentoIngerido;
     private javax.swing.JPanel panelBuscarPlan;
-    private javax.swing.JPanel panelConsultaConProfesional;
+    private javax.swing.JPanel panelConsultaConProfesionalOld;
     private javax.swing.JPanel panelConversacion;
     private javax.swing.JPanel panelDerecho;
     private javax.swing.JPanel panelElegirProfesional;
