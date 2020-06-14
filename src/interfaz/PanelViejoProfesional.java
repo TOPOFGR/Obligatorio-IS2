@@ -1957,7 +1957,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     private void btnPlanesSolicitadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanesSolicitadosActionPerformed
         ocultarPaneles();
         this.btnPlanesSolicitados.setEnabled(false);
-        if (sistema.getListaPlanesAlimentacion().size() < 1){
+        if (sistema.getListaPlanesAlimentacion().size() < 1) {
             this.panelNoHayPlanesPendientes.setVisible(true);
             this.lblNohayPlanesTexto1.setVisible(true);
             this.lblNohayConsultasTexto2.setVisible(true);
@@ -1965,34 +1965,35 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
             this.lblNoHayAlimentosIcono.setVisible(false);
             this.lblNohayPlanesIcono.setVisible(true);
         } else {
-        if (sistema.getListaAlimentos().size() <= 0) {
-            this.panelNoHayPlanesPendientes.setVisible(true);
-            this.lblNohayPlanesTexto1.setVisible(false);
-            this.lblNohayConsultasTexto2.setVisible(false);
-            this.lblNoHayAlimentos.setVisible(true);
-            this.lblNoHayAlimentosIcono.setVisible(true);
-            this.lblNohayPlanesIcono.setVisible(false);
-        } else {
-            this.panelPlanAlimentacion.setVisible(true);
-            this.panelPerfilDeUsuario.setVisible(false);
-            this.btnPlanesSolicitados.setEnabled(false);
-            this.listaPlanesPendientes.setSelectedIndex(0);
-            String nombreProfesionalLogueado = sistema.getPersonaLogueada().getNombreCompleto();
-            Profesional profesionalLogueado = sistema.getProfesionalPorNombre(nombreProfesionalLogueado);
-            String[] lista = this.sistema.getListaPlanesPendientes(profesionalLogueado);
-            if (lista.length > 0) {
-                this.listaPlanesPendientes.setListData(lista);
-            } else {
-                ocultarPaneles();
+            if (sistema.getListaAlimentos().size() <= 0) {
                 this.panelNoHayPlanesPendientes.setVisible(true);
-                this.lblNohayPlanesTexto1.setVisible(true);
-                this.lblNohayConsultasTexto2.setVisible(true);
-                this.lblNoHayAlimentos.setVisible(false);
-                this.lblNoHayAlimentosIcono.setVisible(false);
-                this.lblNohayPlanesIcono.setVisible(true);
+                this.lblNohayPlanesTexto1.setVisible(false);
+                this.lblNohayConsultasTexto2.setVisible(false);
+                this.lblNoHayAlimentos.setVisible(true);
+                this.lblNoHayAlimentosIcono.setVisible(true);
+                this.lblNohayPlanesIcono.setVisible(false);
+            } else {
+                this.panelPlanAlimentacion.setVisible(true);
+                this.panelPerfilDeUsuario.setVisible(false);
+                this.btnPlanesSolicitados.setEnabled(false);
+                this.elaborarPlan.setVisible(true);
+                this.listaPlanesPendientes.setSelectedIndex(0);
+                String nombreProfesionalLogueado = sistema.getPersonaLogueada().getNombreCompleto();
+                Profesional profesionalLogueado = sistema.getProfesionalPorNombre(nombreProfesionalLogueado);
+                String[] lista = this.sistema.getListaPlanesPendientes(profesionalLogueado);
+                if (lista.length > 0) {
+                    this.listaPlanesPendientes.setListData(lista);
+                } else {
+                    ocultarPaneles();
+                    this.panelNoHayPlanesPendientes.setVisible(true);
+                    this.lblNohayPlanesTexto1.setVisible(true);
+                    this.lblNohayConsultasTexto2.setVisible(true);
+                    this.lblNoHayAlimentos.setVisible(false);
+                    this.lblNoHayAlimentosIcono.setVisible(false);
+                    this.lblNohayPlanesIcono.setVisible(true);
+                }
             }
         }
-                }
     }//GEN-LAST:event_btnPlanesSolicitadosActionPerformed
 
     private void btnIngresarAlimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlimentoActionPerformed
@@ -2487,6 +2488,7 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
     }//GEN-LAST:event_lblValidarTipoAlimentoFocusGained
 
     private void elaborarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elaborarPlanActionPerformed
+        this.elaborarPlan.setVisible(false);
         this.panelElaborarPlan.setVisible(true);
     }//GEN-LAST:event_elaborarPlanActionPerformed
 
