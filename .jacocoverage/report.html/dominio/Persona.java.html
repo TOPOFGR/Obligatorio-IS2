@@ -57,8 +57,8 @@ import javax.swing.ImageIcon;
 
     public String getNombreCompleto() {
         String retorno;
-<span class="pc bpc" id="L60" title="3 of 4 branches missed.">        if (getNombre().equals(&quot;Nombre no ingresado&quot;) &amp;&amp; getApellido().equals(&quot;Apellido no ingresado&quot;)) {</span>
-<span class="nc" id="L61">            retorno = &quot;Nombre no ingresado&quot;;</span>
+<span class="pc bpc" id="L60" title="1 of 4 branches missed.">        if (getNombre().equals(&quot;Nombre no ingresado&quot;) &amp;&amp; getApellido().equals(&quot;Apellido no ingresado&quot;)) {</span>
+<span class="fc" id="L61">            retorno = &quot;Nombre no ingresado&quot;;</span>
 <span class="pc bpc" id="L62" title="1 of 2 branches missed.">        } else if (getNombre().equals(&quot;Nombre no ingresado&quot;)) {</span>
 <span class="nc" id="L63">            retorno = getApellido();</span>
 <span class="fc bfc" id="L64" title="All 2 branches covered.">        } else if (getApellido().equals(&quot;Apellido no ingresado&quot;)) {</span>
@@ -77,7 +77,9 @@ import javax.swing.ImageIcon;
     @Override
     public boolean equals(Object obj) {
 <span class="fc" id="L79">        Persona otraPersona = (Persona) obj;</span>
-<span class="fc" id="L80">        return this.getNombreCompleto().equals(otraPersona.getNombreCompleto());</span>
+<span class="fc" id="L80">        String nombre1 = this.getNombreCompleto();</span>
+<span class="fc" id="L81">        String nombre2 = otraPersona.getNombreCompleto();</span>
+<span class="pc bpc" id="L82" title="6 of 10 branches missed.">        return nombre1.equals(nombre2) || (nombre1 == null &amp;&amp; nombre2.equals(&quot;Nombre no ingresado&quot;)) || (nombre2 == null &amp;&amp; nombre1.equals(&quot;Nombre no ingresado&quot;));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

@@ -19,7 +19,12 @@ public final class Alimento implements Serializable {
             ImageIcon foto) {
 
         this.setNombre(unNombre);
-        this.setTipoAlimento(unTipoAlimento);
+        if (unTipoAlimento == null || unTipoAlimento.trim().equals("")){
+            this.setTipoAlimento("No definido");
+        }
+        else {
+            this.setTipoAlimento(unTipoAlimento);
+        }
         this.setListaNutrientesConProporcion(listaNutrientes);
         this.setFotoDelAlimento(foto);
     }
@@ -61,9 +66,9 @@ public final class Alimento implements Serializable {
         }
     }
 
-    public ImageIcon getFotoDelAlimento() {
-        return this.fotoDelAlimento;
-    }
+   // public ImageIcon getFotoDelAlimento() {
+    //    return this.fotoDelAlimento;
+    //}
 
     public void setFotoDelAlimento(ImageIcon foto) {
         if (foto == null) {

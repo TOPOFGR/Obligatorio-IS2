@@ -117,7 +117,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
 <span class="nc" id="L117">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L118">        lblNombre.setText(&quot;Profesional&quot;);</span>
 <span class="nc" id="L119">        panel2.add(lblNombre);</span>
-<span class="nc" id="L120">        lblNombre.setBounds(450, 200, 181, 38);</span>
+<span class="nc" id="L120">        lblNombre.setBounds(450, 200, 181, 39);</span>
 
 <span class="nc" id="L122">        listaUsuariosVentana.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L123">        listaUsuariosVentana.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
@@ -168,7 +168,7 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
 <span class="nc" id="L168">        lblNombre1.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L169">        lblNombre1.setText(&quot;Usuario&quot;);</span>
 <span class="nc" id="L170">        panel2.add(lblNombre1);</span>
-<span class="nc" id="L171">        lblNombre1.setBounds(90, 200, 181, 38);</span>
+<span class="nc" id="L171">        lblNombre1.setBounds(90, 200, 181, 39);</span>
 
 <span class="nc" id="L173">        btnAgregarProfesional1.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoAgregarProfesional.png&quot;))); // NOI18N</span>
 <span class="nc" id="L174">        btnAgregarProfesional1.addMouseListener(new java.awt.event.MouseAdapter() {</span>
@@ -185,61 +185,60 @@ public class VentanaMenuPrincipal extends javax.swing.JDialog {
 <span class="nc" id="L185">        btnCerrarSistema.setBorderPainted(false);</span>
 <span class="nc" id="L186">        btnCerrarSistema.setContentAreaFilled(false);</span>
 <span class="nc" id="L187">        btnCerrarSistema.setFocusPainted(false);</span>
-<span class="nc" id="L188">        btnCerrarSistema.setOpaque(false);</span>
-<span class="nc" id="L189">        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L188">        btnCerrarSistema.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L191">                btnCerrarSistemaActionPerformed(evt);</span>
-<span class="nc" id="L192">            }</span>
+<span class="nc" id="L190">                btnCerrarSistemaActionPerformed(evt);</span>
+<span class="nc" id="L191">            }</span>
         });
-<span class="nc" id="L194">        panel2.add(btnCerrarSistema);</span>
-<span class="nc" id="L195">        btnCerrarSistema.setBounds(730, 10, 50, 50);</span>
+<span class="nc" id="L193">        panel2.add(btnCerrarSistema);</span>
+<span class="nc" id="L194">        btnCerrarSistema.setBounds(730, 10, 50, 50);</span>
 
-<span class="nc" id="L197">        getContentPane().add(panel2);</span>
-<span class="nc" id="L198">        panel2.setBounds(275, 0, 950, 800);</span>
+<span class="nc" id="L196">        getContentPane().add(panel2);</span>
+<span class="nc" id="L197">        panel2.setBounds(275, 0, 950, 800);</span>
 
-<span class="nc" id="L200">        pack();</span>
-<span class="nc" id="L201">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L199">        pack();</span>
+<span class="nc" id="L200">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-<span class="nc" id="L204">        this.sistema.guardarDatosSistema();</span>
-<span class="nc" id="L205">    }//GEN-LAST:event_formWindowClosing</span>
+<span class="nc" id="L203">        this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L204">    }//GEN-LAST:event_formWindowClosing</span>
 
     private void listaUsuariosVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaUsuariosVentanaValueChanged
-<span class="nc" id="L208">        this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());</span>
-<span class="nc" id="L209">        VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);</span>
-<span class="nc" id="L210">        this.setVisible(false);</span>
-<span class="nc" id="L211">        ventanaPrincipalUsuarios.setVisible(true);</span>
-<span class="nc" id="L212">    }//GEN-LAST:event_listaUsuariosVentanaValueChanged</span>
+<span class="nc" id="L207">        this.sistema.setPersonaLogueada((Persona) listaUsuariosVentana.getSelectedValue());</span>
+<span class="nc" id="L208">        VentanaMenuPrincipalUsuario ventanaPrincipalUsuarios = new VentanaMenuPrincipalUsuario(sistema);</span>
+<span class="nc" id="L209">        this.setVisible(false);</span>
+<span class="nc" id="L210">        ventanaPrincipalUsuarios.setVisible(true);</span>
+<span class="nc" id="L211">    }//GEN-LAST:event_listaUsuariosVentanaValueChanged</span>
 
     private void listaProfesionalesVentanaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProfesionalesVentanaValueChanged
-<span class="nc" id="L215">        this.sistema.setPersonaLogueada((Persona) listaProfesionalesVentana.getSelectedValue());</span>
-<span class="nc" id="L216">        VentanaMenuPrincipalProfesional ventanaPrincipalProfesionales = new VentanaMenuPrincipalProfesional(sistema);</span>
-<span class="nc" id="L217">        this.setVisible(false);</span>
-<span class="nc" id="L218">        ventanaPrincipalProfesionales.setVisible(true);</span>
-<span class="nc" id="L219">    }//GEN-LAST:event_listaProfesionalesVentanaValueChanged</span>
+<span class="nc" id="L214">        this.sistema.setPersonaLogueada((Persona) listaProfesionalesVentana.getSelectedValue());</span>
+<span class="nc" id="L215">        VentanaMenuPrincipalProfesional ventanaPrincipalProfesionales = new VentanaMenuPrincipalProfesional(sistema);</span>
+<span class="nc" id="L216">        this.setVisible(false);</span>
+<span class="nc" id="L217">        ventanaPrincipalProfesionales.setVisible(true);</span>
+<span class="nc" id="L218">    }//GEN-LAST:event_listaProfesionalesVentanaValueChanged</span>
 
     private void btnAgregarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioMouseClicked
-<span class="nc" id="L222">        VentanaRegistrarUsuario unA = new VentanaRegistrarUsuario(sistema);</span>
-<span class="nc" id="L223">        this.setVisible(false);</span>
-<span class="nc" id="L224">        unA.setVisible(true);</span>
-<span class="nc" id="L225">    }//GEN-LAST:event_btnAgregarUsuarioMouseClicked</span>
+<span class="nc" id="L221">        VentanaRegistrarUsuario unA = new VentanaRegistrarUsuario(sistema);</span>
+<span class="nc" id="L222">        this.setVisible(false);</span>
+<span class="nc" id="L223">        unA.setVisible(true);</span>
+<span class="nc" id="L224">    }//GEN-LAST:event_btnAgregarUsuarioMouseClicked</span>
 
     private void btnAgregarProfesionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProfesionalMouseClicked
-<span class="nc" id="L228">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
-<span class="nc" id="L229">        this.setVisible(false);</span>
-<span class="nc" id="L230">        ventanaRegProfesional.setVisible(true);</span>
-<span class="nc" id="L231">    }//GEN-LAST:event_btnAgregarProfesionalMouseClicked</span>
+<span class="nc" id="L227">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
+<span class="nc" id="L228">        this.setVisible(false);</span>
+<span class="nc" id="L229">        ventanaRegProfesional.setVisible(true);</span>
+<span class="nc" id="L230">    }//GEN-LAST:event_btnAgregarProfesionalMouseClicked</span>
 
     private void btnAgregarProfesional1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProfesional1MouseClicked
-<span class="nc" id="L234">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
-<span class="nc" id="L235">        this.setVisible(false);</span>
-<span class="nc" id="L236">        ventanaRegProfesional.setVisible(true);</span>
-<span class="nc" id="L237">    }//GEN-LAST:event_btnAgregarProfesional1MouseClicked</span>
+<span class="nc" id="L233">        VentanaRegistrarProfesional ventanaRegProfesional = new VentanaRegistrarProfesional(sistema);</span>
+<span class="nc" id="L234">        this.setVisible(false);</span>
+<span class="nc" id="L235">        ventanaRegProfesional.setVisible(true);</span>
+<span class="nc" id="L236">    }//GEN-LAST:event_btnAgregarProfesional1MouseClicked</span>
 
     private void btnCerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSistemaActionPerformed
-<span class="nc" id="L240">        this.sistema.guardarDatosSistema();</span>
-<span class="nc" id="L241">        this.dispose();</span>
-<span class="nc" id="L242">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
+<span class="nc" id="L239">        this.sistema.guardarDatosSistema();</span>
+<span class="nc" id="L240">        this.dispose();</span>
+<span class="nc" id="L241">    }//GEN-LAST:event_btnCerrarSistemaActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
