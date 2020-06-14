@@ -11,6 +11,7 @@ import dominio.PlanAlimentacion;
 import dominio.Profesional;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.awt.CardLayout;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -69,13 +70,13 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         this.existeConversacion = existe;
     }
     
-    private void ocultarPaneles() {
+    public void ocultarPaneles() {
         this.btnConsultaConProfesional.setEnabled(true);
         this.btnIngresarAlimentoIngerido.setEnabled(true);
         this.btnSolicitarPlanAlimentacion.setEnabled(true);
         this.btnSolicitarNuevoPlan.setEnabled(true);
         this.btnVerPlanesExistentes.setEnabled(true);
-        this.panelConsultaConProfesionalOld.setVisible(false);
+        this.panelConsultaConProfesional.setVisible(false);
         this.txtMostrarConversacion.setText("");
         this.panelElegirProfesional.setVisible(false);
         this.panelBuscarPlan.setVisible(false);
@@ -90,7 +91,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         this.panelIngestaRegistradaCorrectamente.setVisible(false);
         this.panelNoHayConversacionesCreadas.setVisible(false);
         this.panelNoHayPlanesDisponibles.setVisible(false);
-        this.panelVacio.setVisible(false);
+        this.panelVacio.setVisible(true);
     }
 
     private void actualizarConversaciones(String destinatario) {
@@ -154,7 +155,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblNohayProfesionales = new javax.swing.JLabel();
-        panelConsultaConProfesionalOld = new javax.swing.JPanel();
+        panelConsultaConProfesional = new javax.swing.JPanel();
         panelConversacion = new javax.swing.JPanel();
         lblFotoProfesional = new javax.swing.JLabel();
         lblNombreProfesional = new javax.swing.JLabel();
@@ -429,7 +430,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto3.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto3.setText("No hay conversaciones creadas");
         panelNoHayConversacionesCreadas.add(lblNohayConsultasTexto3);
-        lblNohayConsultasTexto3.setBounds(80, 350, 634, 80);
+        lblNohayConsultasTexto3.setBounds(80, 350, 599, 80);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoCaraTriste.png"))); // NOI18N
         panelNoHayConversacionesCreadas.add(jLabel2);
@@ -445,10 +446,10 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
 
         panelDerecho.add(panelNoHayConversacionesCreadas, "card9");
 
-        panelConsultaConProfesionalOld.setBackground(new java.awt.Color(51, 51, 51));
-        panelConsultaConProfesionalOld.setMaximumSize(new java.awt.Dimension(800, 800));
-        panelConsultaConProfesionalOld.setMinimumSize(new java.awt.Dimension(800, 800));
-        panelConsultaConProfesionalOld.setLayout(null);
+        panelConsultaConProfesional.setBackground(new java.awt.Color(51, 51, 51));
+        panelConsultaConProfesional.setMaximumSize(new java.awt.Dimension(800, 800));
+        panelConsultaConProfesional.setMinimumSize(new java.awt.Dimension(800, 800));
+        panelConsultaConProfesional.setLayout(null);
 
         panelConversacion.setOpaque(false);
 
@@ -525,8 +526,8 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelConsultaConProfesionalOld.add(panelConversacion);
-        panelConversacion.setBounds(264, 48, 526, 647);
+        panelConsultaConProfesional.add(panelConversacion);
+        panelConversacion.setBounds(264, 48, 526, 671);
 
         btnNuevaConversacion.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaConversacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoNuevoMensaje.png"))); // NOI18N
@@ -539,7 +540,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
                 btnNuevaConversacionActionPerformed(evt);
             }
         });
-        panelConsultaConProfesionalOld.add(btnNuevaConversacion);
+        panelConsultaConProfesional.add(btnNuevaConversacion);
         btnNuevaConversacion.setBounds(83, 588, 93, 57);
 
         listaConversaciones.setBackground(new java.awt.Color(238, 238, 238));
@@ -551,16 +552,16 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(listaConversaciones);
 
-        panelConsultaConProfesionalOld.add(jScrollPane3);
+        panelConsultaConProfesional.add(jScrollPane3);
         jScrollPane3.setBounds(26, 158, 232, 424);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Seleccione al profesional");
-        panelConsultaConProfesionalOld.add(jLabel1);
-        jLabel1.setBounds(26, 131, 190, 21);
+        panelConsultaConProfesional.add(jLabel1);
+        jLabel1.setBounds(26, 131, 175, 21);
 
-        panelDerecho.add(panelConsultaConProfesionalOld, "card3");
+        panelDerecho.add(panelConsultaConProfesional, "card3");
 
         panelElegirProfesional.setBackground(new java.awt.Color(51, 51, 51));
         panelElegirProfesional.setMaximumSize(new java.awt.Dimension(800, 800));
@@ -764,7 +765,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblNohayConsultasTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblNohayConsultasTexto1.setText("Ingesta registrada");
         panelIngestaRegistradaCorrectamente.add(lblNohayConsultasTexto1);
-        lblNohayConsultasTexto1.setBounds(190, 340, 360, 50);
+        lblNohayConsultasTexto1.setBounds(190, 340, 360, 52);
 
         panelDerecho.add(panelIngestaRegistradaCorrectamente, "card10");
 
@@ -789,7 +790,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         lblAlimentoIngeridoSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
         lblAlimentoIngeridoSeleccionado.setText("Ingrese el nuevo alimento ");
         panelAlimentoIngerido.add(lblAlimentoIngeridoSeleccionado);
-        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 38);
+        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 39);
 
         comboAlimentosEnSistema.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         comboAlimentosEnSistema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
@@ -1120,7 +1121,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
 
         panelPlanDeAlimentacion.add(panelSolicitarNuevoPlan);
-        panelSolicitarNuevoPlan.setBounds(35, 246, 404, 556);
+        panelSolicitarNuevoPlan.setBounds(35, 246, 394, 556);
 
         panelBuscarPlan.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -1160,7 +1161,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         );
 
         panelPlanDeAlimentacion.add(panelBuscarPlan);
-        panelBuscarPlan.setBounds(435, 254, 339, 525);
+        panelBuscarPlan.setBounds(435, 254, 339, 529);
 
         btnVerPlanesExistentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoVerPlanesAlimentacion.png"))); // NOI18N
         btnVerPlanesExistentes.setBorderPainted(false);
@@ -1237,7 +1238,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             if (lista.length > 0) {
                 this.listaConversaciones.setListData(lista);
                 this.existeConversacion = true;
-                this.panelConsultaConProfesionalOld.setVisible(true);
+                this.panelConsultaConProfesional.setVisible(true);
             } else {
                 this.panelNoHayConversacionesCreadas.setVisible(true);
                 this.lblNohayProfesionales.setVisible(false);
@@ -1334,7 +1335,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         this.sistema.crearConversacion(this.sistema.getPersonaLogueada(), profesional, "CONVERSACION:", true);
         ocultarPaneles();
         actualizarConversaciones(profesional.getNombreCompleto());
-        this.panelConsultaConProfesionalOld.setVisible(true);
+        this.panelConsultaConProfesional.setVisible(true);
     }//GEN-LAST:event_listaElegirProfesionalesValueChanged
 
     private void comboAlimentosEnSistemaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboAlimentosEnSistemaItemStateChanged
@@ -1567,7 +1568,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
     private javax.swing.JList<String> listaPlanesDelUsuario;
     private javax.swing.JPanel panelAlimentoIngerido;
     private javax.swing.JPanel panelBuscarPlan;
-    private javax.swing.JPanel panelConsultaConProfesionalOld;
+    private javax.swing.JPanel panelConsultaConProfesional;
     private javax.swing.JPanel panelConversacion;
     private javax.swing.JPanel panelDerecho;
     private javax.swing.JPanel panelElegirProfesional;
