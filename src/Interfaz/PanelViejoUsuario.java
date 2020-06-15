@@ -1337,6 +1337,9 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         actualizarConversaciones(profesional);
         this.msjEnviado.setVisible(true);
         this.jScrollPane2.setVisible(false);
+        this.jScrollPane1.setVisible(false);
+        this.btnEnviarMensaje.setVisible(false);
+
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     private void btnNuevaConversacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaConversacionActionPerformed
@@ -1355,6 +1358,8 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
             this.profesionalSeleccionado = this.listaConversaciones.getSelectedValue();
             this.msjEnviado.setVisible(false);
             this.jScrollPane2.setVisible(true);
+            this.jScrollPane1.setVisible(true);
+            this.btnEnviarMensaje.setVisible(true);
             actualizarConversaciones(this.profesionalSeleccionado);
         }
     }//GEN-LAST:event_listaConversacionesValueChanged
