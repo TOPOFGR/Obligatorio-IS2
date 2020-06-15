@@ -72,7 +72,7 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
         }
     }
 
-    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion) {
+    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion, Calendar hoy, Calendar fecha, Calendar fechaGrad) {
         if (nombre.equals("")) {
             this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarNombre.setVisible(true);
@@ -93,24 +93,14 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
             this.lblValidarPaisGraduacion.setVisible(true);
             this.lblPaisVacio.setVisible(true);
         }
-        Calendar hoy = Calendar.getInstance();
-        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();
-        fecha.set(Calendar.SECOND, 0);
-        fecha.set(Calendar.MILLISECOND, 0);
-
-        Calendar fechaGrad = this.dateChooserFechaGraduacion.getCurrent();
-        fechaGrad.set(Calendar.SECOND, 0);
-        fechaGrad.set(Calendar.MILLISECOND, 0);
-
-        hoy.set(Calendar.MILLISECOND, 0);
-        hoy.set(Calendar.SECOND, 0);
-
-        if (fecha.getTime().compareTo(hoy.getTime()) == 0 || fecha.getTime().compareTo(fechaGrad.getTime()) >= 0) {
+        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0 || fecha.getTime().compareTo(fechaGrad.getTime()) >= 0;
+        if (fechaInvalida) {
             this.lblValidarFecha.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarFecha.setVisible(true);
             this.lblFechaInvalida.setVisible(true);
         }
-        if (fechaGrad.getTime().compareTo(hoy.getTime()) == 0) {
+        boolean fechaGradInvalida = fechaGrad.getTime().compareTo(hoy.getTime()) == 0;
+        if (fechaGradInvalida) {
             this.lblValidarFechaGrad.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarFechaGrad.setVisible(true);
             this.lblFechaInvalidaGrad.setVisible(true);
@@ -470,9 +460,23 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
         String paisGraduacion = (String) this.listaPaisGraduacion.getSelectedItem();
         String fechaNacimiento = this.dateChooserFechaNacimiento.getText();
         String fechaGraduacion = this.dateChooserFechaGraduacion.getText();
-        if (nombre.equals("") || apellido.equals("") || tituloProfesional.equals("Seleccione...") || paisGraduacion.equals("Seleccione...")) {
+        Calendar hoy = Calendar.getInstance();
+        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();
+        fecha.set(Calendar.SECOND, 0);
+        fecha.set(Calendar.MILLISECOND, 0);
+
+        Calendar fechaGrad = this.dateChooserFechaGraduacion.getCurrent();
+        fechaGrad.set(Calendar.SECOND, 0);
+        fechaGrad.set(Calendar.MILLISECOND, 0);
+
+        hoy.set(Calendar.MILLISECOND, 0);
+        hoy.set(Calendar.SECOND, 0);
+        boolean fechaGradInvalida = fechaGrad.getTime().compareTo(hoy.getTime()) == 0;
+        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0 || fecha.getTime().compareTo(fechaGrad.getTime()) >= 0;
+
+        if (nombre.equals("") || apellido.equals("") || tituloProfesional.equals("Seleccione...") || paisGraduacion.equals("Seleccione...") || fechaGradInvalida || fechaInvalida) {
             this.lblDatosIncorrectos.setVisible(true);
-            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion);
+            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion, hoy, fecha, fechaGrad);
         } else {
             this.lblDatosIncorrectos.setVisible(false);
             boolean seAgregoProfesional = sistema.crearProfesional(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, tituloProfesional, fechaGraduacion, paisGraduacion);
