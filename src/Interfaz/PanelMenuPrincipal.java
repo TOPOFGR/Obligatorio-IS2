@@ -26,12 +26,13 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         ventana = vent;
         actualizarTablas();
     }
-    
-    public void actualizarTablas(){
+
+    public void actualizarTablas() {
         if (sistema.getListaUsuarios().isEmpty()) {
             this.lblNombre1.setText("No hay usuarios");
             this.jScrollPane2.setVisible(false);
         } else {
+            this.lblNombre1.setText("Usuarios");
             this.listaUsuariosVentana.setListData(sistema.getListaUsuarios().toArray());
             this.jScrollPane2.setVisible(true);
         }
@@ -39,10 +40,12 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
             this.lblNombre.setText("No hay profesionales");
             this.jScrollPane1.setVisible(false);
         } else {
+            this.lblNombre.setText("Profesionales");
             this.listaProfesionalesVentana.setListData(sistema.getListaProfesionales().toArray());
             this.jScrollPane1.setVisible(true);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -435,9 +435,16 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         ArrayList<Ingesta> alimentosIngeridosPorFecha = new ArrayList<>();
         String nacionalidad = (String) this.listaNacionalidad.getSelectedItem();
         String fechaNacimiento = this.dateChooserFechaNacimiento.getText();
-        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...")) {
+        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();
+        fecha.set(Calendar.SECOND, 0);
+        fecha.set(Calendar.MILLISECOND, 0);
+        Calendar hoy = Calendar.getInstance();
+        hoy.set(Calendar.MILLISECOND, 0);
+        hoy.set(Calendar.SECOND, 0);
+        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0;
+        if (nombre.equals("") || apellido.equals("") || nacionalidad.equals("Seleccione...") || fechaInvalida) {
             this.lblDatosIncorrectos.setVisible(true);
-            mostrarErrores(nombre, apellido, nacionalidad, Calendar.getInstance());
+            mostrarErrores(nombre, apellido, nacionalidad, hoy, fecha);
         } else {
             this.lblDatosIncorrectos.setVisible(false);
             agregarPreferenciasUsuario(preferencias);
@@ -479,7 +486,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnIngresarFotoPerfilActionPerformed
 
-    private void mostrarErrores(String nombre, String apellido, String nacionalidad, Calendar hoy) {
+    private void mostrarErrores(String nombre, String apellido, String nacionalidad, Calendar hoy, Calendar fecha) {
         if (nombre.equals("")) {
             this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarNombre.setVisible(true);
@@ -495,14 +502,8 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
             this.lblValidarNacionalidad.setVisible(true);
             this.lblPaisVacio.setVisible(true);
         }
-        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();
-        fecha.set(Calendar.SECOND, 0);
-        fecha.set(Calendar.MILLISECOND, 0);
-        
-        hoy.set(Calendar.MILLISECOND, 0);
-        hoy.set(Calendar.SECOND, 0);
-
-        if (fecha.getTime().compareTo(hoy.getTime()) == 0) {
+        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0;
+        if (fechaInvalida) {
             this.lblValidarFecha.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconoCampoIncorrecto.png")));
             this.lblValidarFecha.setVisible(true);
             this.lblFechaInvalida.setVisible(true);
