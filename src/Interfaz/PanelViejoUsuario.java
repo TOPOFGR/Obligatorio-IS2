@@ -165,6 +165,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         txtMostrarConversacion = new javax.swing.JTextPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMensajeNuevo = new javax.swing.JTextArea();
+        msjEnviado = new javax.swing.JLabel();
         btnNuevaConversacion = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         listaConversaciones = new javax.swing.JList<>();
@@ -486,6 +487,11 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         txtMensajeNuevo.setRows(5);
         jScrollPane1.setViewportView(txtMensajeNuevo);
 
+        msjEnviado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        msjEnviado.setForeground(new java.awt.Color(0, 204, 0));
+        msjEnviado.setText("Mensaje Enviado");
+        msjEnviado.setToolTipText("");
+
         javax.swing.GroupLayout panelConversacionLayout = new javax.swing.GroupLayout(panelConversacion);
         panelConversacion.setLayout(panelConversacionLayout);
         panelConversacionLayout.setHorizontalGroup(
@@ -506,7 +512,11 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
                         .addGap(53, 53, 53))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConversacionLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))))
+                        .addGap(65, 65, 65))
+                    .addGroup(panelConversacionLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(msjEnviado)
+                        .addContainerGap())))
         );
         panelConversacionLayout.setVerticalGroup(
             panelConversacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,7 +531,9 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
                         .addComponent(lblFotoProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
+                .addGap(18, 18, 18)
+                .addComponent(msjEnviado)
+                .addGap(28, 28, 28)
                 .addGroup(panelConversacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -568,7 +580,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         todosprofesionales.setText("Ya contactó a todos los profesionales");
         todosprofesionales.setToolTipText("");
         panelConsultaConProfesional.add(todosprofesionales);
-        todosprofesionales.setBounds(30, 720, 433, 32);
+        todosprofesionales.setBounds(30, 710, 433, 32);
 
         panelDerecho.add(panelConsultaConProfesional, "card3");
 
@@ -1241,6 +1253,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
     private void btnConsultaConProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaConProfesionalActionPerformed
         ocultarPaneles();
         this.btnConsultaConProfesional.setEnabled(false);
+        this.msjEnviado.setVisible(false);
         if (sistema.getListaProfesionales().size() > 0) {
             this.listaConversaciones.setSelectedIndex(0);
             String[] lista = sistema.getListaNombresProfesionalesConversaciones(sistema.getPersonaLogueada().getNombreCompleto());
@@ -1309,6 +1322,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         listaNombresProfesionalesSinConversacion = this.sistema.getNombresProfesionalesSinConversacionConUsuario((sistema.getPersonaLogueada()));
         if (listaNombresProfesionalesSinConversacion != null && listaNombresProfesionalesSinConversacion.size() > 0) {
             ocultarPaneles();
+            this.msjEnviado.setVisible(false);
             this.listaElegirProfesionales.setListData(listaNombresProfesionalesSinConversacion.toArray());
             this.panelElegirProfesional.setVisible(true);
         }
@@ -1321,6 +1335,11 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         this.sistema.agregarMensajeConversacion(usuario, profesional, mensaje, false, false);
         this.txtMensajeNuevo.setText("");
         actualizarConversaciones(profesional);
+        this.msjEnviado.setVisible(true);
+        this.jScrollPane2.setVisible(false);
+        this.jScrollPane1.setVisible(false);
+        this.btnEnviarMensaje.setVisible(false);
+
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     private void btnNuevaConversacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaConversacionActionPerformed
@@ -1337,6 +1356,10 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
         if (this.existeConversacion && this.listaConversaciones.getSelectedValue() != null) {
             this.panelConversacion.setVisible(true);
             this.profesionalSeleccionado = this.listaConversaciones.getSelectedValue();
+            this.msjEnviado.setVisible(false);
+            this.jScrollPane2.setVisible(true);
+            this.jScrollPane1.setVisible(true);
+            this.btnEnviarMensaje.setVisible(true);
             actualizarConversaciones(this.profesionalSeleccionado);
         }
     }//GEN-LAST:event_listaConversacionesValueChanged
@@ -1585,6 +1608,7 @@ public class PanelViejoUsuario extends javax.swing.JPanel {
     private javax.swing.JList<String> listaConversaciones;
     private javax.swing.JList listaElegirProfesionales;
     private javax.swing.JList<String> listaPlanesDelUsuario;
+    private javax.swing.JLabel msjEnviado;
     private javax.swing.JPanel panelAlimentoIngerido;
     private javax.swing.JPanel panelBuscarPlan;
     private javax.swing.JPanel panelConsultaConProfesional;

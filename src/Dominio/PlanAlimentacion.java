@@ -1,6 +1,7 @@
 package Dominio;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Currency;
 
@@ -83,9 +84,21 @@ public final class PlanAlimentacion implements Serializable {
     @Override
     public boolean equals(Object obj) {
         PlanAlimentacion otroPlanAlimentacion = (PlanAlimentacion) obj;
-        return (this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
+        return  (otroPlanAlimentacion!= null && this.getNombreDelPlan().equals(otroPlanAlimentacion.getNombreDelPlan())
                 && this.getUsuario().equals(otroPlanAlimentacion.getUsuario())
                 && this.getProfesional().equals(otroPlanAlimentacion.getProfesional()));
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 13 * hash + Objects.hashCode(this.nombreDelPlan);
+        hash = 13 * hash + Objects.hashCode(this.usuario);
+        hash = 13 * hash + Objects.hashCode(this.profesional);
+        hash = 13 * hash + (this.fueAtendidoElPlan ? 1 : 0);
+        hash = 13 * hash + Arrays.deepHashCode(this.planDiaADia);
+        return hash;
+    }
+    
+    
 }
