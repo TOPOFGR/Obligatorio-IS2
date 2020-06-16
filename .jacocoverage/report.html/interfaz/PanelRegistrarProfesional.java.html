@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRegistrarProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelRegistrarProfesional.java</span></div><h1>PanelRegistrarProfesional.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRegistrarProfesional.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interfaz</a> &gt; <span class="el_source">PanelRegistrarProfesional.java</span></div><h1>PanelRegistrarProfesional.java</h1><pre class="source lang-java linenums">/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaz;
+package Interfaz;
 
-import dominio.Sistema;
+import Dominio.Sistema;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -13,7 +13,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 
 /**
  *
@@ -25,6 +24,7 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
     VentanaSPA ventana;
     private ImageIcon fotoDePerfilActual;
     private boolean primeraVez;
+
     /**
      * Creates new form PanelRegistrarProfesional
      */
@@ -41,11 +41,11 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
 <span class="nc" id="L41">        this.dateChooserFechaGraduacion.setMaxDate(fecha);</span>
 <span class="nc" id="L42">        this.primeraVez = false;</span>
 <span class="nc" id="L43">    }</span>
-    
+
     public void setPrimeraVezEnSistema(boolean primera) {
 <span class="nc" id="L46">        this.primeraVez = primera;</span>
 <span class="nc" id="L47">    }</span>
-    
+
     private void ocultarEtiquetas() {
 <span class="nc" id="L50">        this.lblValidarNombre.setVisible(false);</span>
 <span class="nc" id="L51">        this.lblValidarApellido.setVisible(false);</span>
@@ -56,40 +56,57 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
 <span class="nc" id="L56">        this.lblApellidoVacio.setVisible(false);</span>
 <span class="nc" id="L57">        this.lblTituloVacio.setVisible(false);</span>
 <span class="nc" id="L58">        this.lblPaisVacio.setVisible(false);</span>
-<span class="nc" id="L59">    }</span>
+<span class="nc" id="L59">        this.lblValidarFecha.setVisible(false);</span>
+<span class="nc" id="L60">        this.lblFechaInvalida.setVisible(false);</span>
+<span class="nc" id="L61">        this.lblValidarFechaGrad.setVisible(false);</span>
+<span class="nc" id="L62">        this.lblFechaInvalidaGrad.setVisible(false);</span>
+<span class="nc" id="L63">    }</span>
 
     private void cargarListaPaisesGraduacion() {
-<span class="nc" id="L62">        DefaultComboBoxModel modelo = new DefaultComboBoxModel();</span>
-<span class="nc" id="L63">        ArrayList&lt;String&gt; paisesEnSistema = sistema.devolverListaPaises();</span>
-<span class="nc" id="L64">        this.listaPaisGraduacion.setModel(modelo);</span>
-<span class="nc" id="L65">        this.listaPaisGraduacion.addItem(&quot;Seleccione...&quot;);</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">        for (int i = 0; i &lt; paisesEnSistema.size(); i++) {</span>
-<span class="nc" id="L67">            this.listaPaisGraduacion.addItem(paisesEnSistema.get(i));</span>
+<span class="nc" id="L66">        DefaultComboBoxModel modelo = new DefaultComboBoxModel();</span>
+<span class="nc" id="L67">        ArrayList&lt;String&gt; paisesEnSistema = sistema.devolverListaPaises();</span>
+<span class="nc" id="L68">        this.listaPaisGraduacion.setModel(modelo);</span>
+<span class="nc" id="L69">        this.listaPaisGraduacion.addItem(&quot;Seleccione...&quot;);</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        for (int i = 0; i &lt; paisesEnSistema.size(); i++) {</span>
+<span class="nc" id="L71">            this.listaPaisGraduacion.addItem(paisesEnSistema.get(i));</span>
         }
-<span class="nc" id="L69">    }</span>
+<span class="nc" id="L73">    }</span>
 
-    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion) {
-<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (nombre.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L73">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L74">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L75">            this.lblNombreVacio.setVisible(true);</span>
+    private void mostrarErrores(String nombre, String apellido, String tituloProfesional, String paisGraduacion, Calendar hoy, Calendar fecha, Calendar fechaGrad) {
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if (nombre.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L77">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L78">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L79">            this.lblNombreVacio.setVisible(true);</span>
         }
-<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (apellido.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L78">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L79">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L80">            this.lblApellidoVacio.setVisible(true);</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        if (apellido.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L82">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L83">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L84">            this.lblApellidoVacio.setVisible(true);</span>
         }
-<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (tituloProfesional.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L83">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L84">            this.lblValidarTituloProfesional.setVisible(true);</span>
-<span class="nc" id="L85">            this.lblTituloVacio.setVisible(true);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if (tituloProfesional.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L87">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L88">            this.lblValidarTituloProfesional.setVisible(true);</span>
+<span class="nc" id="L89">            this.lblTituloVacio.setVisible(true);</span>
         }
-<span class="nc bnc" id="L87" title="All 2 branches missed.">        if (paisGraduacion.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L88">            this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L89">            this.lblValidarPaisGraduacion.setVisible(true);</span>
-<span class="nc" id="L90">            this.lblPaisVacio.setVisible(true);</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (paisGraduacion.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L92">            this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L93">            this.lblValidarPaisGraduacion.setVisible(true);</span>
+<span class="nc" id="L94">            this.lblPaisVacio.setVisible(true);</span>
         }
-<span class="nc" id="L92">    }</span>
+<span class="nc bnc" id="L96" title="All 4 branches missed.">        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0 || fecha.getTime().compareTo(fechaGrad.getTime()) &gt;= 0;</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if (fechaInvalida) {</span>
+<span class="nc" id="L98">            this.lblValidarFecha.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L99">            this.lblValidarFecha.setVisible(true);</span>
+<span class="nc" id="L100">            this.lblFechaInvalida.setVisible(true);</span>
+        }
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        boolean fechaGradInvalida = fechaGrad.getTime().compareTo(hoy.getTime()) == 0;</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if (fechaGradInvalida) {</span>
+<span class="nc" id="L104">            this.lblValidarFechaGrad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L105">            this.lblValidarFechaGrad.setVisible(true);</span>
+<span class="nc" id="L106">            this.lblFechaInvalidaGrad.setVisible(true);</span>
+        }
+        
+<span class="nc" id="L109">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,460 +117,418 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L103">        panel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L104">        lblTituloVentana = new javax.swing.JLabel();</span>
-<span class="nc" id="L105">        btnHome = new javax.swing.JButton();</span>
-<span class="nc" id="L106">        icono = new javax.swing.JLabel();</span>
-<span class="nc" id="L107">        panel2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L108">        lblNuevoProfesional = new javax.swing.JLabel();</span>
-<span class="nc" id="L109">        lblIconoNuevoProfesional = new javax.swing.JLabel();</span>
-<span class="nc" id="L110">        lblNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L111">        lblApellido = new javax.swing.JLabel();</span>
-<span class="nc" id="L112">        txtNombre = new javax.swing.JTextField();</span>
-<span class="nc" id="L113">        txtApellido = new javax.swing.JTextField();</span>
-<span class="nc" id="L114">        lblTituloProfesional = new javax.swing.JLabel();</span>
-<span class="nc" id="L115">        btnIngresarProfesionalASistema = new javax.swing.JButton();</span>
-<span class="nc" id="L116">        lblPaisGraduacion = new javax.swing.JLabel();</span>
-<span class="nc" id="L117">        listaPaisGraduacion = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L118">        listaTituloProfesional = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L119">        lblFechaNac = new javax.swing.JLabel();</span>
-<span class="nc" id="L120">        dateChooserFechaNacimiento = new datechooser.beans.DateChooserCombo();</span>
-<span class="nc" id="L121">        btnIngresarFotoPerfil = new javax.swing.JButton();</span>
-<span class="nc" id="L122">        lblFechaGraduacion = new javax.swing.JLabel();</span>
-<span class="nc" id="L123">        dateChooserFechaGraduacion = new datechooser.beans.DateChooserCombo();</span>
-<span class="nc" id="L124">        lblValidarNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L125">        lblValidarApellido = new javax.swing.JLabel();</span>
-<span class="nc" id="L126">        lblValidarTituloProfesional = new javax.swing.JLabel();</span>
-<span class="nc" id="L127">        lblValidarPaisGraduacion = new javax.swing.JLabel();</span>
-<span class="nc" id="L128">        lblDatosIncorrectos = new javax.swing.JLabel();</span>
-<span class="nc" id="L129">        lblNombreVacio = new javax.swing.JLabel();</span>
-<span class="nc" id="L130">        lblTituloVacio = new javax.swing.JLabel();</span>
-<span class="nc" id="L131">        lblPaisVacio = new javax.swing.JLabel();</span>
-<span class="nc" id="L132">        lblApellidoVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L120">        panel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L121">        lblTituloVentana = new javax.swing.JLabel();</span>
+<span class="nc" id="L122">        btnHome = new javax.swing.JButton();</span>
+<span class="nc" id="L123">        icono = new javax.swing.JLabel();</span>
+<span class="nc" id="L124">        panel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L125">        lblNuevoProfesional = new javax.swing.JLabel();</span>
+<span class="nc" id="L126">        lblIconoNuevoProfesional = new javax.swing.JLabel();</span>
+<span class="nc" id="L127">        lblNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L128">        lblApellido = new javax.swing.JLabel();</span>
+<span class="nc" id="L129">        txtNombre = new javax.swing.JTextField();</span>
+<span class="nc" id="L130">        txtApellido = new javax.swing.JTextField();</span>
+<span class="nc" id="L131">        lblTituloProfesional = new javax.swing.JLabel();</span>
+<span class="nc" id="L132">        btnIngresarProfesionalASistema = new javax.swing.JButton();</span>
+<span class="nc" id="L133">        lblPaisGraduacion = new javax.swing.JLabel();</span>
+<span class="nc" id="L134">        listaPaisGraduacion = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L135">        listaTituloProfesional = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L136">        lblFechaNac = new javax.swing.JLabel();</span>
+<span class="nc" id="L137">        dateChooserFechaNacimiento = new datechooser.beans.DateChooserCombo();</span>
+<span class="nc" id="L138">        btnIngresarFotoPerfil = new javax.swing.JButton();</span>
+<span class="nc" id="L139">        lblFechaGraduacion = new javax.swing.JLabel();</span>
+<span class="nc" id="L140">        dateChooserFechaGraduacion = new datechooser.beans.DateChooserCombo();</span>
+<span class="nc" id="L141">        lblValidarNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L142">        lblValidarApellido = new javax.swing.JLabel();</span>
+<span class="nc" id="L143">        lblValidarTituloProfesional = new javax.swing.JLabel();</span>
+<span class="nc" id="L144">        lblValidarPaisGraduacion = new javax.swing.JLabel();</span>
+<span class="nc" id="L145">        lblDatosIncorrectos = new javax.swing.JLabel();</span>
+<span class="nc" id="L146">        lblNombreVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L147">        lblTituloVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L148">        lblPaisVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L149">        lblApellidoVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L150">        lblFechaInvalida = new javax.swing.JLabel();</span>
+<span class="nc" id="L151">        lblValidarFecha = new javax.swing.JLabel();</span>
+<span class="nc" id="L152">        lblValidarFechaGrad = new javax.swing.JLabel();</span>
+<span class="nc" id="L153">        lblFechaInvalidaGrad = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L134">        setMinimumSize(new java.awt.Dimension(1060, 800));</span>
+<span class="nc" id="L155">        setMinimumSize(new java.awt.Dimension(1060, 800));</span>
 
-<span class="nc" id="L136">        panel1.setBackground(new java.awt.Color(164, 211, 249));</span>
-<span class="nc" id="L137">        panel1.setMaximumSize(new java.awt.Dimension(270, 800));</span>
-<span class="nc" id="L138">        panel1.setMinimumSize(new java.awt.Dimension(270, 800));</span>
+<span class="nc" id="L157">        panel1.setBackground(new java.awt.Color(164, 211, 249));</span>
+<span class="nc" id="L158">        panel1.setMaximumSize(new java.awt.Dimension(270, 800));</span>
+<span class="nc" id="L159">        panel1.setMinimumSize(new java.awt.Dimension(270, 800));</span>
 
-<span class="nc" id="L140">        lblTituloVentana.setFont(new java.awt.Font(&quot;Segoe Script&quot;, 1, 50)); // NOI18N</span>
-<span class="nc" id="L141">        lblTituloVentana.setForeground(new java.awt.Color(0, 51, 153));</span>
-<span class="nc" id="L142">        lblTituloVentana.setText(&quot;Broccoli&quot;);</span>
+<span class="nc" id="L161">        lblTituloVentana.setFont(new java.awt.Font(&quot;Segoe Script&quot;, 1, 50)); // NOI18N</span>
+<span class="nc" id="L162">        lblTituloVentana.setForeground(new java.awt.Color(0, 51, 153));</span>
+<span class="nc" id="L163">        lblTituloVentana.setText(&quot;Broccoli&quot;);</span>
 
-<span class="nc" id="L144">        btnHome.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L145">        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoVolverAtras.png&quot;))); // NOI18N</span>
-<span class="nc" id="L146">        btnHome.setBorder(null);</span>
-<span class="nc" id="L147">        btnHome.setBorderPainted(false);</span>
-<span class="nc" id="L148">        btnHome.setContentAreaFilled(false);</span>
-<span class="nc" id="L149">        btnHome.setFocusPainted(false);</span>
-<span class="nc" id="L150">        btnHome.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L165">        btnHome.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L166">        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoVolverAtras.png&quot;))); // NOI18N</span>
+<span class="nc" id="L167">        btnHome.setBorder(null);</span>
+<span class="nc" id="L168">        btnHome.setBorderPainted(false);</span>
+<span class="nc" id="L169">        btnHome.setContentAreaFilled(false);</span>
+<span class="nc" id="L170">        btnHome.setFocusPainted(false);</span>
+<span class="nc" id="L171">        btnHome.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L152">                btnHomeActionPerformed(evt);</span>
-<span class="nc" id="L153">            }</span>
+<span class="nc" id="L173">                btnHomeActionPerformed(evt);</span>
+<span class="nc" id="L174">            }</span>
         });
 
-<span class="nc" id="L156">        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/IconoBrocoli.png&quot;))); // NOI18N</span>
+<span class="nc" id="L177">        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/IconoBrocoli.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L158">        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);</span>
-<span class="nc" id="L159">        panel1.setLayout(panel1Layout);</span>
-<span class="nc" id="L160">        panel1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L161">            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L162">            .addGroup(panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L163">                .addContainerGap()</span>
-<span class="nc" id="L164">                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L165">                    .addGroup(panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L166">                        .addComponent(btnHome)</span>
-<span class="nc" id="L167">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L168">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L169">                        .addGap(0, 12, Short.MAX_VALUE)</span>
-<span class="nc" id="L170">                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L171">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L172">                                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L173">                                .addGap(26, 26, 26))</span>
-<span class="nc" id="L174">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L175">                                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L176">                                .addContainerGap())))))</span>
+<span class="nc" id="L179">        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);</span>
+<span class="nc" id="L180">        panel1.setLayout(panel1Layout);</span>
+<span class="nc" id="L181">        panel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L182">            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L183">            .addGroup(panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L184">                .addContainerGap()</span>
+<span class="nc" id="L185">                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L186">                    .addGroup(panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L187">                        .addComponent(btnHome)</span>
+<span class="nc" id="L188">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L189">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L190">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L191">                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L192">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L193">                                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L194">                                .addGap(26, 26, 26))</span>
+<span class="nc" id="L195">                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L196">                                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L197">                                .addContainerGap())))))</span>
         );
-<span class="nc" id="L178">        panel1Layout.setVerticalGroup(</span>
-<span class="nc" id="L179">            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L180">            .addGroup(panel1Layout.createSequentialGroup()</span>
-<span class="nc" id="L181">                .addContainerGap()</span>
-<span class="nc" id="L182">                .addComponent(btnHome)</span>
-<span class="nc" id="L183">                .addGap(116, 116, 116)</span>
-<span class="nc" id="L184">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L185">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L186">                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L187">                .addContainerGap(341, Short.MAX_VALUE))</span>
+<span class="nc" id="L199">        panel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L200">            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L201">            .addGroup(panel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L202">                .addContainerGap()</span>
+<span class="nc" id="L203">                .addComponent(btnHome)</span>
+<span class="nc" id="L204">                .addGap(116, 116, 116)</span>
+<span class="nc" id="L205">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L206">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L207">                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L208">                .addContainerGap(354, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L190">        panel2.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L191">        panel2.setForeground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L192">        panel2.setMaximumSize(new java.awt.Dimension(800, 800));</span>
-<span class="nc" id="L193">        panel2.setMinimumSize(new java.awt.Dimension(800, 800));</span>
-<span class="nc" id="L194">        panel2.setLayout(null);</span>
+<span class="nc" id="L211">        panel2.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L212">        panel2.setForeground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L213">        panel2.setMaximumSize(new java.awt.Dimension(800, 800));</span>
+<span class="nc" id="L214">        panel2.setMinimumSize(new java.awt.Dimension(800, 800));</span>
+<span class="nc" id="L215">        panel2.setLayout(null);</span>
 
-<span class="nc" id="L196">        lblNuevoProfesional.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 65)); // NOI18N</span>
-<span class="nc" id="L197">        lblNuevoProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L198">        lblNuevoProfesional.setText(&quot;Nuevo Profesional&quot;);</span>
-<span class="nc" id="L199">        panel2.add(lblNuevoProfesional);</span>
-<span class="nc" id="L200">        lblNuevoProfesional.setBounds(149, 27, 530, 91);</span>
+<span class="nc" id="L217">        lblNuevoProfesional.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 65)); // NOI18N</span>
+<span class="nc" id="L218">        lblNuevoProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L219">        lblNuevoProfesional.setText(&quot;Nuevo Profesional&quot;);</span>
+<span class="nc" id="L220">        panel2.add(lblNuevoProfesional);</span>
+<span class="nc" id="L221">        lblNuevoProfesional.setBounds(149, 27, 530, 91);</span>
 
-<span class="nc" id="L202">        lblIconoNuevoProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
-<span class="nc" id="L203">        panel2.add(lblIconoNuevoProfesional);</span>
-<span class="nc" id="L204">        lblIconoNuevoProfesional.setBounds(31, 27, 100, 100);</span>
+<span class="nc" id="L223">        lblIconoNuevoProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
+<span class="nc" id="L224">        panel2.add(lblIconoNuevoProfesional);</span>
+<span class="nc" id="L225">        lblIconoNuevoProfesional.setBounds(31, 27, 100, 100);</span>
 
-<span class="nc" id="L206">        lblNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L207">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L208">        lblNombre.setText(&quot;Nombre&quot;);</span>
-<span class="nc" id="L209">        panel2.add(lblNombre);</span>
-<span class="nc" id="L210">        lblNombre.setBounds(30, 180, 134, 39);</span>
+<span class="nc" id="L227">        lblNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L228">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L229">        lblNombre.setText(&quot;Nombre&quot;);</span>
+<span class="nc" id="L230">        panel2.add(lblNombre);</span>
+<span class="nc" id="L231">        lblNombre.setBounds(30, 180, 134, 39);</span>
 
-<span class="nc" id="L212">        lblApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L213">        lblApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L214">        lblApellido.setText(&quot;Apellido&quot;);</span>
-<span class="nc" id="L215">        panel2.add(lblApellido);</span>
-<span class="nc" id="L216">        lblApellido.setBounds(31, 223, 151, 39);</span>
+<span class="nc" id="L233">        lblApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L234">        lblApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L235">        lblApellido.setText(&quot;Apellido&quot;);</span>
+<span class="nc" id="L236">        panel2.add(lblApellido);</span>
+<span class="nc" id="L237">        lblApellido.setBounds(31, 223, 151, 39);</span>
 
-<span class="nc" id="L218">        txtNombre.setBackground(new java.awt.Color(227, 227, 227));</span>
-<span class="nc" id="L219">        txtNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
-<span class="nc" id="L220">        txtNombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
-<span class="nc" id="L221">        txtNombre.setMaximumSize(new java.awt.Dimension(6, 26));</span>
-<span class="nc" id="L222">        txtNombre.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+<span class="nc" id="L239">        txtNombre.setBackground(new java.awt.Color(227, 227, 227));</span>
+<span class="nc" id="L240">        txtNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
+<span class="nc" id="L241">        txtNombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L242">        txtNombre.setMaximumSize(new java.awt.Dimension(6, 26));</span>
+<span class="nc" id="L243">        txtNombre.addFocusListener(new java.awt.event.FocusAdapter() {</span>
             public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L224">                txtNombreFocusLost(evt);</span>
-<span class="nc" id="L225">            }</span>
+<span class="nc" id="L245">                txtNombreFocusLost(evt);</span>
+<span class="nc" id="L246">            }</span>
         });
-<span class="nc" id="L227">        panel2.add(txtNombre);</span>
-<span class="nc" id="L228">        txtNombre.setBounds(220, 180, 176, 38);</span>
+<span class="nc" id="L248">        panel2.add(txtNombre);</span>
+<span class="nc" id="L249">        txtNombre.setBounds(220, 180, 176, 38);</span>
 
-<span class="nc" id="L230">        txtApellido.setBackground(new java.awt.Color(227, 227, 227));</span>
-<span class="nc" id="L231">        txtApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
-<span class="nc" id="L232">        txtApellido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
-<span class="nc" id="L233">        txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+<span class="nc" id="L251">        txtApellido.setBackground(new java.awt.Color(227, 227, 227));</span>
+<span class="nc" id="L252">        txtApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
+<span class="nc" id="L253">        txtApellido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L254">        txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {</span>
             public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L235">                txtApellidoFocusLost(evt);</span>
-<span class="nc" id="L236">            }</span>
+<span class="nc" id="L256">                txtApellidoFocusLost(evt);</span>
+<span class="nc" id="L257">            }</span>
         });
-<span class="nc" id="L238">        panel2.add(txtApellido);</span>
-<span class="nc" id="L239">        txtApellido.setBounds(220, 230, 176, 33);</span>
+<span class="nc" id="L259">        panel2.add(txtApellido);</span>
+<span class="nc" id="L260">        txtApellido.setBounds(220, 230, 176, 33);</span>
 
-<span class="nc" id="L241">        lblTituloProfesional.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L242">        lblTituloProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L243">        lblTituloProfesional.setText(&quot;Seleccione el título profesional&quot;);</span>
-<span class="nc" id="L244">        panel2.add(lblTituloProfesional);</span>
-<span class="nc" id="L245">        lblTituloProfesional.setBounds(31, 377, 402, 39);</span>
+<span class="nc" id="L262">        lblTituloProfesional.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L263">        lblTituloProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L264">        lblTituloProfesional.setText(&quot;Seleccione el título profesional&quot;);</span>
+<span class="nc" id="L265">        panel2.add(lblTituloProfesional);</span>
+<span class="nc" id="L266">        lblTituloProfesional.setBounds(31, 377, 402, 39);</span>
 
-<span class="nc" id="L247">        btnIngresarProfesionalASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoConfirmar.png&quot;))); // NOI18N</span>
-<span class="nc" id="L248">        btnIngresarProfesionalASistema.setBorderPainted(false);</span>
-<span class="nc" id="L249">        btnIngresarProfesionalASistema.setContentAreaFilled(false);</span>
-<span class="nc" id="L250">        btnIngresarProfesionalASistema.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L268">        btnIngresarProfesionalASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoConfirmar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L269">        btnIngresarProfesionalASistema.setBorderPainted(false);</span>
+<span class="nc" id="L270">        btnIngresarProfesionalASistema.setContentAreaFilled(false);</span>
+<span class="nc" id="L271">        btnIngresarProfesionalASistema.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L252">                btnIngresarProfesionalASistemaActionPerformed(evt);</span>
-<span class="nc" id="L253">            }</span>
+<span class="nc" id="L273">                btnIngresarProfesionalASistemaActionPerformed(evt);</span>
+<span class="nc" id="L274">            }</span>
         });
-<span class="nc" id="L255">        panel2.add(btnIngresarProfesionalASistema);</span>
-<span class="nc" id="L256">        btnIngresarProfesionalASistema.setBounds(630, 650, 115, 94);</span>
+<span class="nc" id="L276">        panel2.add(btnIngresarProfesionalASistema);</span>
+<span class="nc" id="L277">        btnIngresarProfesionalASistema.setBounds(630, 650, 115, 94);</span>
 
-<span class="nc" id="L258">        lblPaisGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L259">        lblPaisGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L260">        lblPaisGraduacion.setText(&quot;Seleccione el pais de graduación&quot;);</span>
-<span class="nc" id="L261">        panel2.add(lblPaisGraduacion);</span>
-<span class="nc" id="L262">        lblPaisGraduacion.setBounds(31, 607, 436, 39);</span>
+<span class="nc" id="L279">        lblPaisGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L280">        lblPaisGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L281">        lblPaisGraduacion.setText(&quot;Seleccione el pais de graduación&quot;);</span>
+<span class="nc" id="L282">        panel2.add(lblPaisGraduacion);</span>
+<span class="nc" id="L283">        lblPaisGraduacion.setBounds(31, 607, 436, 39);</span>
 
-<span class="nc" id="L264">        listaPaisGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L265">        listaPaisGraduacion.addItemListener(new java.awt.event.ItemListener() {</span>
+<span class="nc" id="L285">        listaPaisGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L286">        listaPaisGraduacion.addItemListener(new java.awt.event.ItemListener() {</span>
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-<span class="nc" id="L267">                listaPaisGraduacionItemStateChanged(evt);</span>
-<span class="nc" id="L268">            }</span>
+<span class="nc" id="L288">                listaPaisGraduacionItemStateChanged(evt);</span>
+<span class="nc" id="L289">            }</span>
         });
-<span class="nc" id="L270">        panel2.add(listaPaisGraduacion);</span>
-<span class="nc" id="L271">        listaPaisGraduacion.setBounds(31, 663, 440, 31);</span>
+<span class="nc" id="L291">        panel2.add(listaPaisGraduacion);</span>
+<span class="nc" id="L292">        listaPaisGraduacion.setBounds(31, 663, 440, 31);</span>
 
-<span class="nc" id="L273">        listaTituloProfesional.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L274">        listaTituloProfesional.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Seleccione...&quot;, &quot;Ciencia de los alimentos&quot;, &quot;Entrenador físico e instructor aeróbico&quot;, &quot;Ingeniería en alimentos&quot;, &quot;Licenciatura en nutrición&quot;, &quot;Maestro de salud y educación física&quot;, &quot;Medicina&quot;, &quot;Nutrición Humana y Dietética&quot;, &quot;Nutricionista&quot;, &quot;Técnicatura en Gestión Gastronómica&quot;, &quot;Técnicatura en tecnología de alimentos&quot;, &quot;Técnico operador de alimentos&quot;, &quot;Otro...&quot; }));</span>
-<span class="nc" id="L275">        listaTituloProfesional.addItemListener(new java.awt.event.ItemListener() {</span>
+<span class="nc" id="L294">        listaTituloProfesional.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L295">        listaTituloProfesional.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Seleccione...&quot;, &quot;Ciencia de los alimentos&quot;, &quot;Entrenador físico e instructor aeróbico&quot;, &quot;Ingeniería en alimentos&quot;, &quot;Licenciatura en nutrición&quot;, &quot;Maestro de salud y educación física&quot;, &quot;Medicina&quot;, &quot;Nutrición Humana y Dietética&quot;, &quot;Nutricionista&quot;, &quot;Técnicatura en Gestión Gastronómica&quot;, &quot;Técnicatura en tecnología de alimentos&quot;, &quot;Técnico operador de alimentos&quot;, &quot;Otro...&quot; }));</span>
+<span class="nc" id="L296">        listaTituloProfesional.addItemListener(new java.awt.event.ItemListener() {</span>
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-<span class="nc" id="L277">                listaTituloProfesionalItemStateChanged(evt);</span>
-<span class="nc" id="L278">            }</span>
+<span class="nc" id="L298">                listaTituloProfesionalItemStateChanged(evt);</span>
+<span class="nc" id="L299">            }</span>
         });
-<span class="nc" id="L280">        panel2.add(listaTituloProfesional);</span>
-<span class="nc" id="L281">        listaTituloProfesional.setBounds(31, 421, 440, 31);</span>
+<span class="nc" id="L301">        panel2.add(listaTituloProfesional);</span>
+<span class="nc" id="L302">        listaTituloProfesional.setBounds(31, 421, 440, 31);</span>
 
-<span class="nc" id="L283">        lblFechaNac.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L284">        lblFechaNac.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L285">        lblFechaNac.setText(&quot;Fecha de nacimiento&quot;);</span>
-<span class="nc" id="L286">        panel2.add(lblFechaNac);</span>
-<span class="nc" id="L287">        lblFechaNac.setBounds(31, 292, 338, 39);</span>
+<span class="nc" id="L304">        lblFechaNac.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L305">        lblFechaNac.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L306">        lblFechaNac.setText(&quot;Fecha de nacimiento&quot;);</span>
+<span class="nc" id="L307">        panel2.add(lblFechaNac);</span>
+<span class="nc" id="L308">        lblFechaNac.setBounds(31, 292, 338, 39);</span>
 
-<span class="nc" id="L289">        dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList(&quot;Swing&quot;,</span>
-            new datechooser.view.appearance.ViewAppearance(&quot;custom&quot;,
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    true,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 255),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(128, 128, 128),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(255, 0, 0),
-                    false,
-                    false,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                (datechooser.view.BackRenderer)null,
-                false,
-                true)));
-<span class="nc" id="L330">    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
-<span class="nc" id="L331">    dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
-<span class="nc" id="L332">    dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
-<span class="nc" id="L333">    panel2.add(dateChooserFechaNacimiento);</span>
-<span class="nc" id="L334">    dateChooserFechaNacimiento.setBounds(401, 292, 183, 38);</span>
+<span class="nc" id="L310">        dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
+<span class="nc" id="L311">        dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
+<span class="nc" id="L312">        dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
+<span class="nc" id="L313">        panel2.add(dateChooserFechaNacimiento);</span>
+<span class="nc" id="L314">        dateChooserFechaNacimiento.setBounds(401, 292, 183, 38);</span>
 
-<span class="nc" id="L336">    btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/agregarFotoUsuario.png&quot;))); // NOI18N</span>
-<span class="nc" id="L337">    btnIngresarFotoPerfil.setBorderPainted(false);</span>
-<span class="nc" id="L338">    btnIngresarFotoPerfil.setContentAreaFilled(false);</span>
-<span class="nc" id="L339">    btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {</span>
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L341">            btnIngresarFotoPerfilActionPerformed(evt);</span>
-<span class="nc" id="L342">        }</span>
-    });
-<span class="nc" id="L344">    panel2.add(btnIngresarFotoPerfil);</span>
-<span class="nc" id="L345">    btnIngresarFotoPerfil.setBounds(579, 163, 158, 102);</span>
+<span class="nc" id="L316">        btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/agregarFotoUsuario.png&quot;))); // NOI18N</span>
+<span class="nc" id="L317">        btnIngresarFotoPerfil.setBorderPainted(false);</span>
+<span class="nc" id="L318">        btnIngresarFotoPerfil.setContentAreaFilled(false);</span>
+<span class="nc" id="L319">        btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L321">                btnIngresarFotoPerfilActionPerformed(evt);</span>
+<span class="nc" id="L322">            }</span>
+        });
+<span class="nc" id="L324">        panel2.add(btnIngresarFotoPerfil);</span>
+<span class="nc" id="L325">        btnIngresarFotoPerfil.setBounds(579, 163, 158, 102);</span>
 
-<span class="nc" id="L347">    lblFechaGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L348">    lblFechaGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L349">    lblFechaGraduacion.setText(&quot;Seleccione la fecha de graduación&quot;);</span>
-<span class="nc" id="L350">    panel2.add(lblFechaGraduacion);</span>
-<span class="nc" id="L351">    lblFechaGraduacion.setBounds(31, 489, 453, 39);</span>
+<span class="nc" id="L327">        lblFechaGraduacion.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L328">        lblFechaGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L329">        lblFechaGraduacion.setText(&quot;Seleccione la fecha de graduación&quot;);</span>
+<span class="nc" id="L330">        panel2.add(lblFechaGraduacion);</span>
+<span class="nc" id="L331">        lblFechaGraduacion.setBounds(31, 489, 453, 39);</span>
 
-<span class="nc" id="L353">    dateChooserFechaGraduacion.setCurrentView(new datechooser.view.appearance.AppearancesList(&quot;Swing&quot;,</span>
-        new datechooser.view.appearance.ViewAppearance(&quot;custom&quot;,
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(0, 0, 0),
-                new java.awt.Color(0, 0, 255),
-                false,
-                true,
-                new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(0, 0, 0),
-                new java.awt.Color(0, 0, 255),
-                true,
-                true,
-                new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(0, 0, 255),
-                new java.awt.Color(0, 0, 255),
-                false,
-                true,
-                new datechooser.view.appearance.swing.ButtonPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(128, 128, 128),
-                new java.awt.Color(0, 0, 255),
-                false,
-                true,
-                new datechooser.view.appearance.swing.LabelPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(0, 0, 0),
-                new java.awt.Color(0, 0, 255),
-                false,
-                true,
-                new datechooser.view.appearance.swing.LabelPainter()),
-            new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                new java.awt.Color(0, 0, 0),
-                new java.awt.Color(255, 0, 0),
-                false,
-                false,
-                new datechooser.view.appearance.swing.ButtonPainter()),
-            (datechooser.view.BackRenderer)null,
-            false,
-            true)));
-<span class="nc" id="L394">dateChooserFechaGraduacion.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
-<span class="nc" id="L395">dateChooserFechaGraduacion.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
-<span class="nc" id="L396">dateChooserFechaGraduacion.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
-<span class="nc" id="L397">panel2.add(dateChooserFechaGraduacion);</span>
-<span class="nc" id="L398">dateChooserFechaGraduacion.setBounds(31, 552, 183, 37);</span>
+<span class="nc" id="L333">        dateChooserFechaGraduacion.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
+<span class="nc" id="L334">        dateChooserFechaGraduacion.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
+<span class="nc" id="L335">        dateChooserFechaGraduacion.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
+<span class="nc" id="L336">        panel2.add(dateChooserFechaGraduacion);</span>
+<span class="nc" id="L337">        dateChooserFechaGraduacion.setBounds(31, 552, 183, 37);</span>
 
-<span class="nc" id="L400">lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L401">lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L402">panel2.add(lblValidarNombre);</span>
-<span class="nc" id="L403">lblValidarNombre.setBounds(420, 180, 32, 44);</span>
+<span class="nc" id="L339">        lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L340">        lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L341">        panel2.add(lblValidarNombre);</span>
+<span class="nc" id="L342">        lblValidarNombre.setBounds(420, 180, 32, 44);</span>
 
-<span class="nc" id="L405">lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L406">lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L407">panel2.add(lblValidarApellido);</span>
-<span class="nc" id="L408">lblValidarApellido.setBounds(420, 220, 32, 44);</span>
+<span class="nc" id="L344">        lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L345">        lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L346">        panel2.add(lblValidarApellido);</span>
+<span class="nc" id="L347">        lblValidarApellido.setBounds(420, 220, 32, 44);</span>
 
-<span class="nc" id="L410">lblValidarTituloProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L411">lblValidarTituloProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L412">panel2.add(lblValidarTituloProfesional);</span>
-<span class="nc" id="L413">lblValidarTituloProfesional.setBounds(490, 410, 32, 44);</span>
+<span class="nc" id="L349">        lblValidarTituloProfesional.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L350">        lblValidarTituloProfesional.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L351">        panel2.add(lblValidarTituloProfesional);</span>
+<span class="nc" id="L352">        lblValidarTituloProfesional.setBounds(490, 410, 32, 44);</span>
 
-<span class="nc" id="L415">lblValidarPaisGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L416">lblValidarPaisGraduacion.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L417">panel2.add(lblValidarPaisGraduacion);</span>
-<span class="nc" id="L418">lblValidarPaisGraduacion.setBounds(490, 660, 32, 44);</span>
+<span class="nc" id="L354">        lblValidarPaisGraduacion.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L355">        lblValidarPaisGraduacion.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L356">        panel2.add(lblValidarPaisGraduacion);</span>
+<span class="nc" id="L357">        lblValidarPaisGraduacion.setBounds(490, 660, 32, 44);</span>
 
-<span class="nc" id="L420">lblDatosIncorrectos.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L421">lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));</span>
-<span class="nc" id="L422">lblDatosIncorrectos.setText(&quot;Aún quedan datos incorrectos&quot;);</span>
-<span class="nc" id="L423">panel2.add(lblDatosIncorrectos);</span>
-<span class="nc" id="L424">lblDatosIncorrectos.setBounds(330, 720, 312, 26);</span>
+<span class="nc" id="L359">        lblDatosIncorrectos.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L360">        lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));</span>
+<span class="nc" id="L361">        lblDatosIncorrectos.setText(&quot;Aún quedan datos incorrectos&quot;);</span>
+<span class="nc" id="L362">        panel2.add(lblDatosIncorrectos);</span>
+<span class="nc" id="L363">        lblDatosIncorrectos.setBounds(330, 720, 312, 26);</span>
 
-<span class="nc" id="L426">lblNombreVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L427">lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L428">lblNombreVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L429">panel2.add(lblNombreVacio);</span>
-<span class="nc" id="L430">lblNombreVacio.setBounds(460, 180, 134, 38);</span>
+<span class="nc" id="L365">        lblNombreVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L366">        lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L367">        lblNombreVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L368">        panel2.add(lblNombreVacio);</span>
+<span class="nc" id="L369">        lblNombreVacio.setBounds(460, 180, 134, 38);</span>
 
-<span class="nc" id="L432">lblTituloVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L433">lblTituloVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L434">lblTituloVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L435">panel2.add(lblTituloVacio);</span>
-<span class="nc" id="L436">lblTituloVacio.setBounds(530, 410, 134, 38);</span>
+<span class="nc" id="L371">        lblTituloVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L372">        lblTituloVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L373">        lblTituloVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L374">        panel2.add(lblTituloVacio);</span>
+<span class="nc" id="L375">        lblTituloVacio.setBounds(530, 410, 134, 38);</span>
 
-<span class="nc" id="L438">lblPaisVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L439">lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L440">lblPaisVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L441">panel2.add(lblPaisVacio);</span>
-<span class="nc" id="L442">lblPaisVacio.setBounds(530, 660, 120, 38);</span>
+<span class="nc" id="L377">        lblPaisVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L378">        lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L379">        lblPaisVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L380">        panel2.add(lblPaisVacio);</span>
+<span class="nc" id="L381">        lblPaisVacio.setBounds(530, 660, 120, 38);</span>
 
-<span class="nc" id="L444">lblApellidoVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L445">lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L446">lblApellidoVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L447">panel2.add(lblApellidoVacio);</span>
-<span class="nc" id="L448">lblApellidoVacio.setBounds(460, 220, 134, 38);</span>
+<span class="nc" id="L383">        lblApellidoVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L384">        lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L385">        lblApellidoVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L386">        panel2.add(lblApellidoVacio);</span>
+<span class="nc" id="L387">        lblApellidoVacio.setBounds(450, 220, 134, 38);</span>
 
-<span class="nc" id="L450">javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L451">this.setLayout(layout);</span>
-<span class="nc" id="L452">layout.setHorizontalGroup(</span>
-<span class="nc" id="L453">    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L454">    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L455">        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L456">        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L457">        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 781, Short.MAX_VALUE))</span>
-    );
-<span class="nc" id="L459">    layout.setVerticalGroup(</span>
-<span class="nc" id="L460">        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L461">        .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L462">        .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-    );
-<span class="nc" id="L464">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L389">        lblFechaInvalida.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L390">        lblFechaInvalida.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L391">        lblFechaInvalida.setText(&quot;Dato Incorrecto&quot;);</span>
+<span class="nc" id="L392">        panel2.add(lblFechaInvalida);</span>
+<span class="nc" id="L393">        lblFechaInvalida.setBounds(640, 290, 150, 38);</span>
+
+<span class="nc" id="L395">        lblValidarFecha.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L396">        lblValidarFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L397">        panel2.add(lblValidarFecha);</span>
+<span class="nc" id="L398">        lblValidarFecha.setBounds(600, 290, 32, 44);</span>
+
+<span class="nc" id="L400">        lblValidarFechaGrad.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L401">        lblValidarFechaGrad.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L402">        panel2.add(lblValidarFechaGrad);</span>
+<span class="nc" id="L403">        lblValidarFechaGrad.setBounds(240, 550, 32, 44);</span>
+
+<span class="nc" id="L405">        lblFechaInvalidaGrad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L406">        lblFechaInvalidaGrad.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L407">        lblFechaInvalidaGrad.setText(&quot;Dato Incorrecto&quot;);</span>
+<span class="nc" id="L408">        panel2.add(lblFechaInvalidaGrad);</span>
+<span class="nc" id="L409">        lblFechaInvalidaGrad.setBounds(280, 550, 160, 38);</span>
+
+<span class="nc" id="L411">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L412">        this.setLayout(layout);</span>
+<span class="nc" id="L413">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L414">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L415">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L416">                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L417">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L418">                .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L420">        layout.setVerticalGroup(</span>
+<span class="nc" id="L421">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L422">            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L423">            .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L425">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-<span class="nc" id="L467">        ventana.gotoMenuPrincipal();</span>
-<span class="nc" id="L468">    }//GEN-LAST:event_btnHomeActionPerformed</span>
+<span class="nc" id="L428">        ventana.gotoMenuPrincipal();</span>
+<span class="nc" id="L429">    }//GEN-LAST:event_btnHomeActionPerformed</span>
 
     private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
-<span class="nc" id="L471">        String nombreIngresado = this.txtNombre.getText();</span>
-<span class="nc bnc" id="L472" title="All 2 branches missed.">        if (nombreIngresado.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L473">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L474">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L475">            this.lblNombreVacio.setVisible(true);</span>
+<span class="nc" id="L432">        String nombreIngresado = this.txtNombre.getText();</span>
+<span class="nc bnc" id="L433" title="All 2 branches missed.">        if (nombreIngresado.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L434">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L435">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L436">            this.lblNombreVacio.setVisible(true);</span>
         } else {
-<span class="nc" id="L477">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L478">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L479">            this.lblNombreVacio.setVisible(false);</span>
+<span class="nc" id="L438">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L439">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L440">            this.lblNombreVacio.setVisible(false);</span>
         }
-<span class="nc" id="L481">    }//GEN-LAST:event_txtNombreFocusLost</span>
+<span class="nc" id="L442">    }//GEN-LAST:event_txtNombreFocusLost</span>
 
     private void txtApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidoFocusLost
-<span class="nc" id="L484">        String apellidoIngresado = this.txtApellido.getText();</span>
-<span class="nc bnc" id="L485" title="All 2 branches missed.">        if (apellidoIngresado.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L486">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L487">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L488">            this.lblApellidoVacio.setVisible(true);</span>
+<span class="nc" id="L445">        String apellidoIngresado = this.txtApellido.getText();</span>
+<span class="nc bnc" id="L446" title="All 2 branches missed.">        if (apellidoIngresado.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L447">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L448">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L449">            this.lblApellidoVacio.setVisible(true);</span>
         } else {
-<span class="nc" id="L490">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L491">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L492">            this.lblApellidoVacio.setVisible(false);</span>
+<span class="nc" id="L451">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L452">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L453">            this.lblApellidoVacio.setVisible(false);</span>
         }
-<span class="nc" id="L494">    }//GEN-LAST:event_txtApellidoFocusLost</span>
+<span class="nc" id="L455">    }//GEN-LAST:event_txtApellidoFocusLost</span>
 
     private void btnIngresarProfesionalASistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarProfesionalASistemaActionPerformed
-<span class="nc" id="L497">        String nombre = this.txtNombre.getText();</span>
-<span class="nc" id="L498">        String apellido = this.txtApellido.getText();</span>
-<span class="nc" id="L499">        String tituloProfesional = (String) this.listaTituloProfesional.getSelectedItem();</span>
-<span class="nc" id="L500">        String paisGraduacion = (String) this.listaPaisGraduacion.getSelectedItem();</span>
-<span class="nc" id="L501">        String fechaNacimiento = this.dateChooserFechaNacimiento.getText();</span>
-<span class="nc" id="L502">        String fechaGraduacion = this.dateChooserFechaGraduacion.getText();</span>
-<span class="nc bnc" id="L503" title="All 8 branches missed.">        if (nombre.equals(&quot;&quot;) || apellido.equals(&quot;&quot;) || tituloProfesional.equals(&quot;Seleccione...&quot;) || paisGraduacion.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L504">            this.lblDatosIncorrectos.setVisible(true);</span>
-<span class="nc" id="L505">            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion);</span>
+<span class="nc" id="L458">        String nombre = this.txtNombre.getText();</span>
+<span class="nc" id="L459">        String apellido = this.txtApellido.getText();</span>
+<span class="nc" id="L460">        String tituloProfesional = (String) this.listaTituloProfesional.getSelectedItem();</span>
+<span class="nc" id="L461">        String paisGraduacion = (String) this.listaPaisGraduacion.getSelectedItem();</span>
+<span class="nc" id="L462">        String fechaNacimiento = this.dateChooserFechaNacimiento.getText();</span>
+<span class="nc" id="L463">        String fechaGraduacion = this.dateChooserFechaGraduacion.getText();</span>
+<span class="nc" id="L464">        Calendar hoy = Calendar.getInstance();</span>
+<span class="nc" id="L465">        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();</span>
+<span class="nc" id="L466">        fecha.set(Calendar.SECOND, 0);</span>
+<span class="nc" id="L467">        fecha.set(Calendar.MILLISECOND, 0);</span>
+
+<span class="nc" id="L469">        Calendar fechaGrad = this.dateChooserFechaGraduacion.getCurrent();</span>
+<span class="nc" id="L470">        fechaGrad.set(Calendar.SECOND, 0);</span>
+<span class="nc" id="L471">        fechaGrad.set(Calendar.MILLISECOND, 0);</span>
+
+<span class="nc" id="L473">        hoy.set(Calendar.MILLISECOND, 0);</span>
+<span class="nc" id="L474">        hoy.set(Calendar.SECOND, 0);</span>
+<span class="nc bnc" id="L475" title="All 2 branches missed.">        boolean fechaGradInvalida = fechaGrad.getTime().compareTo(hoy.getTime()) == 0;</span>
+<span class="nc bnc" id="L476" title="All 4 branches missed.">        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0 || fecha.getTime().compareTo(fechaGrad.getTime()) &gt;= 0;</span>
+
+<span class="nc bnc" id="L478" title="All 12 branches missed.">        if (nombre.equals(&quot;&quot;) || apellido.equals(&quot;&quot;) || tituloProfesional.equals(&quot;Seleccione...&quot;) || paisGraduacion.equals(&quot;Seleccione...&quot;) || fechaGradInvalida || fechaInvalida) {</span>
+<span class="nc" id="L479">            this.lblDatosIncorrectos.setVisible(true);</span>
+<span class="nc" id="L480">            mostrarErrores(nombre, apellido, tituloProfesional, paisGraduacion, hoy, fecha, fechaGrad);</span>
         } else {
-<span class="nc" id="L507">            this.lblDatosIncorrectos.setVisible(false);</span>
-<span class="nc" id="L508">            boolean seAgregoProfesional = sistema.crearProfesional(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, tituloProfesional, fechaGraduacion, paisGraduacion);</span>
-<span class="nc bnc" id="L509" title="All 2 branches missed.">            if (seAgregoProfesional) {</span>
-<span class="nc" id="L510">                this.txtNombre.setText(&quot;&quot;);</span>
-<span class="nc" id="L511">                this.txtApellido.setText(&quot;&quot;);</span>
-<span class="nc" id="L512">                ventana.gotoMenuPrincipal();</span>
+<span class="nc" id="L482">            this.lblDatosIncorrectos.setVisible(false);</span>
+<span class="nc" id="L483">            boolean seAgregoProfesional = sistema.crearProfesional(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, tituloProfesional, fechaGraduacion, paisGraduacion);</span>
+<span class="nc bnc" id="L484" title="All 2 branches missed.">            if (seAgregoProfesional) {</span>
+<span class="nc" id="L485">                this.txtNombre.setText(&quot;&quot;);</span>
+<span class="nc" id="L486">                this.txtApellido.setText(&quot;&quot;);</span>
+<span class="nc" id="L487">                ventana.gotoMenuPrincipal();</span>
             }
         }
-<span class="nc" id="L515">    }//GEN-LAST:event_btnIngresarProfesionalASistemaActionPerformed</span>
+<span class="nc" id="L490">    }//GEN-LAST:event_btnIngresarProfesionalASistemaActionPerformed</span>
 
     private void listaPaisGraduacionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaPaisGraduacionItemStateChanged
-<span class="nc bnc" id="L518" title="All 2 branches missed.">        if (!this.primeraVez) {</span>
-<span class="nc" id="L519">            String paisGraduacionIngresado = (String) this.listaPaisGraduacion.getSelectedItem();</span>
-<span class="nc bnc" id="L520" title="All 2 branches missed.">            if (paisGraduacionIngresado.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L521">                this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L522">                this.lblValidarPaisGraduacion.setVisible(true);</span>
-<span class="nc" id="L523">                this.lblPaisVacio.setVisible(true);</span>
+<span class="nc bnc" id="L493" title="All 2 branches missed.">        if (!this.primeraVez) {</span>
+<span class="nc" id="L494">            String paisGraduacionIngresado = (String) this.listaPaisGraduacion.getSelectedItem();</span>
+<span class="nc bnc" id="L495" title="All 2 branches missed.">            if (paisGraduacionIngresado.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L496">                this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L497">                this.lblValidarPaisGraduacion.setVisible(true);</span>
+<span class="nc" id="L498">                this.lblPaisVacio.setVisible(true);</span>
             } else {
-<span class="nc" id="L525">                this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L526">                this.lblValidarPaisGraduacion.setVisible(true);</span>
-<span class="nc" id="L527">                this.lblPaisVacio.setVisible(false);</span>
+<span class="nc" id="L500">                this.lblValidarPaisGraduacion.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L501">                this.lblValidarPaisGraduacion.setVisible(true);</span>
+<span class="nc" id="L502">                this.lblPaisVacio.setVisible(false);</span>
             }
         }
-<span class="nc" id="L530">    }//GEN-LAST:event_listaPaisGraduacionItemStateChanged</span>
+<span class="nc" id="L505">    }//GEN-LAST:event_listaPaisGraduacionItemStateChanged</span>
 
     private void listaTituloProfesionalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaTituloProfesionalItemStateChanged
-<span class="nc" id="L533">        String tituloIngresado = (String) this.listaTituloProfesional.getSelectedItem();</span>
-<span class="nc bnc" id="L534" title="All 2 branches missed.">        if (tituloIngresado.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L535">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L536">            this.lblValidarTituloProfesional.setVisible(true);</span>
-<span class="nc" id="L537">            this.lblTituloVacio.setVisible(true);</span>
+<span class="nc" id="L508">        String tituloIngresado = (String) this.listaTituloProfesional.getSelectedItem();</span>
+<span class="nc bnc" id="L509" title="All 2 branches missed.">        if (tituloIngresado.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L510">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L511">            this.lblValidarTituloProfesional.setVisible(true);</span>
+<span class="nc" id="L512">            this.lblTituloVacio.setVisible(true);</span>
         } else {
-<span class="nc" id="L539">            this.lblTituloVacio.setVisible(false);</span>
-<span class="nc" id="L540">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L541">            this.lblValidarTituloProfesional.setVisible(true);</span>
+<span class="nc" id="L514">            this.lblTituloVacio.setVisible(false);</span>
+<span class="nc" id="L515">            this.lblValidarTituloProfesional.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L516">            this.lblValidarTituloProfesional.setVisible(true);</span>
         }
-<span class="nc" id="L543">    }//GEN-LAST:event_listaTituloProfesionalItemStateChanged</span>
+<span class="nc" id="L518">    }//GEN-LAST:event_listaTituloProfesionalItemStateChanged</span>
 
     private void btnIngresarFotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarFotoPerfilActionPerformed
-<span class="nc" id="L546">        JFileChooser fileChooser = new JFileChooser();</span>
-<span class="nc" id="L547">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;PNG&quot;, &quot;png&quot;);</span>
-<span class="nc" id="L548">        fileChooser.setFileFilter(file);</span>
-<span class="nc" id="L549">        fileChooser.setAcceptAllFileFilterUsed(false);</span>
-<span class="nc" id="L550">        int imagen = fileChooser.showOpenDialog(this);</span>
-<span class="nc bnc" id="L551" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L552">            ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
-<span class="nc" id="L553">            this.btnIngresarFotoPerfil.setIcon(iconoPerfil);</span>
-<span class="nc" id="L554">            this.fotoDePerfilActual = iconoPerfil;</span>
+<span class="nc" id="L521">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L522">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;PNG&quot;, &quot;png&quot;);</span>
+<span class="nc" id="L523">        fileChooser.setFileFilter(file);</span>
+<span class="nc" id="L524">        fileChooser.setAcceptAllFileFilterUsed(false);</span>
+<span class="nc" id="L525">        int imagen = fileChooser.showOpenDialog(this);</span>
+<span class="nc bnc" id="L526" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L527">            ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
+<span class="nc" id="L528">            this.btnIngresarFotoPerfil.setIcon(iconoPerfil);</span>
+<span class="nc" id="L529">            this.fotoDePerfilActual = iconoPerfil;</span>
         }
-<span class="nc" id="L556">    }//GEN-LAST:event_btnIngresarFotoPerfilActionPerformed</span>
+<span class="nc" id="L531">    }//GEN-LAST:event_btnIngresarFotoPerfilActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -567,6 +542,8 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel lblApellidoVacio;
     private javax.swing.JLabel lblDatosIncorrectos;
     private javax.swing.JLabel lblFechaGraduacion;
+    private javax.swing.JLabel lblFechaInvalida;
+    private javax.swing.JLabel lblFechaInvalidaGrad;
     private javax.swing.JLabel lblFechaNac;
     private javax.swing.JLabel lblIconoNuevoProfesional;
     private javax.swing.JLabel lblNombre;
@@ -578,6 +555,8 @@ public class PanelRegistrarProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel lblTituloVacio;
     private javax.swing.JLabel lblTituloVentana;
     private javax.swing.JLabel lblValidarApellido;
+    private javax.swing.JLabel lblValidarFecha;
+    private javax.swing.JLabel lblValidarFechaGrad;
     private javax.swing.JLabel lblValidarNombre;
     private javax.swing.JLabel lblValidarPaisGraduacion;
     private javax.swing.JLabel lblValidarTituloProfesional;

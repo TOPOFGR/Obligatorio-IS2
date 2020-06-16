@@ -660,11 +660,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
                 listaDiasDeLaSemanaFocusLost(evt);
             }
         });
-        listaDiasDeLaSemana.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaDiasDeLaSemanaMouseClicked(evt);
-            }
-        });
         panelElaborarPlan.add(listaDiasDeLaSemana);
         listaDiasDeLaSemana.setBounds(50, 170, 200, 40);
 
@@ -2631,10 +2626,6 @@ public class PanelViejoProfesional extends javax.swing.JPanel {
         this.panelElaborarPlan.setVisible(true);
         cargarListaAlimentos();
     }//GEN-LAST:event_elaborarPlanActionPerformed
-
-    private void listaDiasDeLaSemanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaMouseClicked
-        guardarDatosDelPlan();
-    }//GEN-LAST:event_listaDiasDeLaSemanaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

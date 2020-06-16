@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRegistrarUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">PanelRegistrarUsuario.java</span></div><h1>PanelRegistrarUsuario.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PanelRegistrarUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interfaz</a> &gt; <span class="el_source">PanelRegistrarUsuario.java</span></div><h1>PanelRegistrarUsuario.java</h1><pre class="source lang-java linenums">/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaz;
+package Interfaz;
 
-import dominio.Ingesta;
-import dominio.Sistema;
+import Dominio.Ingesta;
+import Dominio.Sistema;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -25,23 +26,24 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     VentanaSPA ventana;
     private ImageIcon fotoDePerfilActual;
     private boolean primeraVez;
+
     /**
      * Creates new form PanelRegistrarUsuario
      */
-<span class="nc" id="L31">    public PanelRegistrarUsuario(Sistema sys, VentanaSPA win) {</span>
-<span class="nc" id="L32">        initComponents();</span>
-<span class="nc" id="L33">        sistema = sys;</span>
-<span class="nc" id="L34">        ventana = win;</span>
-<span class="nc" id="L35">        this.fotoDePerfilActual = new ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;));</span>
-<span class="nc" id="L36">        this.primeraVez = true;</span>
-<span class="nc" id="L37">        ocultarEtiquetas();</span>
-<span class="nc" id="L38">        cargarListaPreferencias();</span>
-<span class="nc" id="L39">        cargarListaRestricciones();</span>
-<span class="nc" id="L40">        cargarListaPaises();</span>
-<span class="nc" id="L41">        Calendar fecha = new GregorianCalendar();</span>
-<span class="nc" id="L42">        this.dateChooserFechaNacimiento.setMaxDate(fecha);</span>
-<span class="nc" id="L43">        this.primeraVez = false;</span>
-<span class="nc" id="L44">    }</span>
+<span class="nc" id="L33">    public PanelRegistrarUsuario(Sistema sys, VentanaSPA win) {</span>
+<span class="nc" id="L34">        initComponents();</span>
+<span class="nc" id="L35">        sistema = sys;</span>
+<span class="nc" id="L36">        ventana = win;</span>
+<span class="nc" id="L37">        this.fotoDePerfilActual = new ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;));</span>
+<span class="nc" id="L38">        this.primeraVez = true;</span>
+<span class="nc" id="L39">        ocultarEtiquetas();</span>
+<span class="nc" id="L40">        cargarListaPreferencias();</span>
+<span class="nc" id="L41">        cargarListaRestricciones();</span>
+<span class="nc" id="L42">        cargarListaPaises();</span>
+<span class="nc" id="L43">        Calendar fecha = new GregorianCalendar();</span>
+<span class="nc" id="L44">        this.dateChooserFechaNacimiento.setMaxDate(fecha);</span>
+<span class="nc" id="L45">        this.primeraVez = false;</span>
+<span class="nc" id="L46">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,593 +54,580 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L55">        banner = new javax.swing.JPanel();</span>
-<span class="nc" id="L56">        lblTituloVentana = new javax.swing.JLabel();</span>
-<span class="nc" id="L57">        btnHome = new javax.swing.JButton();</span>
-<span class="nc" id="L58">        icono = new javax.swing.JLabel();</span>
-<span class="nc" id="L59">        menu = new javax.swing.JPanel();</span>
-<span class="nc" id="L60">        lblNuevoUsuario = new javax.swing.JLabel();</span>
-<span class="nc" id="L61">        lblIconoNuevoUsuario = new javax.swing.JLabel();</span>
-<span class="nc" id="L62">        lblNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L63">        lblApellido = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        txtNombre = new javax.swing.JTextField();</span>
-<span class="nc" id="L65">        txtApellido = new javax.swing.JTextField();</span>
-<span class="nc" id="L66">        lblTxtPreferencias = new javax.swing.JLabel();</span>
-<span class="nc" id="L67">        rdBtnVerduras = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L68">        rdBtnHarinas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L69">        rdBtnFrutas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L70">        rdBtnCarnesRojas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L71">        rdBtnCarnesBlancas = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L72">        lblTxtRestricciones = new javax.swing.JLabel();</span>
-<span class="nc" id="L73">        rdBtnCeliaco = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L74">        rdBtnDiabetes = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L75">        rdBtnVegano = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L76">        btnIngresarUsuarioASistema = new javax.swing.JButton();</span>
-<span class="nc" id="L77">        lblTxtNacionalidad = new javax.swing.JLabel();</span>
-<span class="nc" id="L78">        listaNacionalidad = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L79">        lblTxtFechaNac = new javax.swing.JLabel();</span>
-<span class="nc" id="L80">        rdBtnIntoleranteLactosa = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L81">        dateChooserFechaNacimiento = new datechooser.beans.DateChooserCombo();</span>
-<span class="nc" id="L82">        btnIngresarFotoPerfil = new javax.swing.JButton();</span>
-<span class="nc" id="L83">        lblValidarNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L84">        lblValidarApellido = new javax.swing.JLabel();</span>
-<span class="nc" id="L85">        lblValidarNacionalidad = new javax.swing.JLabel();</span>
-<span class="nc" id="L86">        lblDatosIncorrectos = new javax.swing.JLabel();</span>
-<span class="nc" id="L87">        lblNombreVacio = new javax.swing.JLabel();</span>
-<span class="nc" id="L88">        lblApellidoVacio = new javax.swing.JLabel();</span>
-<span class="nc" id="L89">        lblPaisVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L57">        banner = new javax.swing.JPanel();</span>
+<span class="nc" id="L58">        lblTituloVentana = new javax.swing.JLabel();</span>
+<span class="nc" id="L59">        btnHome = new javax.swing.JButton();</span>
+<span class="nc" id="L60">        icono = new javax.swing.JLabel();</span>
+<span class="nc" id="L61">        menu = new javax.swing.JPanel();</span>
+<span class="nc" id="L62">        lblNuevoUsuario = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        lblIconoNuevoUsuario = new javax.swing.JLabel();</span>
+<span class="nc" id="L64">        lblNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L65">        lblApellido = new javax.swing.JLabel();</span>
+<span class="nc" id="L66">        txtNombre = new javax.swing.JTextField();</span>
+<span class="nc" id="L67">        txtApellido = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        lblTxtPreferencias = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        rdBtnVerduras = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L70">        rdBtnHarinas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L71">        rdBtnFrutas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L72">        rdBtnCarnesRojas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L73">        rdBtnCarnesBlancas = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L74">        lblTxtRestricciones = new javax.swing.JLabel();</span>
+<span class="nc" id="L75">        rdBtnCeliaco = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L76">        rdBtnDiabetes = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L77">        rdBtnVegano = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L78">        btnIngresarUsuarioASistema = new javax.swing.JButton();</span>
+<span class="nc" id="L79">        lblTxtNacionalidad = new javax.swing.JLabel();</span>
+<span class="nc" id="L80">        listaNacionalidad = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L81">        lblTxtFechaNac = new javax.swing.JLabel();</span>
+<span class="nc" id="L82">        rdBtnIntoleranteLactosa = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L83">        dateChooserFechaNacimiento = new datechooser.beans.DateChooserCombo();</span>
+<span class="nc" id="L84">        btnIngresarFotoPerfil = new javax.swing.JButton();</span>
+<span class="nc" id="L85">        lblValidarNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L86">        lblValidarApellido = new javax.swing.JLabel();</span>
+<span class="nc" id="L87">        lblValidarFecha = new javax.swing.JLabel();</span>
+<span class="nc" id="L88">        lblDatosIncorrectos = new javax.swing.JLabel();</span>
+<span class="nc" id="L89">        lblNombreVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L90">        lblApellidoVacio = new javax.swing.JLabel();</span>
+<span class="nc" id="L91">        lblFechaInvalida = new javax.swing.JLabel();</span>
+<span class="nc" id="L92">        lblValidarNacionalidad = new javax.swing.JLabel();</span>
+<span class="nc" id="L93">        lblPaisVacio = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L91">        banner.setBackground(new java.awt.Color(164, 211, 249));</span>
-<span class="nc" id="L92">        banner.setMaximumSize(new java.awt.Dimension(270, 800));</span>
+<span class="nc" id="L95">        banner.setBackground(new java.awt.Color(164, 211, 249));</span>
+<span class="nc" id="L96">        banner.setMaximumSize(new java.awt.Dimension(270, 800));</span>
 
-<span class="nc" id="L94">        lblTituloVentana.setFont(new java.awt.Font(&quot;Segoe Script&quot;, 1, 50)); // NOI18N</span>
-<span class="nc" id="L95">        lblTituloVentana.setForeground(new java.awt.Color(0, 51, 153));</span>
-<span class="nc" id="L96">        lblTituloVentana.setText(&quot;Broccoli&quot;);</span>
+<span class="nc" id="L98">        lblTituloVentana.setFont(new java.awt.Font(&quot;Segoe Script&quot;, 1, 50)); // NOI18N</span>
+<span class="nc" id="L99">        lblTituloVentana.setForeground(new java.awt.Color(0, 51, 153));</span>
+<span class="nc" id="L100">        lblTituloVentana.setText(&quot;Broccoli&quot;);</span>
 
-<span class="nc" id="L98">        btnHome.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L99">        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoVolverAtras.png&quot;))); // NOI18N</span>
-<span class="nc" id="L100">        btnHome.setBorder(null);</span>
-<span class="nc" id="L101">        btnHome.setBorderPainted(false);</span>
-<span class="nc" id="L102">        btnHome.setContentAreaFilled(false);</span>
-<span class="nc" id="L103">        btnHome.setFocusPainted(false);</span>
-<span class="nc" id="L104">        btnHome.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L102">        btnHome.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L103">        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoVolverAtras.png&quot;))); // NOI18N</span>
+<span class="nc" id="L104">        btnHome.setBorder(null);</span>
+<span class="nc" id="L105">        btnHome.setBorderPainted(false);</span>
+<span class="nc" id="L106">        btnHome.setContentAreaFilled(false);</span>
+<span class="nc" id="L107">        btnHome.setFocusPainted(false);</span>
+<span class="nc" id="L108">        btnHome.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L106">                btnHomeActionPerformed(evt);</span>
-<span class="nc" id="L107">            }</span>
+<span class="nc" id="L110">                btnHomeActionPerformed(evt);</span>
+<span class="nc" id="L111">            }</span>
         });
 
-<span class="nc" id="L110">        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/IconoBrocoli.png&quot;))); // NOI18N</span>
+<span class="nc" id="L114">        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/IconoBrocoli.png&quot;))); // NOI18N</span>
 
-<span class="nc" id="L112">        javax.swing.GroupLayout bannerLayout = new javax.swing.GroupLayout(banner);</span>
-<span class="nc" id="L113">        banner.setLayout(bannerLayout);</span>
-<span class="nc" id="L114">        bannerLayout.setHorizontalGroup(</span>
-<span class="nc" id="L115">            bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L116">            .addGroup(bannerLayout.createSequentialGroup()</span>
-<span class="nc" id="L117">                .addContainerGap()</span>
-<span class="nc" id="L118">                .addGroup(bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L119">                    .addGroup(bannerLayout.createSequentialGroup()</span>
-<span class="nc" id="L120">                        .addComponent(btnHome)</span>
-<span class="nc" id="L121">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L122">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bannerLayout.createSequentialGroup()</span>
-<span class="nc" id="L123">                        .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L124">                        .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L125">                        .addGap(26, 26, 26))))</span>
-<span class="nc" id="L126">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bannerLayout.createSequentialGroup()</span>
-<span class="nc" id="L127">                .addContainerGap(24, Short.MAX_VALUE)</span>
-<span class="nc" id="L128">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L129">                .addGap(18, 18, 18))</span>
+<span class="nc" id="L116">        javax.swing.GroupLayout bannerLayout = new javax.swing.GroupLayout(banner);</span>
+<span class="nc" id="L117">        banner.setLayout(bannerLayout);</span>
+<span class="nc" id="L118">        bannerLayout.setHorizontalGroup(</span>
+<span class="nc" id="L119">            bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L120">            .addGroup(bannerLayout.createSequentialGroup()</span>
+<span class="nc" id="L121">                .addContainerGap()</span>
+<span class="nc" id="L122">                .addGroup(bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L123">                    .addGroup(bannerLayout.createSequentialGroup()</span>
+<span class="nc" id="L124">                        .addComponent(btnHome)</span>
+<span class="nc" id="L125">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L126">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bannerLayout.createSequentialGroup()</span>
+<span class="nc" id="L127">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L128">                        .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L129">                        .addGap(26, 26, 26))))</span>
+<span class="nc" id="L130">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bannerLayout.createSequentialGroup()</span>
+<span class="nc" id="L131">                .addContainerGap(24, Short.MAX_VALUE)</span>
+<span class="nc" id="L132">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L133">                .addGap(18, 18, 18))</span>
         );
-<span class="nc" id="L131">        bannerLayout.setVerticalGroup(</span>
-<span class="nc" id="L132">            bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L133">            .addGroup(bannerLayout.createSequentialGroup()</span>
-<span class="nc" id="L134">                .addContainerGap()</span>
-<span class="nc" id="L135">                .addComponent(btnHome)</span>
-<span class="nc" id="L136">                .addGap(116, 116, 116)</span>
-<span class="nc" id="L137">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L138">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L139">                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L140">                .addContainerGap(341, Short.MAX_VALUE))</span>
+<span class="nc" id="L135">        bannerLayout.setVerticalGroup(</span>
+<span class="nc" id="L136">            bannerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L137">            .addGroup(bannerLayout.createSequentialGroup()</span>
+<span class="nc" id="L138">                .addContainerGap()</span>
+<span class="nc" id="L139">                .addComponent(btnHome)</span>
+<span class="nc" id="L140">                .addGap(116, 116, 116)</span>
+<span class="nc" id="L141">                .addComponent(lblTituloVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L142">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L143">                .addComponent(icono, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L144">                .addContainerGap(354, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L143">        menu.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L144">        menu.setForeground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L145">        menu.setMaximumSize(new java.awt.Dimension(800, 800));</span>
-<span class="nc" id="L146">        menu.setMinimumSize(new java.awt.Dimension(800, 800));</span>
-<span class="nc" id="L147">        menu.setLayout(null);</span>
+<span class="nc" id="L147">        menu.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L148">        menu.setForeground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L149">        menu.setMaximumSize(new java.awt.Dimension(800, 800));</span>
+<span class="nc" id="L150">        menu.setMinimumSize(new java.awt.Dimension(800, 800));</span>
+<span class="nc" id="L151">        menu.setLayout(null);</span>
 
-<span class="nc" id="L149">        lblNuevoUsuario.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 65)); // NOI18N</span>
-<span class="nc" id="L150">        lblNuevoUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L151">        lblNuevoUsuario.setText(&quot;Nuevo Usuario&quot;);</span>
-<span class="nc" id="L152">        menu.add(lblNuevoUsuario);</span>
-<span class="nc" id="L153">        lblNuevoUsuario.setBounds(203, 36, 475, 91);</span>
+<span class="nc" id="L153">        lblNuevoUsuario.setFont(new java.awt.Font(&quot;Levenim MT&quot;, 0, 65)); // NOI18N</span>
+<span class="nc" id="L154">        lblNuevoUsuario.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L155">        lblNuevoUsuario.setText(&quot;Nuevo Usuario&quot;);</span>
+<span class="nc" id="L156">        menu.add(lblNuevoUsuario);</span>
+<span class="nc" id="L157">        lblNuevoUsuario.setBounds(203, 36, 475, 91);</span>
 
-<span class="nc" id="L155">        lblIconoNuevoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
-<span class="nc" id="L156">        menu.add(lblIconoNuevoUsuario);</span>
-<span class="nc" id="L157">        lblIconoNuevoUsuario.setBounds(85, 27, 100, 100);</span>
+<span class="nc" id="L159">        lblIconoNuevoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDeUsuarioStandard.png&quot;))); // NOI18N</span>
+<span class="nc" id="L160">        menu.add(lblIconoNuevoUsuario);</span>
+<span class="nc" id="L161">        lblIconoNuevoUsuario.setBounds(85, 27, 100, 100);</span>
 
-<span class="nc" id="L159">        lblNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L160">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L161">        lblNombre.setText(&quot;Nombre&quot;);</span>
-<span class="nc" id="L162">        menu.add(lblNombre);</span>
-<span class="nc" id="L163">        lblNombre.setBounds(31, 182, 181, 39);</span>
+<span class="nc" id="L163">        lblNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L164">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L165">        lblNombre.setText(&quot;Nombre&quot;);</span>
+<span class="nc" id="L166">        menu.add(lblNombre);</span>
+<span class="nc" id="L167">        lblNombre.setBounds(31, 182, 181, 39);</span>
 
-<span class="nc" id="L165">        lblApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L166">        lblApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L167">        lblApellido.setText(&quot;Apellido&quot;);</span>
-<span class="nc" id="L168">        menu.add(lblApellido);</span>
-<span class="nc" id="L169">        lblApellido.setBounds(31, 231, 171, 39);</span>
+<span class="nc" id="L169">        lblApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L170">        lblApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L171">        lblApellido.setText(&quot;Apellido&quot;);</span>
+<span class="nc" id="L172">        menu.add(lblApellido);</span>
+<span class="nc" id="L173">        lblApellido.setBounds(31, 231, 171, 39);</span>
 
-<span class="nc" id="L171">        txtNombre.setBackground(new java.awt.Color(227, 227, 227));</span>
-<span class="nc" id="L172">        txtNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
-<span class="nc" id="L173">        txtNombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
-<span class="nc" id="L174">        txtNombre.setMaximumSize(new java.awt.Dimension(6, 26));</span>
-<span class="nc" id="L175">        txtNombre.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+<span class="nc" id="L175">        txtNombre.setBackground(new java.awt.Color(227, 227, 227));</span>
+<span class="nc" id="L176">        txtNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
+<span class="nc" id="L177">        txtNombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L178">        txtNombre.setMaximumSize(new java.awt.Dimension(6, 26));</span>
+<span class="nc" id="L179">        txtNombre.addFocusListener(new java.awt.event.FocusAdapter() {</span>
             public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L177">                txtNombreFocusLost(evt);</span>
-<span class="nc" id="L178">            }</span>
+<span class="nc" id="L181">                txtNombreFocusLost(evt);</span>
+<span class="nc" id="L182">            }</span>
         });
-<span class="nc" id="L180">        menu.add(txtNombre);</span>
-<span class="nc" id="L181">        txtNombre.setBounds(260, 180, 181, 38);</span>
+<span class="nc" id="L184">        menu.add(txtNombre);</span>
+<span class="nc" id="L185">        txtNombre.setBounds(260, 180, 181, 38);</span>
 
-<span class="nc" id="L183">        txtApellido.setBackground(new java.awt.Color(227, 227, 227));</span>
-<span class="nc" id="L184">        txtApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
-<span class="nc" id="L185">        txtApellido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
-<span class="nc" id="L186">        txtApellido.setMaximumSize(new java.awt.Dimension(6, 26));</span>
-<span class="nc" id="L187">        txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+<span class="nc" id="L187">        txtApellido.setBackground(new java.awt.Color(227, 227, 227));</span>
+<span class="nc" id="L188">        txtApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
+<span class="nc" id="L189">        txtApellido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));</span>
+<span class="nc" id="L190">        txtApellido.setMaximumSize(new java.awt.Dimension(6, 26));</span>
+<span class="nc" id="L191">        txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {</span>
             public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L189">                txtApellidoFocusLost(evt);</span>
-<span class="nc" id="L190">            }</span>
+<span class="nc" id="L193">                txtApellidoFocusLost(evt);</span>
+<span class="nc" id="L194">            }</span>
         });
-<span class="nc" id="L192">        menu.add(txtApellido);</span>
-<span class="nc" id="L193">        txtApellido.setBounds(260, 230, 181, 34);</span>
+<span class="nc" id="L196">        menu.add(txtApellido);</span>
+<span class="nc" id="L197">        txtApellido.setBounds(260, 230, 181, 34);</span>
 
-<span class="nc" id="L195">        lblTxtPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L196">        lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L197">        lblTxtPreferencias.setText(&quot;Preferencias&quot;);</span>
-<span class="nc" id="L198">        menu.add(lblTxtPreferencias);</span>
-<span class="nc" id="L199">        lblTxtPreferencias.setBounds(31, 423, 265, 39);</span>
+<span class="nc" id="L199">        lblTxtPreferencias.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L200">        lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L201">        lblTxtPreferencias.setText(&quot;Preferencias&quot;);</span>
+<span class="nc" id="L202">        menu.add(lblTxtPreferencias);</span>
+<span class="nc" id="L203">        lblTxtPreferencias.setBounds(31, 423, 265, 39);</span>
 
-<span class="nc" id="L201">        rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L202">        rdBtnVerduras.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L203">        rdBtnVerduras.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L204">        rdBtnVerduras.setText(&quot;Preferencia 3&quot;);</span>
-<span class="nc" id="L205">        menu.add(rdBtnVerduras);</span>
-<span class="nc" id="L206">        rdBtnVerduras.setBounds(31, 544, 195, 35);</span>
+<span class="nc" id="L205">        rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L206">        rdBtnVerduras.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L207">        rdBtnVerduras.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L208">        rdBtnVerduras.setText(&quot;Preferencia 3&quot;);</span>
+<span class="nc" id="L209">        menu.add(rdBtnVerduras);</span>
+<span class="nc" id="L210">        rdBtnVerduras.setBounds(31, 544, 195, 35);</span>
 
-<span class="nc" id="L208">        rdBtnHarinas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L209">        rdBtnHarinas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L210">        rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L211">        rdBtnHarinas.setText(&quot;Preferencia 5&quot;);</span>
-<span class="nc" id="L212">        menu.add(rdBtnHarinas);</span>
-<span class="nc" id="L213">        rdBtnHarinas.setBounds(31, 620, 151, 35);</span>
+<span class="nc" id="L212">        rdBtnHarinas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L213">        rdBtnHarinas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L214">        rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L215">        rdBtnHarinas.setText(&quot;Preferencia 5&quot;);</span>
+<span class="nc" id="L216">        menu.add(rdBtnHarinas);</span>
+<span class="nc" id="L217">        rdBtnHarinas.setBounds(31, 620, 151, 35);</span>
 
-<span class="nc" id="L215">        rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L216">        rdBtnFrutas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L217">        rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L218">        rdBtnFrutas.setText(&quot;Preferencia 4&quot;);</span>
-<span class="nc" id="L219">        menu.add(rdBtnFrutas);</span>
-<span class="nc" id="L220">        rdBtnFrutas.setBounds(31, 582, 151, 35);</span>
+<span class="nc" id="L219">        rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L220">        rdBtnFrutas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L221">        rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L222">        rdBtnFrutas.setText(&quot;Preferencia 4&quot;);</span>
+<span class="nc" id="L223">        menu.add(rdBtnFrutas);</span>
+<span class="nc" id="L224">        rdBtnFrutas.setBounds(31, 582, 151, 35);</span>
 
-<span class="nc" id="L222">        rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L223">        rdBtnCarnesRojas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L224">        rdBtnCarnesRojas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L225">        rdBtnCarnesRojas.setText(&quot;Preferencia 1&quot;);</span>
-<span class="nc" id="L226">        menu.add(rdBtnCarnesRojas);</span>
-<span class="nc" id="L227">        rdBtnCarnesRojas.setBounds(31, 468, 218, 35);</span>
+<span class="nc" id="L226">        rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L227">        rdBtnCarnesRojas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L228">        rdBtnCarnesRojas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L229">        rdBtnCarnesRojas.setText(&quot;Preferencia 1&quot;);</span>
+<span class="nc" id="L230">        menu.add(rdBtnCarnesRojas);</span>
+<span class="nc" id="L231">        rdBtnCarnesRojas.setBounds(31, 468, 218, 35);</span>
 
-<span class="nc" id="L229">        rdBtnCarnesBlancas.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L230">        rdBtnCarnesBlancas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L231">        rdBtnCarnesBlancas.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L232">        rdBtnCarnesBlancas.setText(&quot;Preferencia 2&quot;);</span>
-<span class="nc" id="L233">        menu.add(rdBtnCarnesBlancas);</span>
-<span class="nc" id="L234">        rdBtnCarnesBlancas.setBounds(31, 506, 209, 35);</span>
+<span class="nc" id="L233">        rdBtnCarnesBlancas.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L234">        rdBtnCarnesBlancas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L235">        rdBtnCarnesBlancas.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L236">        rdBtnCarnesBlancas.setText(&quot;Preferencia 2&quot;);</span>
+<span class="nc" id="L237">        menu.add(rdBtnCarnesBlancas);</span>
+<span class="nc" id="L238">        rdBtnCarnesBlancas.setBounds(31, 506, 209, 35);</span>
 
-<span class="nc" id="L236">        lblTxtRestricciones.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L237">        lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L238">        lblTxtRestricciones.setText(&quot;Restricciones&quot;);</span>
-<span class="nc" id="L239">        menu.add(lblTxtRestricciones);</span>
-<span class="nc" id="L240">        lblTxtRestricciones.setBounds(469, 423, 208, 39);</span>
+<span class="nc" id="L240">        lblTxtRestricciones.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L241">        lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L242">        lblTxtRestricciones.setText(&quot;Restricciones&quot;);</span>
+<span class="nc" id="L243">        menu.add(lblTxtRestricciones);</span>
+<span class="nc" id="L244">        lblTxtRestricciones.setBounds(469, 423, 208, 39);</span>
 
-<span class="nc" id="L242">        rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L243">        rdBtnCeliaco.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L244">        rdBtnCeliaco.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L245">        rdBtnCeliaco.setText(&quot;Restriccion 4&quot;);</span>
-<span class="nc" id="L246">        menu.add(rdBtnCeliaco);</span>
-<span class="nc" id="L247">        rdBtnCeliaco.setBounds(469, 582, 147, 35);</span>
+<span class="nc" id="L246">        rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L247">        rdBtnCeliaco.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L248">        rdBtnCeliaco.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L249">        rdBtnCeliaco.setText(&quot;Restriccion 4&quot;);</span>
+<span class="nc" id="L250">        menu.add(rdBtnCeliaco);</span>
+<span class="nc" id="L251">        rdBtnCeliaco.setBounds(469, 582, 147, 35);</span>
 
-<span class="nc" id="L249">        rdBtnDiabetes.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L250">        rdBtnDiabetes.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L251">        rdBtnDiabetes.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L252">        rdBtnDiabetes.setText(&quot;Restriccion 1&quot;);</span>
-<span class="nc" id="L253">        menu.add(rdBtnDiabetes);</span>
-<span class="nc" id="L254">        rdBtnDiabetes.setBounds(469, 468, 175, 35);</span>
+<span class="nc" id="L253">        rdBtnDiabetes.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L254">        rdBtnDiabetes.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L255">        rdBtnDiabetes.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L256">        rdBtnDiabetes.setText(&quot;Restriccion 1&quot;);</span>
+<span class="nc" id="L257">        menu.add(rdBtnDiabetes);</span>
+<span class="nc" id="L258">        rdBtnDiabetes.setBounds(469, 468, 175, 35);</span>
 
-<span class="nc" id="L256">        rdBtnVegano.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L257">        rdBtnVegano.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L258">        rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L259">        rdBtnVegano.setText(&quot;Restriccion 2&quot;);</span>
-<span class="nc" id="L260">        menu.add(rdBtnVegano);</span>
-<span class="nc" id="L261">        rdBtnVegano.setBounds(469, 506, 147, 35);</span>
+<span class="nc" id="L260">        rdBtnVegano.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L261">        rdBtnVegano.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L262">        rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L263">        rdBtnVegano.setText(&quot;Restriccion 2&quot;);</span>
+<span class="nc" id="L264">        menu.add(rdBtnVegano);</span>
+<span class="nc" id="L265">        rdBtnVegano.setBounds(469, 506, 147, 35);</span>
 
-<span class="nc" id="L263">        btnIngresarUsuarioASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoConfirmar.png&quot;))); // NOI18N</span>
-<span class="nc" id="L264">        btnIngresarUsuarioASistema.setBorderPainted(false);</span>
-<span class="nc" id="L265">        btnIngresarUsuarioASistema.setContentAreaFilled(false);</span>
-<span class="nc" id="L266">        btnIngresarUsuarioASistema.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L267">        btnIngresarUsuarioASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoConfirmar.png&quot;))); // NOI18N</span>
+<span class="nc" id="L268">        btnIngresarUsuarioASistema.setBorderPainted(false);</span>
+<span class="nc" id="L269">        btnIngresarUsuarioASistema.setContentAreaFilled(false);</span>
+<span class="nc" id="L270">        btnIngresarUsuarioASistema.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L268">                btnIngresarUsuarioASistemaActionPerformed(evt);</span>
-<span class="nc" id="L269">            }</span>
+<span class="nc" id="L272">                btnIngresarUsuarioASistemaActionPerformed(evt);</span>
+<span class="nc" id="L273">            }</span>
         });
-<span class="nc" id="L271">        menu.add(btnIngresarUsuarioASistema);</span>
-<span class="nc" id="L272">        btnIngresarUsuarioASistema.setBounds(654, 657, 99, 94);</span>
+<span class="nc" id="L275">        menu.add(btnIngresarUsuarioASistema);</span>
+<span class="nc" id="L276">        btnIngresarUsuarioASistema.setBounds(654, 657, 99, 94);</span>
 
-<span class="nc" id="L274">        lblTxtNacionalidad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L275">        lblTxtNacionalidad.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L276">        lblTxtNacionalidad.setText(&quot;Nacionalidad&quot;);</span>
-<span class="nc" id="L277">        menu.add(lblTxtNacionalidad);</span>
-<span class="nc" id="L278">        lblTxtNacionalidad.setBounds(30, 280, 173, 39);</span>
+<span class="nc" id="L278">        lblTxtNacionalidad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L279">        lblTxtNacionalidad.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L280">        lblTxtNacionalidad.setText(&quot;Nacionalidad&quot;);</span>
+<span class="nc" id="L281">        menu.add(lblTxtNacionalidad);</span>
+<span class="nc" id="L282">        lblTxtNacionalidad.setBounds(30, 280, 173, 39);</span>
 
-<span class="nc" id="L280">        listaNacionalidad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L281">        listaNacionalidad.addItemListener(new java.awt.event.ItemListener() {</span>
+<span class="nc" id="L284">        listaNacionalidad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L285">        listaNacionalidad.addItemListener(new java.awt.event.ItemListener() {</span>
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-<span class="nc" id="L283">                listaNacionalidadItemStateChanged(evt);</span>
-<span class="nc" id="L284">            }</span>
+<span class="nc" id="L287">                listaNacionalidadItemStateChanged(evt);</span>
+<span class="nc" id="L288">            }</span>
         });
-<span class="nc" id="L286">        menu.add(listaNacionalidad);</span>
-<span class="nc" id="L287">        listaNacionalidad.setBounds(260, 280, 270, 40);</span>
+<span class="nc" id="L290">        menu.add(listaNacionalidad);</span>
+<span class="nc" id="L291">        listaNacionalidad.setBounds(260, 280, 270, 40);</span>
 
-<span class="nc" id="L289">        lblTxtFechaNac.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
-<span class="nc" id="L290">        lblTxtFechaNac.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L291">        lblTxtFechaNac.setText(&quot;Fecha de nacimiento&quot;);</span>
-<span class="nc" id="L292">        menu.add(lblTxtFechaNac);</span>
-<span class="nc" id="L293">        lblTxtFechaNac.setBounds(30, 340, 328, 39);</span>
+<span class="nc" id="L293">        lblTxtFechaNac.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
+<span class="nc" id="L294">        lblTxtFechaNac.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L295">        lblTxtFechaNac.setText(&quot;Fecha de nacimiento&quot;);</span>
+<span class="nc" id="L296">        menu.add(lblTxtFechaNac);</span>
+<span class="nc" id="L297">        lblTxtFechaNac.setBounds(30, 340, 328, 39);</span>
 
-<span class="nc" id="L295">        rdBtnIntoleranteLactosa.setBackground(new java.awt.Color(51, 51, 51));</span>
-<span class="nc" id="L296">        rdBtnIntoleranteLactosa.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L297">        rdBtnIntoleranteLactosa.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L298">        rdBtnIntoleranteLactosa.setText(&quot;Restriccion 3&quot;);</span>
-<span class="nc" id="L299">        rdBtnIntoleranteLactosa.setActionCommand(&quot;&quot;);</span>
-<span class="nc" id="L300">        menu.add(rdBtnIntoleranteLactosa);</span>
-<span class="nc" id="L301">        rdBtnIntoleranteLactosa.setBounds(469, 544, 276, 35);</span>
+<span class="nc" id="L299">        rdBtnIntoleranteLactosa.setBackground(new java.awt.Color(51, 51, 51));</span>
+<span class="nc" id="L300">        rdBtnIntoleranteLactosa.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L301">        rdBtnIntoleranteLactosa.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L302">        rdBtnIntoleranteLactosa.setText(&quot;Restriccion 3&quot;);</span>
+<span class="nc" id="L303">        rdBtnIntoleranteLactosa.setActionCommand(&quot;&quot;);</span>
+<span class="nc" id="L304">        menu.add(rdBtnIntoleranteLactosa);</span>
+<span class="nc" id="L305">        rdBtnIntoleranteLactosa.setBounds(469, 544, 276, 35);</span>
 
-<span class="nc" id="L303">        dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList(&quot;Swing&quot;,</span>
-            new datechooser.view.appearance.ViewAppearance(&quot;custom&quot;,
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    true,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 255),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(128, 128, 128),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(255, 0, 0),
-                    false,
-                    false,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                (datechooser.view.BackRenderer)null,
-                false,
-                true)));
-<span class="nc" id="L344">    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
-<span class="nc" id="L345">    dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
-<span class="nc" id="L346">    dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
-<span class="nc" id="L347">    menu.add(dateChooserFechaNacimiento);</span>
-<span class="nc" id="L348">    dateChooserFechaNacimiento.setBounds(370, 340, 150, 30);</span>
+<span class="nc" id="L307">        dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
+<span class="nc" id="L308">        dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
+<span class="nc" id="L309">        dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
+<span class="nc" id="L310">        menu.add(dateChooserFechaNacimiento);</span>
+<span class="nc" id="L311">        dateChooserFechaNacimiento.setBounds(370, 340, 150, 30);</span>
 
-<span class="nc" id="L350">    btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/agregarFotoUsuario.png&quot;))); // NOI18N</span>
-<span class="nc" id="L351">    btnIngresarFotoPerfil.setBorderPainted(false);</span>
-<span class="nc" id="L352">    btnIngresarFotoPerfil.setContentAreaFilled(false);</span>
-<span class="nc" id="L353">    btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {</span>
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L355">            btnIngresarFotoPerfilActionPerformed(evt);</span>
-<span class="nc" id="L356">        }</span>
-    });
-<span class="nc" id="L358">    menu.add(btnIngresarFotoPerfil);</span>
-<span class="nc" id="L359">    btnIngresarFotoPerfil.setBounds(640, 160, 124, 117);</span>
+<span class="nc" id="L313">        btnIngresarFotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/agregarFotoUsuario.png&quot;))); // NOI18N</span>
+<span class="nc" id="L314">        btnIngresarFotoPerfil.setBorderPainted(false);</span>
+<span class="nc" id="L315">        btnIngresarFotoPerfil.setContentAreaFilled(false);</span>
+<span class="nc" id="L316">        btnIngresarFotoPerfil.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L318">                btnIngresarFotoPerfilActionPerformed(evt);</span>
+<span class="nc" id="L319">            }</span>
+        });
+<span class="nc" id="L321">        menu.add(btnIngresarFotoPerfil);</span>
+<span class="nc" id="L322">        btnIngresarFotoPerfil.setBounds(640, 160, 124, 117);</span>
 
-<span class="nc" id="L361">    lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L362">    lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L363">    menu.add(lblValidarNombre);</span>
-<span class="nc" id="L364">    lblValidarNombre.setBounds(460, 180, 32, 44);</span>
+<span class="nc" id="L324">        lblValidarNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L325">        lblValidarNombre.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L326">        menu.add(lblValidarNombre);</span>
+<span class="nc" id="L327">        lblValidarNombre.setBounds(460, 180, 32, 44);</span>
 
-<span class="nc" id="L366">    lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L367">    lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L368">    menu.add(lblValidarApellido);</span>
-<span class="nc" id="L369">    lblValidarApellido.setBounds(460, 230, 32, 44);</span>
+<span class="nc" id="L329">        lblValidarApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L330">        lblValidarApellido.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L331">        menu.add(lblValidarApellido);</span>
+<span class="nc" id="L332">        lblValidarApellido.setBounds(460, 230, 32, 44);</span>
 
-<span class="nc" id="L371">    lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L372">    lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
-<span class="nc" id="L373">    menu.add(lblValidarNacionalidad);</span>
-<span class="nc" id="L374">    lblValidarNacionalidad.setBounds(540, 280, 32, 44);</span>
+<span class="nc" id="L334">        lblValidarFecha.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L335">        lblValidarFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L336">        menu.add(lblValidarFecha);</span>
+<span class="nc" id="L337">        lblValidarFecha.setBounds(530, 340, 32, 44);</span>
 
-<span class="nc" id="L376">    lblDatosIncorrectos.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
-<span class="nc" id="L377">    lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));</span>
-<span class="nc" id="L378">    lblDatosIncorrectos.setText(&quot;Aún quedan datos incorrectos&quot;);</span>
-<span class="nc" id="L379">    menu.add(lblDatosIncorrectos);</span>
-<span class="nc" id="L380">    lblDatosIncorrectos.setBounds(309, 683, 341, 26);</span>
+<span class="nc" id="L339">        lblDatosIncorrectos.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
+<span class="nc" id="L340">        lblDatosIncorrectos.setForeground(new java.awt.Color(255, 153, 153));</span>
+<span class="nc" id="L341">        lblDatosIncorrectos.setText(&quot;Aún quedan datos incorrectos&quot;);</span>
+<span class="nc" id="L342">        menu.add(lblDatosIncorrectos);</span>
+<span class="nc" id="L343">        lblDatosIncorrectos.setBounds(309, 683, 341, 26);</span>
 
-<span class="nc" id="L382">    lblNombreVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L383">    lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L384">    lblNombreVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L385">    menu.add(lblNombreVacio);</span>
-<span class="nc" id="L386">    lblNombreVacio.setBounds(500, 180, 134, 38);</span>
+<span class="nc" id="L345">        lblNombreVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L346">        lblNombreVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L347">        lblNombreVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L348">        menu.add(lblNombreVacio);</span>
+<span class="nc" id="L349">        lblNombreVacio.setBounds(500, 180, 134, 38);</span>
 
-<span class="nc" id="L388">    lblApellidoVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L389">    lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L390">    lblApellidoVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L391">    menu.add(lblApellidoVacio);</span>
-<span class="nc" id="L392">    lblApellidoVacio.setBounds(500, 230, 134, 38);</span>
+<span class="nc" id="L351">        lblApellidoVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L352">        lblApellidoVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L353">        lblApellidoVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L354">        menu.add(lblApellidoVacio);</span>
+<span class="nc" id="L355">        lblApellidoVacio.setBounds(500, 230, 134, 38);</span>
 
-<span class="nc" id="L394">    lblPaisVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
-<span class="nc" id="L395">    lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
-<span class="nc" id="L396">    lblPaisVacio.setText(&quot;Dato vacío&quot;);</span>
-<span class="nc" id="L397">    menu.add(lblPaisVacio);</span>
-<span class="nc" id="L398">    lblPaisVacio.setBounds(580, 280, 120, 38);</span>
+<span class="nc" id="L357">        lblFechaInvalida.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L358">        lblFechaInvalida.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L359">        lblFechaInvalida.setText(&quot;Dato Incorrecto&quot;);</span>
+<span class="nc" id="L360">        menu.add(lblFechaInvalida);</span>
+<span class="nc" id="L361">        lblFechaInvalida.setBounds(570, 340, 150, 38);</span>
 
-<span class="nc" id="L400">    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L401">    this.setLayout(layout);</span>
-<span class="nc" id="L402">    layout.setHorizontalGroup(</span>
-<span class="nc" id="L403">        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L404">        .addGap(0, 1225, Short.MAX_VALUE)</span>
-<span class="nc" id="L405">        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L406">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L407">                .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L408">                .addComponent(banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L409">                .addGap(5, 5, 5)</span>
-<span class="nc" id="L410">                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L411">                .addGap(0, 0, Short.MAX_VALUE)))</span>
-    );
-<span class="nc" id="L413">    layout.setVerticalGroup(</span>
-<span class="nc" id="L414">        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L415">        .addGap(0, 800, Short.MAX_VALUE)</span>
-<span class="nc" id="L416">        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L417">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L418">                .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L419">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L420">                    .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L421">                    .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L422">                .addGap(0, 0, Short.MAX_VALUE)))</span>
-    );
-<span class="nc" id="L424">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L363">        lblValidarNacionalidad.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L364">        lblValidarNacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;))); // NOI18N</span>
+<span class="nc" id="L365">        menu.add(lblValidarNacionalidad);</span>
+<span class="nc" id="L366">        lblValidarNacionalidad.setBounds(540, 280, 32, 44);</span>
+
+<span class="nc" id="L368">        lblPaisVacio.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 19)); // NOI18N</span>
+<span class="nc" id="L369">        lblPaisVacio.setForeground(new java.awt.Color(240, 128, 128));</span>
+<span class="nc" id="L370">        lblPaisVacio.setText(&quot;Dato vacío&quot;);</span>
+<span class="nc" id="L371">        menu.add(lblPaisVacio);</span>
+<span class="nc" id="L372">        lblPaisVacio.setBounds(580, 280, 120, 38);</span>
+
+<span class="nc" id="L374">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L375">        this.setLayout(layout);</span>
+<span class="nc" id="L376">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L377">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L378">            .addGap(0, 1225, Short.MAX_VALUE)</span>
+<span class="nc" id="L379">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L380">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L381">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L382">                    .addComponent(banner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L383">                    .addGap(5, 5, 5)</span>
+<span class="nc" id="L384">                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L385">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+        );
+<span class="nc" id="L387">        layout.setVerticalGroup(</span>
+<span class="nc" id="L388">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L389">            .addGap(0, 800, Short.MAX_VALUE)</span>
+<span class="nc" id="L390">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L391">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L392">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L393">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L394">                        .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L395">                        .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L396">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+        );
+<span class="nc" id="L398">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-<span class="nc" id="L427">        ventana.gotoMenuPrincipal();</span>
-<span class="nc" id="L428">    }//GEN-LAST:event_btnHomeActionPerformed</span>
+<span class="nc" id="L401">        ventana.gotoMenuPrincipal();</span>
+<span class="nc" id="L402">    }//GEN-LAST:event_btnHomeActionPerformed</span>
 
     private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
-<span class="nc" id="L431">        String nombreIngresado = this.txtNombre.getText();</span>
-<span class="nc bnc" id="L432" title="All 2 branches missed.">        if (nombreIngresado.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L433">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L434">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L435">            this.lblNombreVacio.setVisible(true);</span>
+<span class="nc" id="L405">        String nombreIngresado = this.txtNombre.getText();</span>
+<span class="nc bnc" id="L406" title="All 2 branches missed.">        if (nombreIngresado.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L407">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L408">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L409">            this.lblNombreVacio.setVisible(true);</span>
         } else {
-<span class="nc" id="L437">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L438">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L439">            this.lblNombreVacio.setVisible(false);</span>
+<span class="nc" id="L411">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L412">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L413">            this.lblNombreVacio.setVisible(false);</span>
         }
-<span class="nc" id="L441">    }//GEN-LAST:event_txtNombreFocusLost</span>
+<span class="nc" id="L415">    }//GEN-LAST:event_txtNombreFocusLost</span>
 
     private void txtApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidoFocusLost
-<span class="nc" id="L444">        String apellidoIngresado = this.txtApellido.getText();</span>
-<span class="nc bnc" id="L445" title="All 2 branches missed.">        if (apellidoIngresado.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L446">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L447">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L448">            this.lblApellidoVacio.setVisible(true);</span>
+<span class="nc" id="L418">        String apellidoIngresado = this.txtApellido.getText();</span>
+<span class="nc bnc" id="L419" title="All 2 branches missed.">        if (apellidoIngresado.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L420">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L421">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L422">            this.lblApellidoVacio.setVisible(true);</span>
         } else {
-<span class="nc" id="L450">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L451">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L452">            this.lblApellidoVacio.setVisible(false);</span>
+<span class="nc" id="L424">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L425">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L426">            this.lblApellidoVacio.setVisible(false);</span>
         }
-<span class="nc" id="L454">    }//GEN-LAST:event_txtApellidoFocusLost</span>
+<span class="nc" id="L428">    }//GEN-LAST:event_txtApellidoFocusLost</span>
 
     private void btnIngresarUsuarioASistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarUsuarioASistemaActionPerformed
-<span class="nc" id="L457">        String nombre = this.txtNombre.getText();</span>
-<span class="nc" id="L458">        String apellido = this.txtApellido.getText();</span>
-<span class="nc" id="L459">        ArrayList&lt;String&gt; preferencias = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L460">        ArrayList&lt;String&gt; restricciones = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L461">        ArrayList&lt;Ingesta&gt; alimentosIngeridosPorFecha = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L462">        String nacionalidad = (String) this.listaNacionalidad.getSelectedItem();</span>
-<span class="nc" id="L463">        String fechaNacimiento = this.dateChooserFechaNacimiento.getText();</span>
-<span class="nc bnc" id="L464" title="All 6 branches missed.">        if (nombre.equals(&quot;&quot;) || apellido.equals(&quot;&quot;) || nacionalidad.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L465">            this.lblDatosIncorrectos.setVisible(true);</span>
-<span class="nc" id="L466">            mostrarErrores(nombre, apellido, nacionalidad);</span>
+<span class="nc" id="L431">        String nombre = this.txtNombre.getText();</span>
+<span class="nc" id="L432">        String apellido = this.txtApellido.getText();</span>
+<span class="nc" id="L433">        ArrayList&lt;String&gt; preferencias = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L434">        ArrayList&lt;String&gt; restricciones = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L435">        ArrayList&lt;Ingesta&gt; alimentosIngeridosPorFecha = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L436">        String nacionalidad = (String) this.listaNacionalidad.getSelectedItem();</span>
+<span class="nc" id="L437">        String fechaNacimiento = this.dateChooserFechaNacimiento.getText();</span>
+<span class="nc" id="L438">        Calendar fecha = this.dateChooserFechaNacimiento.getCurrent();</span>
+<span class="nc" id="L439">        fecha.set(Calendar.SECOND, 0);</span>
+<span class="nc" id="L440">        fecha.set(Calendar.MILLISECOND, 0);</span>
+<span class="nc" id="L441">        Calendar hoy = Calendar.getInstance();</span>
+<span class="nc" id="L442">        hoy.set(Calendar.MILLISECOND, 0);</span>
+<span class="nc" id="L443">        hoy.set(Calendar.SECOND, 0);</span>
+<span class="nc bnc" id="L444" title="All 2 branches missed.">        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0;</span>
+<span class="nc bnc" id="L445" title="All 8 branches missed.">        if (nombre.equals(&quot;&quot;) || apellido.equals(&quot;&quot;) || nacionalidad.equals(&quot;Seleccione...&quot;) || fechaInvalida) {</span>
+<span class="nc" id="L446">            this.lblDatosIncorrectos.setVisible(true);</span>
+<span class="nc" id="L447">            mostrarErrores(nombre, apellido, nacionalidad, hoy, fecha);</span>
         } else {
-<span class="nc" id="L468">            this.lblDatosIncorrectos.setVisible(false);</span>
-<span class="nc" id="L469">            agregarPreferenciasUsuario(preferencias);</span>
-<span class="nc" id="L470">            agregarRestriccionesUsuario(restricciones);</span>
-<span class="nc" id="L471">            boolean seAgregoUsuario = this.sistema.crearUsuario(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, nacionalidad, preferencias, restricciones, alimentosIngeridosPorFecha);</span>
-<span class="nc bnc" id="L472" title="All 2 branches missed.">            if (seAgregoUsuario) {</span>
-<span class="nc" id="L473">                this.txtNombre.setText(&quot;&quot;);</span>
-<span class="nc" id="L474">                this.txtApellido.setText(&quot;&quot;);</span>
-<span class="nc" id="L475">                ventana.gotoMenuPrincipal();</span>
+<span class="nc" id="L449">            this.lblDatosIncorrectos.setVisible(false);</span>
+<span class="nc" id="L450">            agregarPreferenciasUsuario(preferencias);</span>
+<span class="nc" id="L451">            agregarRestriccionesUsuario(restricciones);</span>
+<span class="nc" id="L452">            boolean seAgregoUsuario = this.sistema.crearUsuario(nombre, apellido, fechaNacimiento, this.fotoDePerfilActual, nacionalidad, preferencias, restricciones, alimentosIngeridosPorFecha);</span>
+<span class="nc bnc" id="L453" title="All 2 branches missed.">            if (seAgregoUsuario) {</span>
+<span class="nc" id="L454">                this.txtNombre.setText(&quot;&quot;);</span>
+<span class="nc" id="L455">                this.txtApellido.setText(&quot;&quot;);</span>
+<span class="nc" id="L456">                ventana.gotoMenuPrincipal();</span>
             }
         }
-<span class="nc" id="L478">    }//GEN-LAST:event_btnIngresarUsuarioASistemaActionPerformed</span>
+<span class="nc" id="L459">    }//GEN-LAST:event_btnIngresarUsuarioASistemaActionPerformed</span>
 
     private void listaNacionalidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaNacionalidadItemStateChanged
-<span class="nc bnc" id="L481" title="All 2 branches missed.">        if (!this.primeraVez) {</span>
-<span class="nc" id="L482">            String nacionalidadIngresada = (String) listaNacionalidad.getSelectedItem();</span>
-<span class="nc bnc" id="L483" title="All 2 branches missed.">            if (nacionalidadIngresada.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L484">                this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L485">                this.lblValidarNacionalidad.setVisible(true);</span>
-<span class="nc" id="L486">                this.lblPaisVacio.setVisible(true);</span>
+<span class="nc bnc" id="L462" title="All 2 branches missed.">        if (!this.primeraVez) {</span>
+<span class="nc" id="L463">            String nacionalidadIngresada = (String) listaNacionalidad.getSelectedItem();</span>
+<span class="nc bnc" id="L464" title="All 2 branches missed.">            if (nacionalidadIngresada.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L465">                this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L466">                this.lblValidarNacionalidad.setVisible(true);</span>
+<span class="nc" id="L467">                this.lblPaisVacio.setVisible(true);</span>
             } else {
-<span class="nc" id="L488">                this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
-<span class="nc" id="L489">                this.lblValidarNacionalidad.setVisible(true);</span>
-<span class="nc" id="L490">                this.lblPaisVacio.setVisible(false);</span>
+<span class="nc" id="L469">                this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoCorrecto.png&quot;)));</span>
+<span class="nc" id="L470">                this.lblValidarNacionalidad.setVisible(true);</span>
+<span class="nc" id="L471">                this.lblPaisVacio.setVisible(false);</span>
             }
         }
-<span class="nc" id="L493">    }//GEN-LAST:event_listaNacionalidadItemStateChanged</span>
+<span class="nc" id="L474">    }//GEN-LAST:event_listaNacionalidadItemStateChanged</span>
 
     private void btnIngresarFotoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarFotoPerfilActionPerformed
-<span class="nc" id="L496">        JFileChooser fileChooser = new JFileChooser();</span>
-<span class="nc" id="L497">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;PNG&quot;, &quot;png&quot;);</span>
-<span class="nc" id="L498">        fileChooser.setFileFilter(file);</span>
-<span class="nc" id="L499">        fileChooser.setAcceptAllFileFilterUsed(false);</span>
-<span class="nc" id="L500">        int imagen = fileChooser.showOpenDialog(this);</span>
-<span class="nc bnc" id="L501" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L502">            ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
-<span class="nc" id="L503">            this.btnIngresarFotoPerfil.setIcon(iconoPerfil);</span>
-<span class="nc" id="L504">            this.fotoDePerfilActual = iconoPerfil;</span>
+<span class="nc" id="L477">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L478">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;PNG&quot;, &quot;png&quot;);</span>
+<span class="nc" id="L479">        fileChooser.setFileFilter(file);</span>
+<span class="nc" id="L480">        fileChooser.setAcceptAllFileFilterUsed(false);</span>
+<span class="nc" id="L481">        int imagen = fileChooser.showOpenDialog(this);</span>
+<span class="nc bnc" id="L482" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L483">            ImageIcon iconoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
+<span class="nc" id="L484">            this.btnIngresarFotoPerfil.setIcon(iconoPerfil);</span>
+<span class="nc" id="L485">            this.fotoDePerfilActual = iconoPerfil;</span>
         }
-<span class="nc" id="L506">    }//GEN-LAST:event_btnIngresarFotoPerfilActionPerformed</span>
+<span class="nc" id="L487">    }//GEN-LAST:event_btnIngresarFotoPerfilActionPerformed</span>
 
-    private void mostrarErrores(String nombre, String apellido, String nacionalidad) {
-<span class="nc bnc" id="L509" title="All 2 branches missed.">        if (nombre.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L510">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L511">            this.lblValidarNombre.setVisible(true);</span>
-<span class="nc" id="L512">            this.lblNombreVacio.setVisible(true);</span>
+    private void mostrarErrores(String nombre, String apellido, String nacionalidad, Calendar hoy, Calendar fecha) {
+<span class="nc bnc" id="L490" title="All 2 branches missed.">        if (nombre.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L491">            this.lblValidarNombre.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L492">            this.lblValidarNombre.setVisible(true);</span>
+<span class="nc" id="L493">            this.lblNombreVacio.setVisible(true);</span>
         }
-<span class="nc bnc" id="L514" title="All 2 branches missed.">        if (apellido.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L515">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L516">            this.lblValidarApellido.setVisible(true);</span>
-<span class="nc" id="L517">            this.lblApellidoVacio.setVisible(true);</span>
+<span class="nc bnc" id="L495" title="All 2 branches missed.">        if (apellido.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L496">            this.lblValidarApellido.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L497">            this.lblValidarApellido.setVisible(true);</span>
+<span class="nc" id="L498">            this.lblApellidoVacio.setVisible(true);</span>
         }
-<span class="nc bnc" id="L519" title="All 2 branches missed.">        if (nacionalidad.equals(&quot;Seleccione...&quot;)) {</span>
-<span class="nc" id="L520">            this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
-<span class="nc" id="L521">            this.lblValidarNacionalidad.setVisible(true);</span>
-<span class="nc" id="L522">            this.lblPaisVacio.setVisible(true);</span>
+<span class="nc bnc" id="L500" title="All 2 branches missed.">        if (nacionalidad.equals(&quot;Seleccione...&quot;)) {</span>
+<span class="nc" id="L501">            this.lblValidarNacionalidad.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L502">            this.lblValidarNacionalidad.setVisible(true);</span>
+<span class="nc" id="L503">            this.lblPaisVacio.setVisible(true);</span>
         }
-<span class="nc" id="L524">    }</span>
-    
+<span class="nc bnc" id="L505" title="All 2 branches missed.">        boolean fechaInvalida = fecha.getTime().compareTo(hoy.getTime()) == 0;</span>
+<span class="nc bnc" id="L506" title="All 2 branches missed.">        if (fechaInvalida) {</span>
+<span class="nc" id="L507">            this.lblValidarFecha.setIcon(new ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCampoIncorrecto.png&quot;)));</span>
+<span class="nc" id="L508">            this.lblValidarFecha.setVisible(true);</span>
+<span class="nc" id="L509">            this.lblFechaInvalida.setVisible(true);</span>
+        }
+<span class="nc" id="L511">    }</span>
+
     public ImageIcon getFotoDePerfilActual() {
-<span class="nc" id="L527">        return fotoDePerfilActual;</span>
+<span class="nc" id="L514">        return fotoDePerfilActual;</span>
     }
 
     public void setFotoDePerfilActual(ImageIcon unaFoto) {
-<span class="nc" id="L531">        this.fotoDePerfilActual = unaFoto;</span>
-<span class="nc" id="L532">    }</span>
+<span class="nc" id="L518">        this.fotoDePerfilActual = unaFoto;</span>
+<span class="nc" id="L519">    }</span>
 
     public boolean getPrimeraVezEnSistema() {
-<span class="nc" id="L535">        return primeraVez;</span>
+<span class="nc" id="L522">        return primeraVez;</span>
     }
 
     public void setPrimeraVezEnSistema(boolean primera) {
-<span class="nc" id="L539">        this.primeraVez = primera;</span>
-<span class="nc" id="L540">    }</span>
-    
+<span class="nc" id="L526">        this.primeraVez = primera;</span>
+<span class="nc" id="L527">    }</span>
+
     void agregarRestriccionesUsuario(ArrayList&lt;String&gt; restricciones) {
-<span class="nc bnc" id="L543" title="All 2 branches missed.">        if (this.rdBtnCeliaco.isSelected()) {</span>
-<span class="nc" id="L544">            restricciones.add(&quot;Celíaco&quot;);</span>
+<span class="nc bnc" id="L530" title="All 2 branches missed.">        if (this.rdBtnCeliaco.isSelected()) {</span>
+<span class="nc" id="L531">            restricciones.add(&quot;Celíaco&quot;);</span>
         }
-<span class="nc bnc" id="L546" title="All 2 branches missed.">        if (this.rdBtnDiabetes.isSelected()) {</span>
-<span class="nc" id="L547">            restricciones.add(&quot;Diabético&quot;);</span>
+<span class="nc bnc" id="L533" title="All 2 branches missed.">        if (this.rdBtnDiabetes.isSelected()) {</span>
+<span class="nc" id="L534">            restricciones.add(&quot;Diabético&quot;);</span>
         }
-<span class="nc bnc" id="L549" title="All 2 branches missed.">        if (this.rdBtnVegano.isSelected()) {</span>
-<span class="nc" id="L550">            restricciones.add(&quot;Veganismo&quot;);</span>
+<span class="nc bnc" id="L536" title="All 2 branches missed.">        if (this.rdBtnVegano.isSelected()) {</span>
+<span class="nc" id="L537">            restricciones.add(&quot;Veganismo&quot;);</span>
         }
-<span class="nc bnc" id="L552" title="All 2 branches missed.">        if (this.rdBtnIntoleranteLactosa.isSelected()) {</span>
-<span class="nc" id="L553">            restricciones.add(&quot;Intolerancia a la lactosa&quot;);</span>
+<span class="nc bnc" id="L539" title="All 2 branches missed.">        if (this.rdBtnIntoleranteLactosa.isSelected()) {</span>
+<span class="nc" id="L540">            restricciones.add(&quot;Intolerancia a la lactosa&quot;);</span>
         }
-<span class="nc" id="L555">    }</span>
+<span class="nc" id="L542">    }</span>
 
     void agregarPreferenciasUsuario(ArrayList&lt;String&gt; preferencias) {
-<span class="nc bnc" id="L558" title="All 2 branches missed.">        if (this.rdBtnCarnesBlancas.isSelected()) {</span>
-<span class="nc" id="L559">            preferencias.add(&quot;Carnes Blancas&quot;);</span>
+<span class="nc bnc" id="L545" title="All 2 branches missed.">        if (this.rdBtnCarnesBlancas.isSelected()) {</span>
+<span class="nc" id="L546">            preferencias.add(&quot;Carnes Blancas&quot;);</span>
         }
-<span class="nc bnc" id="L561" title="All 2 branches missed.">        if (this.rdBtnCarnesRojas.isSelected()) {</span>
-<span class="nc" id="L562">            preferencias.add(&quot;Carnes Rojas&quot;);</span>
+<span class="nc bnc" id="L548" title="All 2 branches missed.">        if (this.rdBtnCarnesRojas.isSelected()) {</span>
+<span class="nc" id="L549">            preferencias.add(&quot;Carnes Rojas&quot;);</span>
         }
-<span class="nc bnc" id="L564" title="All 2 branches missed.">        if (this.rdBtnFrutas.isSelected()) {</span>
-<span class="nc" id="L565">            preferencias.add(&quot;Frutas&quot;);</span>
+<span class="nc bnc" id="L551" title="All 2 branches missed.">        if (this.rdBtnFrutas.isSelected()) {</span>
+<span class="nc" id="L552">            preferencias.add(&quot;Frutas&quot;);</span>
         }
-<span class="nc bnc" id="L567" title="All 2 branches missed.">        if (this.rdBtnVerduras.isSelected()) {</span>
-<span class="nc" id="L568">            preferencias.add(&quot;Verduras&quot;);</span>
+<span class="nc bnc" id="L554" title="All 2 branches missed.">        if (this.rdBtnVerduras.isSelected()) {</span>
+<span class="nc" id="L555">            preferencias.add(&quot;Verduras&quot;);</span>
         }
-<span class="nc bnc" id="L570" title="All 2 branches missed.">        if (this.rdBtnHarinas.isSelected()) {</span>
-<span class="nc" id="L571">            preferencias.add(&quot;Harinas&quot;);</span>
+<span class="nc bnc" id="L557" title="All 2 branches missed.">        if (this.rdBtnHarinas.isSelected()) {</span>
+<span class="nc" id="L558">            preferencias.add(&quot;Harinas&quot;);</span>
         }
-<span class="nc" id="L573">    }</span>
-    
+<span class="nc" id="L560">    }</span>
+
     private void ocultarEtiquetas() {
-<span class="nc" id="L576">        this.lblValidarNombre.setVisible(false);</span>
-<span class="nc" id="L577">        this.lblValidarApellido.setVisible(false);</span>
-<span class="nc" id="L578">        this.lblValidarNacionalidad.setVisible(false);</span>
-<span class="nc" id="L579">        this.lblDatosIncorrectos.setVisible(false);</span>
-<span class="nc" id="L580">        this.lblNombreVacio.setVisible(false);</span>
-<span class="nc" id="L581">        this.lblApellidoVacio.setVisible(false);</span>
-<span class="nc" id="L582">        this.lblPaisVacio.setVisible(false);</span>
-<span class="nc" id="L583">    }</span>
+<span class="nc" id="L563">        this.lblValidarNombre.setVisible(false);</span>
+<span class="nc" id="L564">        this.lblValidarApellido.setVisible(false);</span>
+<span class="nc" id="L565">        this.lblValidarNacionalidad.setVisible(false);</span>
+<span class="nc" id="L566">        this.lblDatosIncorrectos.setVisible(false);</span>
+<span class="nc" id="L567">        this.lblNombreVacio.setVisible(false);</span>
+<span class="nc" id="L568">        this.lblApellidoVacio.setVisible(false);</span>
+<span class="nc" id="L569">        this.lblPaisVacio.setVisible(false);</span>
+<span class="nc" id="L570">        this.lblFechaInvalida.setVisible(false);</span>
+<span class="nc" id="L571">        this.lblValidarFecha.setVisible(false);</span>
+<span class="nc" id="L572">    }</span>
 
     private void cargarListaPreferencias() {
-<span class="nc" id="L586">        Sistema.Preferencias[] listaPreferencias = new Sistema.Preferencias[5];</span>
-<span class="nc" id="L587">        listaPreferencias[0] = Sistema.Preferencias.CarnesBlancas;</span>
-<span class="nc" id="L588">        listaPreferencias[1] = Sistema.Preferencias.CarnesRojas;</span>
-<span class="nc" id="L589">        listaPreferencias[2] = Sistema.Preferencias.Frutas;</span>
-<span class="nc" id="L590">        listaPreferencias[3] = Sistema.Preferencias.Harinas;</span>
-<span class="nc" id="L591">        listaPreferencias[4] = Sistema.Preferencias.Verduras;</span>
-<span class="nc bnc" id="L592" title="All 2 branches missed.">        for (int i = 0; i &lt; listaPreferencias.length; i++) {</span>
-<span class="nc bnc" id="L593" title="All 2 branches missed.">            if (i == 0) {</span>
-<span class="nc" id="L594">                this.rdBtnCarnesRojas.setText(&quot;Carnes Rojas&quot;);</span>
+<span class="nc" id="L575">        Sistema.Preferencias[] listaPreferencias = new Sistema.Preferencias[5];</span>
+<span class="nc" id="L576">        listaPreferencias[0] = Sistema.Preferencias.CarnesBlancas;</span>
+<span class="nc" id="L577">        listaPreferencias[1] = Sistema.Preferencias.CarnesRojas;</span>
+<span class="nc" id="L578">        listaPreferencias[2] = Sistema.Preferencias.Frutas;</span>
+<span class="nc" id="L579">        listaPreferencias[3] = Sistema.Preferencias.Harinas;</span>
+<span class="nc" id="L580">        listaPreferencias[4] = Sistema.Preferencias.Verduras;</span>
+<span class="nc bnc" id="L581" title="All 2 branches missed.">        for (int i = 0; i &lt; listaPreferencias.length; i++) {</span>
+<span class="nc bnc" id="L582" title="All 2 branches missed.">            if (i == 0) {</span>
+<span class="nc" id="L583">                this.rdBtnCarnesRojas.setText(&quot;Carnes Rojas&quot;);</span>
             }
-<span class="nc bnc" id="L596" title="All 2 branches missed.">            if (i == 1) {</span>
-<span class="nc" id="L597">                this.rdBtnCarnesBlancas.setText(&quot;Carnes Blancas&quot;);</span>
+<span class="nc bnc" id="L585" title="All 2 branches missed.">            if (i == 1) {</span>
+<span class="nc" id="L586">                this.rdBtnCarnesBlancas.setText(&quot;Carnes Blancas&quot;);</span>
             }
-<span class="nc bnc" id="L599" title="All 2 branches missed.">            if (i == 2) {</span>
-<span class="nc" id="L600">                this.rdBtnFrutas.setText(&quot;Frutas&quot;);</span>
+<span class="nc bnc" id="L588" title="All 2 branches missed.">            if (i == 2) {</span>
+<span class="nc" id="L589">                this.rdBtnFrutas.setText(&quot;Frutas&quot;);</span>
             }
-<span class="nc bnc" id="L602" title="All 2 branches missed.">            if (i == 3) {</span>
-<span class="nc" id="L603">                this.rdBtnHarinas.setText(&quot;Harinas&quot;);</span>
+<span class="nc bnc" id="L591" title="All 2 branches missed.">            if (i == 3) {</span>
+<span class="nc" id="L592">                this.rdBtnHarinas.setText(&quot;Harinas&quot;);</span>
             }
-<span class="nc bnc" id="L605" title="All 2 branches missed.">            if (i == 4) {</span>
-<span class="nc" id="L606">                this.rdBtnVerduras.setText(&quot;Verduras&quot;);</span>
+<span class="nc bnc" id="L594" title="All 2 branches missed.">            if (i == 4) {</span>
+<span class="nc" id="L595">                this.rdBtnVerduras.setText(&quot;Verduras&quot;);</span>
             }
         }
-<span class="nc" id="L609">    }</span>
+<span class="nc" id="L598">    }</span>
 
     private void cargarListaRestricciones() {
-<span class="nc" id="L612">        Sistema.Restricciones[] listaRestricciones = new Sistema.Restricciones[4];</span>
-<span class="nc" id="L613">        listaRestricciones[0] = Sistema.Restricciones.Celiaquia;</span>
-<span class="nc" id="L614">        listaRestricciones[1] = Sistema.Restricciones.Diabetes;</span>
-<span class="nc" id="L615">        listaRestricciones[2] = Sistema.Restricciones.IntoleranciaLactosa;</span>
-<span class="nc" id="L616">        listaRestricciones[3] = Sistema.Restricciones.Veganismo;</span>
-<span class="nc bnc" id="L617" title="All 2 branches missed.">        for (int i = 0; i &lt; listaRestricciones.length; i++) {</span>
-<span class="nc bnc" id="L618" title="All 2 branches missed.">            if (i == 0) {</span>
-<span class="nc" id="L619">                this.rdBtnCeliaco.setText(&quot;Celiaquía&quot;);</span>
+<span class="nc" id="L601">        Sistema.Restricciones[] listaRestricciones = new Sistema.Restricciones[4];</span>
+<span class="nc" id="L602">        listaRestricciones[0] = Sistema.Restricciones.Celiaquia;</span>
+<span class="nc" id="L603">        listaRestricciones[1] = Sistema.Restricciones.Diabetes;</span>
+<span class="nc" id="L604">        listaRestricciones[2] = Sistema.Restricciones.IntoleranciaLactosa;</span>
+<span class="nc" id="L605">        listaRestricciones[3] = Sistema.Restricciones.Veganismo;</span>
+<span class="nc bnc" id="L606" title="All 2 branches missed.">        for (int i = 0; i &lt; listaRestricciones.length; i++) {</span>
+<span class="nc bnc" id="L607" title="All 2 branches missed.">            if (i == 0) {</span>
+<span class="nc" id="L608">                this.rdBtnCeliaco.setText(&quot;Celiaquía&quot;);</span>
             }
-<span class="nc bnc" id="L621" title="All 2 branches missed.">            if (i == 1) {</span>
-<span class="nc" id="L622">                this.rdBtnDiabetes.setText(&quot;Diabetes&quot;);</span>
+<span class="nc bnc" id="L610" title="All 2 branches missed.">            if (i == 1) {</span>
+<span class="nc" id="L611">                this.rdBtnDiabetes.setText(&quot;Diabetes&quot;);</span>
             }
-<span class="nc bnc" id="L624" title="All 2 branches missed.">            if (i == 2) {</span>
-<span class="nc" id="L625">                this.rdBtnIntoleranteLactosa.setText(&quot;Intolerante a la lactosa&quot;);</span>
+<span class="nc bnc" id="L613" title="All 2 branches missed.">            if (i == 2) {</span>
+<span class="nc" id="L614">                this.rdBtnIntoleranteLactosa.setText(&quot;Intolerante a la lactosa&quot;);</span>
             }
-<span class="nc bnc" id="L627" title="All 2 branches missed.">            if (i == 3) {</span>
-<span class="nc" id="L628">                this.rdBtnVegano.setText(&quot;Veganismo&quot;);</span>
+<span class="nc bnc" id="L616" title="All 2 branches missed.">            if (i == 3) {</span>
+<span class="nc" id="L617">                this.rdBtnVegano.setText(&quot;Veganismo&quot;);</span>
             }
         }
-<span class="nc" id="L631">    }</span>
+<span class="nc" id="L620">    }</span>
 
     private void cargarListaPaises() {
-<span class="nc" id="L634">        DefaultComboBoxModel modelo = new DefaultComboBoxModel();</span>
-<span class="nc" id="L635">        ArrayList&lt;String&gt; nacionalidaesEnSistema = sistema.devolverListaPaises();</span>
-<span class="nc" id="L636">        this.listaNacionalidad.setModel(modelo);</span>
-<span class="nc" id="L637">        this.listaNacionalidad.addItem(&quot;Seleccione...&quot;);</span>
-<span class="nc bnc" id="L638" title="All 2 branches missed.">        for (int i = 0; i &lt; nacionalidaesEnSistema.size(); i++) {</span>
-<span class="nc" id="L639">            this.listaNacionalidad.addItem(nacionalidaesEnSistema.get(i));</span>
+<span class="nc" id="L623">        DefaultComboBoxModel modelo = new DefaultComboBoxModel();</span>
+<span class="nc" id="L624">        ArrayList&lt;String&gt; nacionalidaesEnSistema = sistema.devolverListaPaises();</span>
+<span class="nc" id="L625">        this.listaNacionalidad.setModel(modelo);</span>
+<span class="nc" id="L626">        this.listaNacionalidad.addItem(&quot;Seleccione...&quot;);</span>
+<span class="nc bnc" id="L627" title="All 2 branches missed.">        for (int i = 0; i &lt; nacionalidaesEnSistema.size(); i++) {</span>
+<span class="nc" id="L628">            this.listaNacionalidad.addItem(nacionalidaesEnSistema.get(i));</span>
         }
-<span class="nc" id="L641">    }</span>
+<span class="nc" id="L630">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel banner;
@@ -650,6 +639,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblApellidoVacio;
     private javax.swing.JLabel lblDatosIncorrectos;
+    private javax.swing.JLabel lblFechaInvalida;
     private javax.swing.JLabel lblIconoNuevoUsuario;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreVacio;
@@ -661,6 +651,7 @@ public class PanelRegistrarUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel lblTxtPreferencias;
     private javax.swing.JLabel lblTxtRestricciones;
     private javax.swing.JLabel lblValidarApellido;
+    private javax.swing.JLabel lblValidarFecha;
     private javax.swing.JLabel lblValidarNacionalidad;
     private javax.swing.JLabel lblValidarNombre;
     private javax.swing.JComboBox&lt;String&gt; listaNacionalidad;

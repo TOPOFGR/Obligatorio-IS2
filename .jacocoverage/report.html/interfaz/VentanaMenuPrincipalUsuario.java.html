@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaMenuPrincipalUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">VentanaMenuPrincipalUsuario.java</span></div><h1>VentanaMenuPrincipalUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaMenuPrincipalUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interfaz</a> &gt; <span class="el_source">VentanaMenuPrincipalUsuario.java</span></div><h1>VentanaMenuPrincipalUsuario.java</h1><pre class="source lang-java linenums">package Interfaz;
 
-import dominio.Alimento;
-import dominio.Ingesta;
-import dominio.PlanAlimentacion;
-import dominio.Profesional;
-import dominio.Sistema;
-import dominio.Usuario;
+import Dominio.Alimento;
+import Dominio.Ingesta;
+import Dominio.PlanAlimentacion;
+import Dominio.Profesional;
+import Dominio.Sistema;
+import Dominio.Usuario;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -369,7 +369,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 <span class="nc" id="L369">        lblNohayConsultasTexto3.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L370">        lblNohayConsultasTexto3.setText(&quot;No hay conversaciones creadas&quot;);</span>
 <span class="nc" id="L371">        panelNoHayConversacionesCreadas.add(lblNohayConsultasTexto3);</span>
-<span class="nc" id="L372">        lblNohayConsultasTexto3.setBounds(80, 350, 634, 77);</span>
+<span class="nc" id="L372">        lblNohayConsultasTexto3.setBounds(80, 350, 599, 77);</span>
 
 <span class="nc" id="L374">        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoCaraTriste.png&quot;))); // NOI18N</span>
 <span class="nc" id="L375">        panelNoHayConversacionesCreadas.add(jLabel2);</span>
@@ -467,7 +467,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         );
 
 <span class="nc" id="L469">        panelConsultaConProfesionalOld.add(panelConversacion);</span>
-<span class="nc" id="L470">        panelConversacion.setBounds(264, 48, 526, 647);</span>
+<span class="nc" id="L470">        panelConversacion.setBounds(264, 48, 0, 0);</span>
 
 <span class="nc" id="L472">        btnNuevaConversacion.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L473">        btnNuevaConversacion.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoNuevoMensaje.png&quot;))); // NOI18N</span>
@@ -499,7 +499,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 <span class="nc" id="L499">        jLabel1.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L500">        jLabel1.setText(&quot;Seleccione al profesional&quot;);</span>
 <span class="nc" id="L501">        panelConsultaConProfesionalOld.add(jLabel1);</span>
-<span class="nc" id="L502">        jLabel1.setBounds(26, 131, 190, 21);</span>
+<span class="nc" id="L502">        jLabel1.setBounds(26, 131, 175, 21);</span>
 
 <span class="nc" id="L504">        panelDerecho.add(panelConsultaConProfesionalOld, &quot;card3&quot;);</span>
 
@@ -707,7 +707,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 <span class="nc" id="L707">        lblNohayConsultasTexto1.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L708">        lblNohayConsultasTexto1.setText(&quot;Ingesta registrada&quot;);</span>
 <span class="nc" id="L709">        panelIngestaRegistradaCorrectamente.add(lblNohayConsultasTexto1);</span>
-<span class="nc" id="L710">        lblNohayConsultasTexto1.setBounds(190, 340, 360, 50);</span>
+<span class="nc" id="L710">        lblNohayConsultasTexto1.setBounds(190, 340, 360, 52);</span>
 
 <span class="nc" id="L712">        panelDerecho.add(panelIngestaRegistradaCorrectamente, &quot;card10&quot;);</span>
 
@@ -732,7 +732,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
 <span class="nc" id="L732">        lblAlimentoIngeridoSeleccionado.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L733">        lblAlimentoIngeridoSeleccionado.setText(&quot;Ingrese el nuevo alimento &quot;);</span>
 <span class="nc" id="L734">        panelAlimentoIngerido.add(lblAlimentoIngeridoSeleccionado);</span>
-<span class="nc" id="L735">        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 38);</span>
+<span class="nc" id="L735">        lblAlimentoIngeridoSeleccionado.setBounds(49, 258, 624, 39);</span>
 
 <span class="nc" id="L737">        comboAlimentosEnSistema.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
 <span class="nc" id="L738">        comboAlimentosEnSistema.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Seleccione...&quot; }));</span>
@@ -1063,7 +1063,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         );
 
 <span class="nc" id="L1065">        panelPlanDeAlimentacion.add(panelSolicitarNuevoPlan);</span>
-<span class="nc" id="L1066">        panelSolicitarNuevoPlan.setBounds(35, 246, 394, 541);</span>
+<span class="nc" id="L1066">        panelSolicitarNuevoPlan.setBounds(35, 246, 0, 0);</span>
 
 <span class="nc" id="L1068">        panelBuscarPlan.setBackground(new java.awt.Color(51, 51, 51));</span>
 
@@ -1103,7 +1103,7 @@ public class VentanaMenuPrincipalUsuario extends javax.swing.JDialog {
         );
 
 <span class="nc" id="L1105">        panelPlanDeAlimentacion.add(panelBuscarPlan);</span>
-<span class="nc" id="L1106">        panelBuscarPlan.setBounds(435, 254, 339, 525);</span>
+<span class="nc" id="L1106">        panelBuscarPlan.setBounds(435, 254, 0, 0);</span>
 
 <span class="nc" id="L1108">        btnVerPlanesExistentes.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/iconoVerPlanesAlimentacion.png&quot;))); // NOI18N</span>
 <span class="nc" id="L1109">        btnVerPlanesExistentes.setBorderPainted(false);</span>

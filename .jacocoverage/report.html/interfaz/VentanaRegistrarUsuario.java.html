@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaRegistrarUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">interfaz</a> &gt; <span class="el_source">VentanaRegistrarUsuario.java</span></div><h1>VentanaRegistrarUsuario.java</h1><pre class="source lang-java linenums">package interfaz;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VentanaRegistrarUsuario.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;AlimentacionSaludable&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Interfaz</a> &gt; <span class="el_source">VentanaRegistrarUsuario.java</span></div><h1>VentanaRegistrarUsuario.java</h1><pre class="source lang-java linenums">package Interfaz;
 
-import dominio.Ingesta;
-import dominio.Sistema;
+import Dominio.Ingesta;
+import Dominio.Sistema;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -183,13 +183,13 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L183">        lblNombre.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L184">        lblNombre.setText(&quot;Nombre&quot;);</span>
 <span class="nc" id="L185">        panel2.add(lblNombre);</span>
-<span class="nc" id="L186">        lblNombre.setBounds(31, 182, 181, 38);</span>
+<span class="nc" id="L186">        lblNombre.setBounds(31, 182, 181, 39);</span>
 
 <span class="nc" id="L188">        lblApellido.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 30)); // NOI18N</span>
 <span class="nc" id="L189">        lblApellido.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L190">        lblApellido.setText(&quot;Apellido&quot;);</span>
 <span class="nc" id="L191">        panel2.add(lblApellido);</span>
-<span class="nc" id="L192">        lblApellido.setBounds(31, 231, 171, 38);</span>
+<span class="nc" id="L192">        lblApellido.setBounds(31, 231, 171, 39);</span>
 
 <span class="nc" id="L194">        txtNombre.setBackground(new java.awt.Color(227, 227, 227));</span>
 <span class="nc" id="L195">        txtNombre.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 15)); // NOI18N</span>
@@ -219,7 +219,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L219">        lblTxtPreferencias.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L220">        lblTxtPreferencias.setText(&quot;Preferencias&quot;);</span>
 <span class="nc" id="L221">        panel2.add(lblTxtPreferencias);</span>
-<span class="nc" id="L222">        lblTxtPreferencias.setBounds(31, 423, 265, 38);</span>
+<span class="nc" id="L222">        lblTxtPreferencias.setBounds(31, 423, 265, 39);</span>
 
 <span class="nc" id="L224">        rdBtnVerduras.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L225">        rdBtnVerduras.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
@@ -233,14 +233,14 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L233">        rdBtnHarinas.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L234">        rdBtnHarinas.setText(&quot;Preferencia 5&quot;);</span>
 <span class="nc" id="L235">        panel2.add(rdBtnHarinas);</span>
-<span class="nc" id="L236">        rdBtnHarinas.setBounds(31, 620, 153, 35);</span>
+<span class="nc" id="L236">        rdBtnHarinas.setBounds(31, 620, 151, 35);</span>
 
 <span class="nc" id="L238">        rdBtnFrutas.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L239">        rdBtnFrutas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
 <span class="nc" id="L240">        rdBtnFrutas.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L241">        rdBtnFrutas.setText(&quot;Preferencia 4&quot;);</span>
 <span class="nc" id="L242">        panel2.add(rdBtnFrutas);</span>
-<span class="nc" id="L243">        rdBtnFrutas.setBounds(31, 582, 153, 35);</span>
+<span class="nc" id="L243">        rdBtnFrutas.setBounds(31, 582, 151, 35);</span>
 
 <span class="nc" id="L245">        rdBtnCarnesRojas.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L246">        rdBtnCarnesRojas.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
@@ -260,14 +260,14 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L260">        lblTxtRestricciones.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L261">        lblTxtRestricciones.setText(&quot;Restricciones&quot;);</span>
 <span class="nc" id="L262">        panel2.add(lblTxtRestricciones);</span>
-<span class="nc" id="L263">        lblTxtRestricciones.setBounds(469, 423, 208, 38);</span>
+<span class="nc" id="L263">        lblTxtRestricciones.setBounds(469, 423, 208, 39);</span>
 
 <span class="nc" id="L265">        rdBtnCeliaco.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L266">        rdBtnCeliaco.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
 <span class="nc" id="L267">        rdBtnCeliaco.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L268">        rdBtnCeliaco.setText(&quot;Restriccion 4&quot;);</span>
 <span class="nc" id="L269">        panel2.add(rdBtnCeliaco);</span>
-<span class="nc" id="L270">        rdBtnCeliaco.setBounds(469, 582, 145, 35);</span>
+<span class="nc" id="L270">        rdBtnCeliaco.setBounds(469, 582, 147, 35);</span>
 
 <span class="nc" id="L272">        rdBtnDiabetes.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L273">        rdBtnDiabetes.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
@@ -281,7 +281,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L281">        rdBtnVegano.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L282">        rdBtnVegano.setText(&quot;Restriccion 2&quot;);</span>
 <span class="nc" id="L283">        panel2.add(rdBtnVegano);</span>
-<span class="nc" id="L284">        rdBtnVegano.setBounds(469, 506, 145, 35);</span>
+<span class="nc" id="L284">        rdBtnVegano.setBounds(469, 506, 147, 35);</span>
 
 <span class="nc" id="L286">        btnIngresarUsuarioASistema.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/Imagenes/fotoConfirmar.png&quot;))); // NOI18N</span>
 <span class="nc" id="L287">        btnIngresarUsuarioASistema.setBorderPainted(false);</span>
@@ -298,7 +298,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L298">        lblTxtNacionalidad.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L299">        lblTxtNacionalidad.setText(&quot;Nacionalidad&quot;);</span>
 <span class="nc" id="L300">        panel2.add(lblTxtNacionalidad);</span>
-<span class="nc" id="L301">        lblTxtNacionalidad.setBounds(30, 280, 204, 38);</span>
+<span class="nc" id="L301">        lblTxtNacionalidad.setBounds(30, 280, 173, 39);</span>
 
 <span class="nc" id="L303">        listaNacionalidad.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
 <span class="nc" id="L304">        listaNacionalidad.addItemListener(new java.awt.event.ItemListener() {</span>
@@ -313,7 +313,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 <span class="nc" id="L313">        lblTxtFechaNac.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L314">        lblTxtFechaNac.setText(&quot;Fecha de nacimiento&quot;);</span>
 <span class="nc" id="L315">        panel2.add(lblTxtFechaNac);</span>
-<span class="nc" id="L316">        lblTxtFechaNac.setBounds(30, 340, 328, 38);</span>
+<span class="nc" id="L316">        lblTxtFechaNac.setBounds(30, 340, 328, 39);</span>
 
 <span class="nc" id="L318">        rdBtnIntoleranteLactosa.setBackground(new java.awt.Color(51, 51, 51));</span>
 <span class="nc" id="L319">        rdBtnIntoleranteLactosa.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 0, 20)); // NOI18N</span>
@@ -325,37 +325,37 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
 
 <span class="nc" id="L326">        dateChooserFechaNacimiento.setCurrentView(new datechooser.view.appearance.AppearancesList(&quot;Swing&quot;,</span>
             new datechooser.view.appearance.ViewAppearance(&quot;custom&quot;,
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     true,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(0, 0, 255),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(128, 128, 128),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(0, 0, 255),
                     false,
                     true,
                     new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 11),
+                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font(&quot;Tahoma&quot;, java.awt.Font.PLAIN, 16),
                     new java.awt.Color(0, 0, 0),
                     new java.awt.Color(255, 0, 0),
                     false,
@@ -364,7 +364,7 @@ public class VentanaRegistrarUsuario extends javax.swing.JDialog {
                 (datechooser.view.BackRenderer)null,
                 false,
                 true)));
-<span class="nc" id="L367">    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Century Gothic&quot;, java.awt.Font.PLAIN, 19));</span>
+<span class="nc" id="L367">    dateChooserFechaNacimiento.setFieldFont(new java.awt.Font(&quot;Dialog&quot;, java.awt.Font.PLAIN, 19));</span>
 <span class="nc" id="L368">    dateChooserFechaNacimiento.setMaxDate(new java.util.GregorianCalendar(2017, 10, 9));</span>
 <span class="nc" id="L369">    dateChooserFechaNacimiento.setMinDate(new java.util.GregorianCalendar(1917, 10, 1));</span>
 <span class="nc" id="L370">    panel2.add(dateChooserFechaNacimiento);</span>
