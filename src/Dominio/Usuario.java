@@ -26,6 +26,9 @@ public final class Usuario extends Persona {
             this.setNombre(unNombre);
         }
         this.setApellido(unApellido);
+        if (unNombre == null || unNombre.trim().equals("")){
+            this.setNombre("Nombre no ingresado");
+        }
         this.setFechaNacimiento(unaFechaNacimiento);
         this.setFotoDePerfil(unaFotoDePerfil);
         if (unaNacionalidad == null || unaNacionalidad.trim().equals("")){

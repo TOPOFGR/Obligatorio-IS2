@@ -33,6 +33,9 @@ public final class Sistema implements Serializable {
         setListaConversaciones(unaListaConversaciones);
         setListaPlanesAlimentacion(unaListaPlanesAlimentacion);
         setPersonaLogueada(personaLogueada);
+        if (personaLogueada == null){
+            setPersonaLogueada(new Usuario(null, null, null, null, null, null, null, null));
+        }
     }
 
     public Sistema() {
@@ -375,7 +378,7 @@ public final class Sistema implements Serializable {
 
     public boolean agregarIngestaAUsuario(ArrayList<Ingesta> listaIngestasDelUsuario, String fechaIngesta, String nuevoAlimento) {
         boolean ingestaAgregada = false;
-        if (listaIngestasDelUsuario != null) {
+        if (listaIngestasDelUsuario != null && fechaIngesta != null) {
             
                 if (yaExisteIngestaEnEsaFecha(listaIngestasDelUsuario, fechaIngesta)) {
                     for (int i = 0; i < listaIngestasDelUsuario.size(); i++) {

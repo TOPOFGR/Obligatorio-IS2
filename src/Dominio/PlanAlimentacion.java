@@ -25,7 +25,13 @@ public final class PlanAlimentacion implements Serializable {
             setNombreDelPlan(np);
         }
         setUsuario(usu);
+        if (usu == null){
+            setUsuario(new Usuario(null, null, null, null, null, null, null, null));
+        }
         setProfesional(pro);
+        if (pro == null){
+            setProfesional(new Profesional(null, null, null, null, null, null, null));
+        }
         setFueAtendidoElPlan(fueAtendido);
         setPlanDiaADia(unPlan);
     }

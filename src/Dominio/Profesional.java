@@ -16,7 +16,11 @@ public final class Profesional extends Persona {
             String unaFechaGraduacion,
             String unPaisGraduacion) {
 
-        setNombre(unNombre);
+        if (unNombre == null || unNombre.trim().equals("")){
+            this.setNombre("Nombre no ingresado");
+        } else {
+            this.setNombre(unNombre);
+        }
         setApellido(unApellido);
         setFechaNacimiento(unaFechaNacimiento);
         setFotoDePerfil(unaFoto);

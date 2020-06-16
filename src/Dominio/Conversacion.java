@@ -13,8 +13,16 @@ public final class Conversacion implements Serializable {
     private boolean fueAtendidaConsulta;
 
     public Conversacion(Persona user, Persona pr, ArrayList<InformacionMensaje> lista) {
-        setUsuario(user);
-        setProfesional(pr);
+        if (user == null){
+            setUsuario(new Usuario(null, null, null, null, null, null, null, null));
+        } else {
+            setUsuario(user);
+        }
+        if (pr == null){
+            setProfesional(new Profesional(null, null, null, null, null, null, null));
+        } else {
+            setProfesional(pr);
+        }
         setListaMensajes(lista);
         setFueAtendidaConsulta(false);
     }
