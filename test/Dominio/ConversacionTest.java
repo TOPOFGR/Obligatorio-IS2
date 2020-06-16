@@ -1,9 +1,5 @@
 package Dominio;
 
-import Dominio.Conversacion;
-import Dominio.Profesional;
-import Dominio.Usuario;
-import Dominio.Persona;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import org.junit.Test;
@@ -81,5 +77,12 @@ public class ConversacionTest {
         assertEquals(conversacionATestear.toString(), "No hay mensajes para mostrar");
     }
 
-
+    @Test
+    public void testAgregarMensaje(){
+        Conversacion conversacionATestear = new Conversacion(null, null, new ArrayList<>());
+        conversacionATestear.setProfesional(null);
+        conversacionATestear.setUsuario(null);
+        boolean resultadoAEvaluar = conversacionATestear.agregarMensaje("Mensaje de prueba", true);
+        assertTrue(resultadoAEvaluar);
+    }
 }

@@ -1,13 +1,5 @@
 package Dominio;
 
-import Dominio.Ingesta;
-import Dominio.Conversacion;
-import Dominio.Profesional;
-import Dominio.Sistema;
-import Dominio.PlanAlimentacion;
-import Dominio.Persona;
-import Dominio.Alimento;
-import Dominio.Usuario;
 import Dominio.Sistema.DiasDeLaSemana;
 import Dominio.Sistema.IngestasPorDia;
 import Dominio.Sistema.Paises;
@@ -571,4 +563,128 @@ public class SistemaTest {
         assertEquals(sistemaATestear.devolverListaDiasDeLaSemana(), listaEsperada);
     }
 
+    @Test
+    public void testDevolverListaPaises(){
+        ArrayList<String> lstNacionalidades = new ArrayList<>();
+        lstNacionalidades.add(Paises.Argentina.toString());
+        lstNacionalidades.add(Paises.Bolivia.toString());
+        lstNacionalidades.add(Paises.Brasil.toString());
+        lstNacionalidades.add(Paises.Chile.toString());
+        lstNacionalidades.add(Paises.Colombia.toString());
+        lstNacionalidades.add("Costa Rica");
+        lstNacionalidades.add(Paises.Cuba.toString());
+        lstNacionalidades.add(Paises.Ecuador.toString());
+        lstNacionalidades.add("El Salvador");
+        lstNacionalidades.add("Guayana Francesa");
+        lstNacionalidades.add(Paises.Granada.toString());
+        lstNacionalidades.add(Paises.Guatemala.toString());
+        lstNacionalidades.add(Paises.Guayana.toString());
+        lstNacionalidades.add(Paises.Haití.toString());
+        lstNacionalidades.add(Paises.Honduras.toString());
+        lstNacionalidades.add(Paises.Jamaica.toString());
+        lstNacionalidades.add(Paises.México.toString());
+        lstNacionalidades.add(Paises.Nicaragua.toString());
+        lstNacionalidades.add(Paises.Paraguay.toString());
+        lstNacionalidades.add(Paises.Panamá.toString());
+        lstNacionalidades.add(Paises.Perú.toString());
+        lstNacionalidades.add("Puerto Rico");
+        lstNacionalidades.add("República Dominicana");
+        lstNacionalidades.add(Paises.Surinam.toString());
+        lstNacionalidades.add(Paises.Uruguay.toString());
+        lstNacionalidades.add(Paises.Venezuela.toString());
+        Sistema sistemaATestear = new Sistema();
+        assertEquals(sistemaATestear.devolverListaPaises(), lstNacionalidades);
+    }
+    
+    @Test
+    public void testCrearProfesionalRepetido(){
+        Sistema sistemaATestear = new Sistema();
+        Profesional profesional = new Profesional("Nombre", "Apellido", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        boolean resultadoAEvaluar = sistemaATestear.crearProfesional("Nombre", "Apellido", null, null, null, null, null);
+        assertFalse(resultadoAEvaluar);
+    }
+    
+    @Test
+    public void testCrearAlimentoRepetido(){
+        Sistema sistemaATestear = new Sistema();
+        Alimento alimento = new Alimento("Banana", null, null, null);
+        sistemaATestear.agregarAlimentoALaLista(alimento);
+        boolean resultadoAEvaluar = sistemaATestear.crearAlimento("Banana", null, null, null);
+        assertFalse(resultadoAEvaluar);
+    }
+    
+    @Test
+    public void testGetArrayAlimentos(){
+        Sistema sistemaATestear = new Sistema();
+        sistemaATestear.crearAlimento("Banana", null, null, null);
+        sistemaATestear.crearAlimento("Manzana", null, null, null);
+        sistemaATestear.crearAlimento("Naranja", null, null, null);
+        String[] resultadoEsperado = {"Banana", "Manzana", "Naranja"};
+        assertEquals(resultadoEsperado, sistemaATestear.getArrayAlimentos());
+    }
+    
+    @Test
+    public void testCrearConversacion(){
+        Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Pedro", "Perez", null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+        Profesional profesional = new Profesional("Carlos", "Conca", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        boolean resultadoAEvaluar = sistemaATestear.crearConversacion(usuario, profesional, "Mensaje de prueba", false);
+        assertTrue(resultadoAEvaluar);
+    }
+    
+    @Test
+    public void testGetListaNombresProfesionalesConversaciones(){
+        Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Pedro", "Perez", null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+        Profesional profesional = new Profesional("Carlos", "Conca", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        sistemaATestear.crearConversacion(usuario, profesional, "Mensaje de prueba", false);
+        String[] resultadoAEvaluar = sistemaATestear.getListaNombresProfesionalesConversaciones("Pedro Perez");
+        assertTrue(resultadoAEvaluar[0].equals(profesional.getNombreCompleto()));
+    }
+    
+    @Test
+    public void testGetListaNombresUsuariosConversaciones(){
+        Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Pedro", "Perez", null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+        Profesional profesional = new Profesional("Carlos", "Conca", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        sistemaATestear.crearConversacion(usuario, profesional, "Mensaje de prueba", false);
+        String[] resultadoAEvaluar = sistemaATestear.getListaNombresUsuariosConversacionesPendientes("Carlos Conca");
+        assertTrue(resultadoAEvaluar[0].equals(usuario.getNombreCompleto()));
+    }
+    
+    @Test
+    public void testGetConversacion(){
+        Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Pedro", "Perez", null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+        Profesional profesional = new Profesional("Carlos", "Conca", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        Profesional profesional2 = new Profesional("Solomeo", "Torres", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional2);
+        sistemaATestear.crearConversacion(usuario, profesional, "Mensaje de prueba", false);
+        sistemaATestear.crearConversacion(usuario, profesional2, "Mensaje de prueba 2", true);
+        String resultadoAEvaluar = sistemaATestear.getConversacion(profesional.getNombreCompleto(), usuario.getNombreCompleto());
+        assertEquals(resultadoAEvaluar, sistemaATestear.getListaConversaciones().get(0).toString());
+    }
+    
+    @Test
+    public void testGetNombresProfesionalesSinConversacionUsuario(){
+        Sistema sistemaATestear = new Sistema();
+        Usuario usuario = new Usuario("Pedro", "Perez", null, null, null, null, null, null);
+        sistemaATestear.agregarUsuarioALaLista(usuario);
+        Profesional profesional = new Profesional("Carlos", "Conca", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional);
+        Profesional profesional2 = new Profesional("Solomeo", "Torres", null, null, null, null, null);
+        sistemaATestear.agregarProfesionalALaLista(profesional2);
+        sistemaATestear.crearConversacion(usuario, profesional, "Mensaje de prueba", false);
+        ArrayList resultadoAEvaluar = sistemaATestear.getNombresProfesionalesSinConversacionConUsuario(usuario);
+        assertTrue(resultadoAEvaluar.contains(profesional2));
+    }
 }

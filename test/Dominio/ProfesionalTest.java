@@ -1,6 +1,5 @@
 package Dominio;
 
-import Dominio.Profesional;
 import javax.swing.ImageIcon;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;

@@ -1,8 +1,5 @@
 package Dominio;
 
-import Dominio.Profesional;
-import Dominio.PlanAlimentacion;
-import Dominio.Usuario;
 import javax.swing.ImageIcon;
 import org.junit.Assert;
 import org.junit.Test;

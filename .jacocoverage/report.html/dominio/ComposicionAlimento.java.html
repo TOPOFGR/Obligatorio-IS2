@@ -7,36 +7,36 @@ public final class ComposicionAlimento implements Serializable {
     private String nutriente;
     private float proporcion;
 
-<span class="nc" id="L10">    public ComposicionAlimento(String unNutriente, float unaProporcion) {</span>
-<span class="nc bnc" id="L11" title="All 4 branches missed.">        if (unNutriente == null || unNutriente.trim().equals(&quot;&quot;)){</span>
-<span class="nc" id="L12">            this.setNutriente(&quot;No definido&quot;);</span>
+<span class="fc" id="L10">    public ComposicionAlimento(String unNutriente, float unaProporcion) {</span>
+<span class="fc bfc" id="L11" title="All 4 branches covered.">        if (unNutriente == null || unNutriente.trim().equals(&quot;&quot;)){</span>
+<span class="fc" id="L12">            this.setNutriente(&quot;No definido&quot;);</span>
         } else {
-<span class="nc" id="L14">            this.setNutriente(unNutriente);   </span>
+<span class="fc" id="L14">            this.setNutriente(unNutriente);   </span>
         }
-<span class="nc" id="L16">        this.setProporcion(unaProporcion);</span>
-<span class="nc" id="L17">    }</span>
+<span class="fc" id="L16">        this.setProporcion(unaProporcion);</span>
+<span class="fc" id="L17">    }</span>
 
     public String getNutriente() {
-<span class="nc" id="L20">        return this.nutriente;</span>
+<span class="fc" id="L20">        return this.nutriente;</span>
     }
 
     public void setNutriente(String unNutriente) {
-<span class="nc" id="L24">        this.nutriente = unNutriente;</span>
+<span class="fc" id="L24">        this.nutriente = unNutriente;</span>
 
 
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L27">    }</span>
 
     public float getProporcion() {
-<span class="nc" id="L30">        return this.proporcion;</span>
+<span class="fc" id="L30">        return this.proporcion;</span>
     }
 
     public void setProporcion(float unaProporcion) {
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (unaProporcion &lt;= 0) {</span>
-<span class="nc" id="L35">            this.proporcion = 1;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (unaProporcion &lt;= 0) {</span>
+<span class="fc" id="L35">            this.proporcion = 1;</span>
         } else {
-<span class="nc" id="L37">            this.proporcion = unaProporcion;</span>
+<span class="fc" id="L37">            this.proporcion = unaProporcion;</span>
         }
-<span class="nc" id="L39">    }</span>
+<span class="fc" id="L39">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

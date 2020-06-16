@@ -1,8 +1,5 @@
 package Dominio;
 
-import Dominio.Ingesta;
-import Dominio.Alimento;
-import Dominio.ComposicionAlimento;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.junit.Test;

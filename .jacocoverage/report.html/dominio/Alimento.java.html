@@ -16,77 +16,77 @@ public final class Alimento implements Serializable {
     public Alimento(String unNombre,
             String unTipoAlimento,
             ArrayList&lt;ComposicionAlimento&gt; listaNutrientes,
-<span class="nc" id="L19">            ImageIcon foto) {</span>
+<span class="fc" id="L19">            ImageIcon foto) {</span>
 
-<span class="nc" id="L21">        this.setNombre(unNombre);</span>
-<span class="nc bnc" id="L22" title="All 4 branches missed.">        if (unTipoAlimento == null || unTipoAlimento.trim().equals(&quot;&quot;)){</span>
-<span class="nc" id="L23">            this.setTipoAlimento(&quot;No definido&quot;);</span>
+<span class="fc" id="L21">        this.setNombre(unNombre);</span>
+<span class="fc bfc" id="L22" title="All 4 branches covered.">        if (unTipoAlimento == null || unTipoAlimento.trim().equals(&quot;&quot;)){</span>
+<span class="fc" id="L23">            this.setTipoAlimento(&quot;No definido&quot;);</span>
         }
         else {
-<span class="nc" id="L26">            this.setTipoAlimento(unTipoAlimento);</span>
+<span class="fc" id="L26">            this.setTipoAlimento(unTipoAlimento);</span>
         }
-<span class="nc" id="L28">        this.setListaNutrientesConProporcion(listaNutrientes);</span>
-<span class="nc" id="L29">        this.setFotoDelAlimento(foto);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L28">        this.setListaNutrientesConProporcion(listaNutrientes);</span>
+<span class="fc" id="L29">        this.setFotoDelAlimento(foto);</span>
+<span class="fc" id="L30">    }</span>
 
     public String getNombre() {
-<span class="nc" id="L33">        return this.nombre;</span>
+<span class="fc" id="L33">        return this.nombre;</span>
     }
 
     public void setNombre(String unNombre) {
-<span class="nc bnc" id="L37" title="All 4 branches missed.">        if (unNombre == null || unNombre.isEmpty()) {</span>
-<span class="nc" id="L38">            this.nombre = &quot;Nombre de alimento no ingresado&quot;;</span>
+<span class="fc bfc" id="L37" title="All 4 branches covered.">        if (unNombre == null || unNombre.isEmpty()) {</span>
+<span class="fc" id="L38">            this.nombre = &quot;Nombre de alimento no ingresado&quot;;</span>
         } else {
-<span class="nc" id="L40">            this.nombre = unNombre;</span>
+<span class="fc" id="L40">            this.nombre = unNombre;</span>
         }
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L42">    }</span>
 
     public String getTipoAlimento() {
-<span class="nc" id="L45">        return this.tipoAlimento;</span>
+<span class="fc" id="L45">        return this.tipoAlimento;</span>
     }
 
     public void setTipoAlimento(String TA) {
-<span class="nc" id="L49">        tipoAlimento = TA;</span>
+<span class="fc" id="L49">        tipoAlimento = TA;</span>
         
-<span class="nc" id="L51">    }</span>
+<span class="fc" id="L51">    }</span>
 
     public ArrayList&lt;ComposicionAlimento&gt; getListaNutrientesConProporcion() {
-<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (this.listaNutrientesConProporcion.isEmpty()) {</span>
-<span class="nc" id="L55">            return new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (this.listaNutrientesConProporcion.isEmpty()) {</span>
+<span class="fc" id="L55">            return new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L57">            return this.listaNutrientesConProporcion;</span>
+<span class="fc" id="L57">            return this.listaNutrientesConProporcion;</span>
         }
     }
 
     public void setListaNutrientesConProporcion(ArrayList&lt;ComposicionAlimento&gt; listaNutrientes) {
-<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (listaNutrientes == null) {</span>
-<span class="nc" id="L63">            this.listaNutrientesConProporcion = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (listaNutrientes == null) {</span>
+<span class="fc" id="L63">            this.listaNutrientesConProporcion = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L65">            this.listaNutrientesConProporcion = listaNutrientes;</span>
+<span class="fc" id="L65">            this.listaNutrientesConProporcion = listaNutrientes;</span>
         }
-<span class="nc" id="L67">    }</span>
+<span class="fc" id="L67">    }</span>
 
    // public ImageIcon getFotoDelAlimento() {
     //    return this.fotoDelAlimento;
     //}
 
     public void setFotoDelAlimento(ImageIcon foto) {
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (foto == null) {</span>
-<span class="nc" id="L75">            this.fotoDelAlimento = new ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDelAlimentoEstandar.png&quot;));</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        if (foto == null) {</span>
+<span class="fc" id="L75">            this.fotoDelAlimento = new ImageIcon(getClass().getResource(&quot;/Imagenes/fotoDelAlimentoEstandar.png&quot;));</span>
         } else {
 <span class="nc" id="L77">            this.fotoDelAlimento = foto;</span>
         }
-<span class="nc" id="L79">    }</span>
+<span class="fc" id="L79">    }</span>
 
     @Override
     public String toString() {
-<span class="nc" id="L83">        return this.getNombre();</span>
+<span class="fc" id="L83">        return this.getNombre();</span>
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="nc" id="L88">        Alimento otroAlimento = (Alimento) obj;</span>
-<span class="nc bnc" id="L89" title="All 4 branches missed.">        return (otroAlimento != null &amp;&amp; this.getNombre().equals(otroAlimento.getNombre()));</span>
+<span class="fc" id="L88">        Alimento otroAlimento = (Alimento) obj;</span>
+<span class="pc bpc" id="L89" title="1 of 4 branches missed.">        return (otroAlimento != null &amp;&amp; this.getNombre().equals(otroAlimento.getNombre()));</span>
     }
     
     @Override

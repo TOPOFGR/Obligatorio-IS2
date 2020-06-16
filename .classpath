@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="Date Chooser Plugin/DateChooserDemo.jar"/>
+	<classpathentry kind="lib" path="Date Chooser Plugin/lib/DateChooser.jar"/>
+	<classpathentry kind="lib" path="javadoc/DateChooser.jar"/>
+	<classpathentry kind="lib" path="lib/DateChooser.jar"/>
+	<classpathentry kind="lib" path="nbproject/DateChooser.jar"/>
+	<classpathentry kind="output" path="build/test/classes"/>
+</classpath>

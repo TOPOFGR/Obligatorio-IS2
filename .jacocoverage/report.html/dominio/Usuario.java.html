@@ -18,75 +18,75 @@ public final class Usuario extends Persona {
             String unaNacionalidad,
             ArrayList&lt;String&gt; listaPreferencias,
             ArrayList&lt;String&gt; listaRestricciones,
-<span class="nc" id="L21">            ArrayList&lt;Ingesta&gt; listaAlimentos) {</span>
+<span class="fc" id="L21">            ArrayList&lt;Ingesta&gt; listaAlimentos) {</span>
 
-<span class="nc bnc" id="L23" title="All 4 branches missed.">        if (unNombre == null || unNombre.trim().equals(&quot;&quot;)){</span>
-<span class="nc" id="L24">            this.setNombre(&quot;Nombre no ingresado&quot;);</span>
+<span class="fc bfc" id="L23" title="All 4 branches covered.">        if (unNombre == null || unNombre.trim().equals(&quot;&quot;)){</span>
+<span class="fc" id="L24">            this.setNombre(&quot;Nombre no ingresado&quot;);</span>
         } else {
-<span class="nc" id="L26">            this.setNombre(unNombre);</span>
+<span class="fc" id="L26">            this.setNombre(unNombre);</span>
         }
-<span class="nc" id="L28">        this.setApellido(unApellido);</span>
-<span class="nc bnc" id="L29" title="All 4 branches missed.">        if (unNombre == null || unNombre.trim().equals(&quot;&quot;)){</span>
-<span class="nc" id="L30">            this.setNombre(&quot;Nombre no ingresado&quot;);</span>
+<span class="fc" id="L28">        this.setApellido(unApellido);</span>
+<span class="fc bfc" id="L29" title="All 4 branches covered.">        if (unNombre == null || unNombre.trim().equals(&quot;&quot;)){</span>
+<span class="fc" id="L30">            this.setNombre(&quot;Nombre no ingresado&quot;);</span>
         }
-<span class="nc" id="L32">        this.setFechaNacimiento(unaFechaNacimiento);</span>
-<span class="nc" id="L33">        this.setFotoDePerfil(unaFotoDePerfil);</span>
-<span class="nc bnc" id="L34" title="All 4 branches missed.">        if (unaNacionalidad == null || unaNacionalidad.trim().equals(&quot;&quot;)){</span>
-<span class="nc" id="L35">            this.setNacionalidad(&quot;Nacionalidad no ingresada&quot;);</span>
+<span class="fc" id="L32">        this.setFechaNacimiento(unaFechaNacimiento);</span>
+<span class="fc" id="L33">        this.setFotoDePerfil(unaFotoDePerfil);</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        if (unaNacionalidad == null || unaNacionalidad.trim().equals(&quot;&quot;)){</span>
+<span class="fc" id="L35">            this.setNacionalidad(&quot;Nacionalidad no ingresada&quot;);</span>
         } else {
-<span class="nc" id="L37">            this.setNacionalidad(unaNacionalidad);</span>
+<span class="fc" id="L37">            this.setNacionalidad(unaNacionalidad);</span>
         }
-<span class="nc" id="L39">        this.setPreferencias(listaPreferencias);</span>
-<span class="nc" id="L40">        this.setRestricciones(listaRestricciones);</span>
-<span class="nc" id="L41">        this.setAlimentosIngeridos(listaAlimentos);</span>
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L39">        this.setPreferencias(listaPreferencias);</span>
+<span class="fc" id="L40">        this.setRestricciones(listaRestricciones);</span>
+<span class="fc" id="L41">        this.setAlimentosIngeridos(listaAlimentos);</span>
+<span class="fc" id="L42">    }</span>
 
     public String getNacionalidad() {
-<span class="nc" id="L45">        return nacionalidad;</span>
+<span class="fc" id="L45">        return nacionalidad;</span>
     }
 
     public void setNacionalidad(String unaNacionalidad) {
        
-<span class="nc" id="L50">        nacionalidad = unaNacionalidad;</span>
+<span class="fc" id="L50">        nacionalidad = unaNacionalidad;</span>
        
-<span class="nc" id="L52">    }</span>
+<span class="fc" id="L52">    }</span>
 
     public ArrayList&lt;String&gt; getPreferencias() {
-<span class="nc" id="L55">        return this.preferencias;</span>
+<span class="fc" id="L55">        return this.preferencias;</span>
     }
 
     public void setPreferencias(ArrayList&lt;String&gt; listaPreferencias) {
-<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (listaPreferencias == null) {</span>
-<span class="nc" id="L60">            this.preferencias = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (listaPreferencias == null) {</span>
+<span class="fc" id="L60">            this.preferencias = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L62">            this.preferencias = listaPreferencias;</span>
+<span class="fc" id="L62">            this.preferencias = listaPreferencias;</span>
         }
-<span class="nc" id="L64">    }</span>
+<span class="fc" id="L64">    }</span>
 
     public ArrayList&lt;String&gt; getRestricciones() {
-<span class="nc" id="L67">        return this.restricciones;</span>
+<span class="fc" id="L67">        return this.restricciones;</span>
     }
 
     public void setRestricciones(ArrayList&lt;String&gt; listaRestricciones) {
-<span class="nc bnc" id="L71" title="All 2 branches missed.">        if (listaRestricciones == null) {</span>
-<span class="nc" id="L72">            this.restricciones = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (listaRestricciones == null) {</span>
+<span class="fc" id="L72">            this.restricciones = new ArrayList&lt;&gt;();</span>
         } else {
-<span class="nc" id="L74">            this.restricciones = listaRestricciones;</span>
+<span class="fc" id="L74">            this.restricciones = listaRestricciones;</span>
         }
-<span class="nc" id="L76">    }</span>
+<span class="fc" id="L76">    }</span>
 
     public ArrayList&lt;Ingesta&gt; getAlimentosIngeridos() {
-<span class="nc" id="L79">        return this.alimentosIngeridos;</span>
+<span class="fc" id="L79">        return this.alimentosIngeridos;</span>
     }
 
     public void setAlimentosIngeridos(ArrayList&lt;Ingesta&gt; listaAlimentos) {
-<span class="nc bnc" id="L83" title="All 2 branches missed.">        if (listaAlimentos == null) {</span>
-<span class="nc" id="L84">            this.alimentosIngeridos = new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">        if (listaAlimentos == null) {</span>
+<span class="fc" id="L84">            this.alimentosIngeridos = new ArrayList&lt;&gt;();</span>
         } else {
 <span class="nc" id="L86">            this.alimentosIngeridos = listaAlimentos;</span>
         }
 
-<span class="nc" id="L89">    }</span>
+<span class="fc" id="L89">    }</span>
 
     public String[] getArrayAlimentosIngeridos() {
 <span class="nc" id="L92">        String[] retorno = new String[getAlimentosIngeridos().size()];</span>
@@ -97,19 +97,19 @@ public final class Usuario extends Persona {
     }
 
     public String[] getArrayRestricciones() {
-<span class="nc" id="L100">        String[] retorno = new String[getRestricciones().size()];</span>
-<span class="nc bnc" id="L101" title="All 2 branches missed.">        for (int i = 0; i &lt; getRestricciones().size(); i++) {</span>
-<span class="nc" id="L102">            retorno[i] = getRestricciones().get(i);</span>
+<span class="fc" id="L100">        String[] retorno = new String[getRestricciones().size()];</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (int i = 0; i &lt; getRestricciones().size(); i++) {</span>
+<span class="fc" id="L102">            retorno[i] = getRestricciones().get(i);</span>
         }
-<span class="nc" id="L104">        return retorno;</span>
+<span class="fc" id="L104">        return retorno;</span>
     }
 
     public String[] getArrayPreferencias() {
-<span class="nc" id="L108">        String[] retorno = new String[getPreferencias().size()];</span>
-<span class="nc bnc" id="L109" title="All 2 branches missed.">        for (int i = 0; i &lt; getPreferencias().size(); i++) {</span>
-<span class="nc" id="L110">            retorno[i] = getPreferencias().get(i);</span>
+<span class="fc" id="L108">        String[] retorno = new String[getPreferencias().size()];</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        for (int i = 0; i &lt; getPreferencias().size(); i++) {</span>
+<span class="fc" id="L110">            retorno[i] = getPreferencias().get(i);</span>
         }
-<span class="nc" id="L112">        return retorno;</span>
+<span class="fc" id="L112">        return retorno;</span>
     }
 
     @Override
@@ -118,11 +118,11 @@ public final class Usuario extends Persona {
     }
 
     public void actualizarPreferenciasUsuario(Usuario usuario, ArrayList&lt;String&gt; pr) {
-<span class="nc" id="L121">        usuario.setPreferencias(pr);</span>
-<span class="nc" id="L122">    }</span>
+<span class="fc" id="L121">        usuario.setPreferencias(pr);</span>
+<span class="fc" id="L122">    }</span>
 
     public void actualizarRestriccionesUsuario(Usuario usuario, ArrayList&lt;String&gt; restricciones) {
-<span class="nc" id="L125">        usuario.setRestricciones(restricciones);</span>
-<span class="nc" id="L126">    }</span>
+<span class="fc" id="L125">        usuario.setRestricciones(restricciones);</span>
+<span class="fc" id="L126">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
